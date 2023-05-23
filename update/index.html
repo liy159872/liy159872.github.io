@@ -1,939 +1,601 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Update | Letter~Spume</title><meta name="keywords" content="翎傑皓信,翎傑皓信,Letter~Spume,Letter~Spume"><meta name="author" content="翎傑皓信"><meta name="copyright" content="翎傑皓信"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="v7.0.0 2021-12-28 更新公告内容 启用valine评论功能 启用 友链页 好友申请 显示 课程推荐、留言板 入口 修复按钮样式失效的bugs  v6.1.20 2021-01-14 更新公告内容 暂停valine评论功能 暂停 友链页 好友申请 隐藏 课程推荐、留言板 入口  v6.1.19 2021-01-10 添加友链  v6.1.18 2021-01-06 添加友链  v6.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Update">
-<meta property="og:url" content="https://liy159872.github.io//update/index.html">
-<meta property="og:site_name" content="翎傑皓信">
-<meta property="og:description" content="v7.0.0 2021-12-28 更新公告内容 启用valine评论功能 启用 友链页 好友申请 显示 课程推荐、留言板 入口 修复按钮样式失效的bugs  v6.1.20 2021-01-14 更新公告内容 暂停valine评论功能 暂停 友链页 好友申请 隐藏 课程推荐、留言板 入口  v6.1.19 2021-01-10 添加友链  v6.1.18 2021-01-06 添加友链  v6.">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/xingjiahui/CDN/post.jpg">
-<meta property="article:published_time" content="2020-04-25T03:54:25.000Z">
-<meta property="article:modified_time" content="2021-12-28T03:46:12.300Z">
-<meta property="article:author" content="翎傑皓信">
-<meta property="article:tag" content="翎傑皓信,翎傑皓信,Letter~Spume,Letter~Spume">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/xingjiahui/CDN/post.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/favicon.ico"><link rel="canonical" href="https://liy159872.github.io//update/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//pingjs.qq.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="Yp0AsOhfru"/><meta name="360-site-verification" content="9346f3a82cd6e2ac3622b3b380341276"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?46d8572351f7699bce77c44868dae192";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-162326632-1"></script><script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-162326632-1');
-</script><script>var _mtac = {};
-(function() {
-    var mta = document.createElement("script");
-    mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
-    mta.setAttribute("name", "MTAH5");
-    mta.setAttribute("sid", "66539107");
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(mta, s);
-})();
-</script><script>var GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  noticeOutdate: {"limitDay":60,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  ClickShowText: undefined,
-  lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"rgb(142,140,216)","bgDark":"#2d3035","position":"bottom-left"},
-  justifiedGallery: {
-    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-  },
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isanchor: true
-};
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Update | Letter~Spume</title>
+    <meta name="keywords" content="翎傑皓信,翎傑皓信,Letter~Spume,Letter~Spume">
+    <meta name="author" content="翎傑皓信">
+    <meta name="copyright" content="翎傑皓信">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="description" content="2019年9月：与萌芽出版社签约，开始正式步入文学界。他以其独特的创作风格和深入人心的作品获得了广泛的认可。
 
-var saveToLocal = {
-  set: function setWithExpiry(key, value, ttl) {
-    const now = new Date()
-    const expiryDay = ttl * 86400000
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay,
-    }
-    localStorage.setItem(key, JSON.stringify(item))
-  },
+2021年3月：荣获《新概念文学最具影响力奖》和《萌芽短篇小说金奖》，凭借出色的文学作品展现了他的才华。同年，他被评为【新概念文学首席作家】，成为这一领域的重要人物。
 
-  get: function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
+2021年9月：翎傑皓信被大学授予【最具影响力新时代文学青年】的荣誉称号，这进一步证明了他在当代文学领域的地位。同年9月，他再次荣登新概念散文文学首席作家评点，展现了他在散文创作方面的卓越才能。
 
-    if (!itemStr) {
-      return undefined
-    }
-    const item = JSON.parse(itemStr)
-    const now = new Date()
+2022年初：综合文学平台认可翎傑皓信的影响力，授予他【00后最具影响力文学作家】的称号，这表明他已经成为新一代作家中备受瞩目的人物。
 
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
-      return undefined
-    }
-    return item.value
-  }
-}</script><script id="config_change">var GLOBAL_CONFIG_SITE = {
-  isPost: false,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2021-12-28 11:46:12'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+2023年初：由于学业压力的增加，翎傑皓信宣布退出文学剧坛，以专注于自己的学业发展。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Update">
+    <meta property="og:url" content="https://liy159872.github.io//update/index.html">
+    <meta property="og:site_name" content="翎傑皓信">
+    <meta property="og:description" content="2019年9月：与萌芽出版社签约，开始正式步入文学界。他以其独特的创作风格和深入人心的作品获得了广泛的认可。
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(function () {  window.activateDarkMode = function () {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+2021年3月：荣获《新概念文学最具影响力奖》和《萌芽短篇小说金奖》，凭借出色的文学作品展现了他的才华。同年，他被评为【新概念文学首席作家】，成为这一领域的重要人物。
+
+2021年9月：翎傑皓信被大学授予【最具影响力新时代文学青年】的荣誉称号，这进一步证明了他在当代文学领域的地位。同年9月，他再次荣登新概念散文文学首席作家评点，展现了他在散文创作方面的卓越才能。
+
+2022年初：综合文学平台认可翎傑皓信的影响力，授予他【00后最具影响力文学作家】的称号，这表明他已经成为新一代作家中备受瞩目的人物。
+
+2023年初：由于学业压力的增加，翎傑皓信宣布退出文学剧坛，以专注于自己的学业发展。">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/xingjiahui/CDN/post.jpg">
+    <meta property="article:published_time" content="2020-04-25T03:54:25.000Z">
+    <meta property="article:modified_time" content="2021-12-28T03:46:12.300Z">
+    <meta property="article:author" content="翎傑皓信">
+    <meta property="article:tag" content="翎傑皓信,翎傑皓信,Letter~Spume,Letter~Spume">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/xingjiahui/CDN/post.jpg">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/favicon.ico">
+    <link rel="canonical" href="https://liy159872.github.io//update/">
+    <link rel="preconnect" href="//cdn.jsdelivr.net"/>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/>
+    <link rel="preconnect" href="//hm.baidu.com"/>
+    <link rel="preconnect" href="//pingjs.qq.com"/>
+    <link rel="preconnect" href="//busuanzi.ibruce.info"/>
+    <meta name="baidu-site-verification" content="Yp0AsOhfru"/>
+    <meta name="360-site-verification" content="9346f3a82cd6e2ac3622b3b380341276"/>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css">
+    <script>var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?46d8572351f7699bce77c44868dae192";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-162326632-1"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
     }
-  }
-  window.activateLightMode = function () {
-    document.documentElement.setAttribute('data-theme', 'light')
-   if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-    }
-  }
-  const autoChangeMode = 'true'
-  const t = saveToLocal.get('theme')
-  if (autoChangeMode === '1') {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-    if (t === undefined) {
-      if (isLightMode) activateLightMode()
-      else if (isDarkMode) activateDarkMode()
-      else if (isNotSpecified || hasNoSupport) {
-        const now = new Date()
-        const hour = now.getHours()
-        const isNight = hour <= 6 || hour >= 18
-        isNight ? activateDarkMode() : activateLightMode()
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-        if (saveToLocal.get('theme') === undefined) {
-          e.matches ? activateDarkMode() : activateLightMode()
+
+    gtag('js', new Date());
+    gtag('config', 'UA-162326632-1');
+    </script>
+    <script>var _mtac = {};
+    (function () {
+        var mta = document.createElement("script");
+        mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+        mta.setAttribute("name", "MTAH5");
+        mta.setAttribute("sid", "66539107");
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(mta, s);
+    })();
+    </script>
+    <script>var GLOBAL_CONFIG = {
+        root: '/',
+        algolia: undefined,
+        localSearch: {"path": "search.xml", "languages": {"hits_empty": "找不到您查询的内容：${query}"}},
+        translate: {
+            "defaultEncoding": 2,
+            "translateDelay": 0,
+            "msgToTraditionalChinese": "繁",
+            "msgToSimplifiedChinese": "簡"
+        },
+        noticeOutdate: {
+            "limitDay": 60,
+            "position": "top",
+            "messagePrev": "It has been",
+            "messageNext": "days since the last update, the content of the article may be outdated."
+        },
+        highlight: {"plugin": "highlighjs", "highlightCopy": true, "highlightLang": true},
+        copy: {
+            success: '复制成功',
+            error: '复制错误',
+            noSupport: '浏览器不支持'
+        },
+        relativeDate: {
+            homepage: false,
+            post: false
+        },
+        runtime: '天',
+        date_suffix: {
+            just: '刚刚',
+            min: '分钟前',
+            hour: '小时前',
+            day: '天前',
+            month: '个月前'
+        },
+        copyright: undefined,
+        ClickShowText: undefined,
+        lightbox: 'fancybox',
+        Snackbar: {
+            "chs_to_cht": "你已切换为繁体",
+            "cht_to_chs": "你已切换为简体",
+            "day_to_night": "你已切换为深色模式",
+            "night_to_day": "你已切换为浅色模式",
+            "bgLight": "rgb(142,140,216)",
+            "bgDark": "#2d3035",
+            "position": "bottom-left"
+        },
+        justifiedGallery: {
+            js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+            css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+        },
+        isPhotoFigcaption: false,
+        islazyload: true,
+        isanchor: true
+    };
+
+    var saveToLocal = {
+        set: function setWithExpiry(key, value, ttl) {
+            const now = new Date()
+            const expiryDay = ttl * 86400000
+            const item = {
+                value: value,
+                expiry: now.getTime() + expiryDay,
+            }
+            localStorage.setItem(key, JSON.stringify(item))
+        },
+
+        get: function getWithExpiry(key) {
+            const itemStr = localStorage.getItem(key)
+
+            if (!itemStr) {
+                return undefined
+            }
+            const item = JSON.parse(itemStr)
+            const now = new Date()
+
+            if (now.getTime() > item.expiry) {
+                localStorage.removeItem(key)
+                return undefined
+            }
+            return item.value
         }
-      })
-    } else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else if (autoChangeMode === '2') {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour <= 6 || hour >= 18
-    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-    else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else {
-    if (t === 'dark') activateDarkMode()
-    else if (t === 'light') activateLightMode()
-  }const asideStatus = saveToLocal.get('aside-status')
-if (asideStatus !== undefined) {
-   if (asideStatus === 'hide') {
-     document.documentElement.classList.add('hide-aside')
-   } else {
-     document.documentElement.classList.remove('hide-aside')
-   }
-}})()</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/beautiful@master/CSS/alicon.css"><link rel="stylesheet" href="https://at.alicdn.com/t/font_2091506_hzyk6ifjte9.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/beautiful@master/CSS/custom.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/buttons.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/footer.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/plugins.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/modify/pace/themes/pink/pace-theme-flash.min.css"><meta name="referrer" content="no-referrer-when-downgrade"/><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Letter~Spume" type="application/atom+xml">
-</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://i.imgloc.com/2023/05/23/V4QOro.jpeg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/510e2c828ef28669ccde919409a1835e.png'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home3"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-friend"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/donate/"><i class="fa-fw iconfont icon-dashang"></i><span> 支持</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw iconfont icon-gengxin"></i><span> 履历</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-kongzhitai"></i><span> 控制台</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/log/"><i class="fa-fw iconfont icon-shuoshuo1"></i><span> 说说页面</span></a></li><li><a class="site-page" href="/video/"><i class="fa-fw iconfont icon-shipinkecheng"></i><span> 课程推荐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-gongneng1"></i><span> 原创文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xingjiahui/Weather-Push"><i class="fa-fw iconfont icon-tianqi"></i><span> 关于过去II</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/319np666/Yunbanke-Auto"><i class="fa-fw iconfont icon-zuoye"></i><span> 作业互评</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-lianxi"></i><span> 联系博主</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban1"></i><span> 留言板</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d"><i class="fa-fw iconfont icon-QQ"></i><span> 腾讯QQ</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="not-index-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/40e2c24229630e3ebfebe24ff1dbca93.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Letter~Spume</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home3"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-friend"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/donate/"><i class="fa-fw iconfont icon-dashang"></i><span> 支持</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw iconfont icon-gengxin"></i><span> 履历</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-kongzhitai"></i><span> 控制台</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/log/"><i class="fa-fw iconfont icon-shuoshuo1"></i><span> 说说页面</span></a></li><li><a class="site-page" href="/video/"><i class="fa-fw iconfont icon-shipinkecheng"></i><span> 课程推荐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-gongneng1"></i><span> 原创文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xingjiahui/Weather-Push"><i class="fa-fw iconfont icon-tianqi"></i><span> 关于过去II</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/319np666/Yunbanke-Auto"><i class="fa-fw iconfont icon-zuoye"></i><span> 作业互评</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-lianxi"></i><span> 联系博主</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban1"></i><span> 留言板</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d"><i class="fa-fw iconfont icon-QQ"></i><span> 腾讯QQ</span></a></li></ul></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="page-site-info"><h1 id="site-title">Update</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div id="article-container"><h1 id="v7-0-0-2021-12-28"><a href="#v7-0-0-2021-12-28" class="headerlink" title="v7.0.0 2021-12-28"></a>v7.0.0 2021-12-28</h1><ul>
-<li>更新公告内容</li>
-<li>启用valine评论功能</li>
-<li>启用 <code>友链页</code> 好友申请</li>
-<li>显示 <code>课程推荐</code>、<code>留言板</code> 入口</li>
-<li>修复按钮样式失效的bugs</li>
-</ul>
-<h1 id="v6-1-20-2021-01-14"><a href="#v6-1-20-2021-01-14" class="headerlink" title="v6.1.20 2021-01-14"></a>v6.1.20 2021-01-14</h1><ul>
-<li>更新公告内容</li>
-<li>暂停valine评论功能</li>
-<li>暂停 <code>友链页</code> 好友申请</li>
-<li>隐藏 <code>课程推荐</code>、<code>留言板</code> 入口</li>
-</ul>
-<h1 id="v6-1-19-2021-01-10"><a href="#v6-1-19-2021-01-10" class="headerlink" title="v6.1.19 2021-01-10"></a>v6.1.19 2021-01-10</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v6-1-18-2021-01-06"><a href="#v6-1-18-2021-01-06" class="headerlink" title="v6.1.18 2021-01-06"></a>v6.1.18 2021-01-06</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v6-1-17-2020-12-30"><a href="#v6-1-17-2020-12-30" class="headerlink" title="v6.1.17 2020-12-30"></a>v6.1.17 2020-12-30</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v6-1-16-2020-12-27"><a href="#v6-1-16-2020-12-27" class="headerlink" title="v6.1.16 2020-12-27"></a>v6.1.16 2020-12-27</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v6-1-15-2020-12-22"><a href="#v6-1-15-2020-12-22" class="headerlink" title="v6.1.15 2020-12-22"></a>v6.1.15 2020-12-22</h1><ul>
-<li>修复 <code>课程推荐</code> 页面图片无法显示的bugs</li>
-</ul>
-<h1 id="v6-1-14-2020-12-21"><a href="#v6-1-14-2020-12-21" class="headerlink" title="v6.1.14 2020-12-21"></a>v6.1.14 2020-12-21</h1><ul>
-<li>修改 <code>关于</code> 页面内容</li>
-<li>修改 <code>课程推荐</code> 页面内容</li>
-</ul>
-<h1 id="v6-1-13-2020-12-20"><a href="#v6-1-13-2020-12-20" class="headerlink" title="v6.1.13 2020-12-20"></a>v6.1.13 2020-12-20</h1><ul>
-<li>添加友链</li>
-<li>发布博客 <code>Java基础编程</code></li>
-</ul>
-<h1 id="v6-1-12-2020-12-16"><a href="#v6-1-12-2020-12-16" class="headerlink" title="v6.1.12 2020-12-16"></a>v6.1.12 2020-12-16</h1><ul>
-<li>修复手机端配色异常<!-- - 发布博客 `Java基础编程` -->
+    }</script>
+    <script id="config_change">var GLOBAL_CONFIG_SITE = {
+        isPost: false,
+        isHome: false,
+        isHighlightShrink: false,
+        isToc: false,
+        postUpdate: '2021-12-28 11:46:12'
+    }</script>
+    <noscript>
+        <style type="text/css">
+            #nav {
+                opacity: 1
+            }
 
-</li>
-</ul>
-<h1 id="v6-1-11-2020-12-13"><a href="#v6-1-11-2020-12-13" class="headerlink" title="v6.1.11 2020-12-13"></a>v6.1.11 2020-12-13</h1><ul>
-<li>全局灰白，南京大屠杀死难者国家公祭日</li>
-<li>修改友链信息</li>
-<li>添加友链</li>
-</ul>
-<h1 id="v6-1-10-2020-12-11"><a href="#v6-1-10-2020-12-11" class="headerlink" title="v6.1.10 2020-12-11"></a>v6.1.10 2020-12-11</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v6-1-9-2020-12-03"><a href="#v6-1-9-2020-12-03" class="headerlink" title="v6.1.9 2020-12-03"></a>v6.1.9 2020-12-03</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v6-1-8-2022-05-02"><a href="#v6-1-8-2022-05-02" class="headerlink" title="v6.1.8 2022-05-02"></a>v6.1.8 2022-05-02</h1><ul>
-<li>修改部分文章分类</li>
-</ul>
-<h1 id="v6-1-7-2020-11-22"><a href="#v6-1-7-2020-11-22" class="headerlink" title="v6.1.7 2020-11-22"></a>v6.1.7 2020-11-22</h1><ul>
-<li>添加友链</li>
-<li>修改博客 <code>你真的该学学如何配置CDN了</code></li>
-</ul>
-<h1 id="v6-1-6-2020-11-21"><a href="#v6-1-6-2020-11-21" class="headerlink" title="v6.1.6 2020-11-21"></a>v6.1.6 2020-11-21</h1><ul>
-<li>修改部分文章分类</li>
-</ul>
-<h1 id="v6-1-5-2020-11-20"><a href="#v6-1-5-2020-11-20" class="headerlink" title="v6.1.5 2020-11-20"></a>v6.1.5 2020-11-20</h1><ul>
-<li>发布博客 <code>Git中级教程</code></li>
-<li>修复首页部分图片加载异常的问题</li>
-<li>修改博客 <code>哇！用github+jsDelivr搭建图床真香</code></li>
-</ul>
-<h1 id="v6-1-4-2020-11-17"><a href="#v6-1-4-2020-11-17" class="headerlink" title="v6.1.4 2020-11-17"></a>v6.1.4 2020-11-17</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v6-1-3-2020-11-12"><a href="#v6-1-3-2020-11-12" class="headerlink" title="v6.1.3 2020-11-12"></a>v6.1.3 2020-11-12</h1><ul>
-<li>修改博客 <code>Hexo常用插件</code></li>
-<li>修改博客 <code>哇！用github+jsDelivr搭建图床真香</code></li>
-<li>修改部分友链内容</li>
-<li>顶部导航栏添加github项目入口</li>
-</ul>
-<h1 id="v6-1-2-2020-11-11"><a href="#v6-1-2-2020-11-11" class="headerlink" title="v6.1.2 2020-11-11"></a>v6.1.2 2020-11-11</h1><ul>
-<li>修改 <code>说说页面</code> 显示说说数目</li>
-</ul>
-<h1 id="v6-1-1-2020-11-10"><a href="#v6-1-1-2020-11-10" class="headerlink" title="v6.1.1 2020-11-10"></a>v6.1.1 2020-11-10</h1><ul>
-<li>修改博客 <code>关于过去II</code></li>
-<li>修改部分友链内容</li>
-</ul>
-<h1 id="v6-1-0-2020-11-09"><a href="#v6-1-0-2020-11-09" class="headerlink" title="v6.1.0 2020-11-09"></a>v6.1.0 2020-11-09</h1><ul>
-<li>修复留言推送异常的问题</li>
-<li>美化 <code>友链</code>、<code>课程推荐</code> 页面</li>
-<li>修改 <code>valine评论</code> 样式</li>
-</ul>
-<h1 id="v6-0-1-2020-11-05"><a href="#v6-0-1-2020-11-05" class="headerlink" title="v6.0.1 2020-11-05"></a>v6.0.1 2020-11-05</h1><ul>
-<li>修改页脚内容</li>
-</ul>
-<h1 id="v6-0-0-2020-10-30"><a href="#v6-0-0-2020-10-30" class="headerlink" title="v6.0.0 2020-10-30"></a>v6.0.0 2020-10-30</h1><ul>
-<li>Hexo版本更新至 <code>v5.2.0</code></li>
-<li>主题版本更新至 <code>v3.3.0</code></li>
-</ul>
-<p>-# v5.3.15 2020-10-29</p>
-<ul>
-<li>发布博客 <code>云班课作业互评(python3+selenium)</code></li>
-</ul>
-<h1 id="v5-3-14-2020-10-28"><a href="#v5-3-14-2020-10-28" class="headerlink" title="v5.3.14 2020-10-28"></a>v5.3.14 2020-10-28</h1><ul>
-<li>修改部分友链</li>
-</ul>
-<h1 id="v5-3-13-2020-10-27"><a href="#v5-3-13-2020-10-27" class="headerlink" title="v5.3.13 2020-10-27"></a>v5.3.13 2020-10-27</h1><ul>
-<li>修复社交图标不显示的bugs</li>
-</ul>
-<h1 id="v5-3-12-2020-10-25"><a href="#v5-3-12-2020-10-25" class="headerlink" title="v5.3.12 2020-10-25"></a>v5.3.12 2020-10-25</h1><ul>
-<li>添加页面 <code>课程推荐</code></li>
-</ul>
-<h1 id="v5-3-11-2020-10-24"><a href="#v5-3-11-2020-10-24" class="headerlink" title="v5.3.11 2020-10-24"></a>v5.3.11 2020-10-24</h1><ul>
-<li>删除单向、无法访问、域名到期友链</li>
-<li>添加友链</li>
-</ul>
-<h1 id="v5-3-10-2020-10-22"><a href="#v5-3-10-2020-10-22" class="headerlink" title="v5.3.10 2020-10-22"></a>v5.3.10 2020-10-22</h1><ul>
-<li>修改博客 <code>Selenium Web自动化（Python3）</code></li>
-</ul>
-<h1 id="v5-3-9-2020-10-20"><a href="#v5-3-9-2020-10-20" class="headerlink" title="v5.3.9 2020-10-20"></a>v5.3.9 2020-10-20</h1><ul>
-<li>添加友链</li>
-<li>发布博客 <code>Selenium Web自动化（Python3）</code></li>
-</ul>
-<h1 id="v5-3-8-2020-10-18"><a href="#v5-3-8-2020-10-18" class="headerlink" title="v5.3.8 2020-10-18"></a>v5.3.8 2020-10-18</h1><ul>
-<li>添加友链</li>
-<li>修复 <code>不蒜子</code> 文章阅读量显示异常的问题</li>
-<li>修改博客 <code>哇！用github+jsDelivr搭建图床真香</code></li>
-</ul>
-<h1 id="v5-3-7-2022-05-02"><a href="#v5-3-7-2022-05-02" class="headerlink" title="v5.3.7 2022-05-02"></a>v5.3.7 2022-05-02</h1><ul>
-<li>发布博客 <code>关于过去II</code></li>
-<li>修改首页文章数目</li>
-</ul>
-<h1 id="v5-3-6-2020-10-08"><a href="#v5-3-6-2020-10-08" class="headerlink" title="v5.3.6 2020-10-08"></a>v5.3.6 2020-10-08</h1><ul>
-<li>修改 <code>关于页面</code>、<code>支持页面</code>、<code>友链页面</code> 内容</li>
-<li>修复 <code>打赏列表</code> 上方添加文字后显示异常的问题</li>
-<li>美化 <code>友情页面</code> 内容</li>
-</ul>
-<h1 id="v5-3-5-2020-10-07"><a href="#v5-3-5-2020-10-07" class="headerlink" title="v5.3.5 2020-10-07"></a>v5.3.5 2020-10-07</h1><ul>
-<li>开启 <code>不蒜子</code> 网页计数服务</li>
-<li>适配 <code>valine-admin</code></li>
-</ul>
-<h1 id="v5-3-4-2020-10-06"><a href="#v5-3-4-2020-10-06" class="headerlink" title="v5.3.4 2020-10-06"></a>v5.3.4 2020-10-06</h1><ul>
-<li>发布博客 <code>linux实用指令（下）</code></li>
-<li>关闭 <code>不蒜子</code> 网页计数服务</li>
-</ul>
-<h1 id="v5-3-3-2020-09-26"><a href="#v5-3-3-2020-09-26" class="headerlink" title="v5.3.3 2020-09-26"></a>v5.3.3 2020-09-26</h1><ul>
-<li>修改博客 <code>用户与用户组的管理</code></li>
-<li>发布博客 <code>linux实用指令（中）</code></li>
-<li>修改友链信息</li>
-</ul>
-<h1 id="v5-3-2-2020-09-25"><a href="#v5-3-2-2020-09-25" class="headerlink" title="v5.3.2 2020-09-25"></a>v5.3.2 2020-09-25</h1><ul>
-<li>发布博客 <code>linux实用指令（上）</code></li>
-</ul>
-<h1 id="v5-3-1-2020-09-24"><a href="#v5-3-1-2020-09-24" class="headerlink" title="v5.3.1 2020-09-24"></a>v5.3.1 2020-09-24</h1><ul>
-<li>更换顶部导航栏图标</li>
-<li>关闭图床、打赏等功能后台入口</li>
-<li>修改 <code>关于页面</code> 作者信息</li>
-<li>修复社交图标显示异常的问题</li>
-<li><code>博主动态页面</code>更名为<code>博主说</code>，并更改配色</li>
-</ul>
-<h1 id="v5-3-0-2020-09-23"><a href="#v5-3-0-2020-09-23" class="headerlink" title="v5.3.0 2020-09-23"></a>v5.3.0 2020-09-23</h1><ul>
-<li>主题版本更新至 <code>v3.2.0-b7</code></li>
-<li>本博客已开启pjax</li>
-</ul>
-<h1 id="v5-2-7-2020-09-22"><a href="#v5-2-7-2020-09-22" class="headerlink" title="v5.2.7 2020-09-22"></a>v5.2.7 2020-09-22</h1><ul>
-<li>发布博客 <code>用户与用户组的管理</code></li>
-</ul>
-<h1 id="v5-2-6-2020-09-21"><a href="#v5-2-6-2020-09-21" class="headerlink" title="v5.2.6 2020-09-21"></a>v5.2.6 2020-09-21</h1><ul>
-<li>发布博客 <code>与服务器的远程连接和文件传输</code></li>
-<li>发布博客 <code>Vi和Vim编辑器与服务器关机和重启</code></li>
-</ul>
-<h1 id="v5-2-5-2020-09-20"><a href="#v5-2-5-2020-09-20" class="headerlink" title="v5.2.5 2020-09-20"></a>v5.2.5 2020-09-20</h1><ul>
-<li>发布博客 <code>VMware安装CentOS6及其配置方法</code></li>
-<li>修改文章美化样式</li>
-</ul>
-<h1 id="v5-2-4-2020-09-18"><a href="#v5-2-4-2020-09-18" class="headerlink" title="v5.2.4 2020-09-18"></a>v5.2.4 2020-09-18</h1><ul>
-<li>发布博客 <code>Day12 正则表达式</code></li>
-</ul>
-<h1 id="v5-2-3-2020-09-15"><a href="#v5-2-3-2020-09-15" class="headerlink" title="v5.2.3 2020-09-15"></a>v5.2.3 2020-09-15</h1><ul>
-<li>修改 <code>关于页面</code> 部分内容</li>
-</ul>
-<h1 id="v5-2-2-2020-09-14"><a href="#v5-2-2-2020-09-14" class="headerlink" title="v5.2.2 2020-09-14"></a>v5.2.2 2020-09-14</h1><ul>
-<li>修改部分文章配图及名称</li>
-<li>更新博客 <code>你真的该学学如何配置CDN了</code></li>
-<li>关闭 <code>Artitalk.js</code> 的评论功能</li>
-</ul>
-<h1 id="v5-2-1-2020-09-12"><a href="#v5-2-1-2020-09-12" class="headerlink" title="v5.2.1 2020-09-12"></a>v5.2.1 2020-09-12</h1><ul>
-<li>更新博客 <code>你真的该学学如何配置CDN了</code></li>
-</ul>
-<h1 id="v5-2-0-2020-09-11"><a href="#v5-2-0-2020-09-11" class="headerlink" title="v5.2.0 2020-09-11"></a>v5.2.0 2020-09-11</h1><ul>
-<li>Artitalk.js更新至v3.1.0,并适配美化内容</li>
-<li>更新博客 <code>做面条，。！不做面条</code></li>
-</ul>
-<h1 id="v5-1-7-2020-09-09"><a href="#v5-1-7-2020-09-09" class="headerlink" title="v5.1.7 2020-09-09"></a>v5.1.7 2020-09-09</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v5-1-6-2020-09-08"><a href="#v5-1-6-2020-09-08" class="headerlink" title="v5.1.6 2020-09-08"></a>v5.1.6 2020-09-08</h1><ul>
-<li>指定Artitalk.js版本为v2.4.2</li>
-</ul>
-<h1 id="v5-1-5-2020-09-03"><a href="#v5-1-5-2020-09-03" class="headerlink" title="v5.1.5 2020-09-03"></a>v5.1.5 2020-09-03</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v5-1-4-2020-08-27"><a href="#v5-1-4-2020-08-27" class="headerlink" title="v5.1.4 2020-08-27"></a>v5.1.4 2020-08-27</h1><ul>
-<li>发布博客 <code>AI学习 Day10 项目-飞机大战游戏</code></li>
-</ul>
-<h1 id="v5-1-3-2020-08-25"><a href="#v5-1-3-2020-08-25" class="headerlink" title="v5.1.3 2020-08-25"></a>v5.1.3 2020-08-25</h1><ul>
-<li>愿天下有情人终成眷属，七夕快乐！</li>
-<li><code>博主动态</code> 页面添加顶部标签和统计数据</li>
-</ul>
-<h1 id="v5-1-2-2020-08-24"><a href="#v5-1-2-2020-08-24" class="headerlink" title="v5.1.2 2020-08-24"></a>v5.1.2 2020-08-24</h1><ul>
-<li>修复 <code>博主动态</code> 页面加载失败的问题</li>
-</ul>
-<h1 id="v5-1-1-2020-08-23"><a href="#v5-1-1-2020-08-23" class="headerlink" title="v5.1.1 2020-08-23"></a>v5.1.1 2020-08-23</h1><ul>
-<li>修改 <code>博主动态</code> 页面鼠标样式，感谢 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.antmoe.com/">见血封侯</a> !</li>
-<li>修改社交图标样式及内容</li>
-</ul>
-<h1 id="v5-1-0-2020-08-22"><a href="#v5-1-0-2020-08-22" class="headerlink" title="v5.1.0 2020-08-22"></a>v5.1.0 2020-08-22</h1><ul>
-<li>更新友链</li>
-<li>修改公告内容</li>
-<li>修改顶部导航栏内容</li>
-<li>添加 <code>博主动态</code> 页面，感谢 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://artitalk.js.org/">Artitalk.js</a> ！</li>
-</ul>
-<h1 id="v5-0-8-2020-08-16"><a href="#v5-0-8-2020-08-16" class="headerlink" title="v5.0.8 2020-08-16"></a>v5.0.8 2020-08-16</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v5-0-7-2020-08-12"><a href="#v5-0-7-2020-08-12" class="headerlink" title="v5.0.7 2020-08-12"></a>v5.0.7 2020-08-12</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v5-0-6-2020-08-10"><a href="#v5-0-6-2020-08-10" class="headerlink" title="v5.0.6 2020-08-10"></a>v5.0.6 2020-08-10</h1><ul>
-<li>发布博客 <code>AI学习 Day09 面向对象基础（下）</code></li>
-</ul>
-<h1 id="v5-0-5-2020-08-06"><a href="#v5-0-5-2020-08-06" class="headerlink" title="v5.0.5 2020-08-06"></a>v5.0.5 2020-08-06</h1><ul>
-<li>发布博客 <code>AI学习 Day08 面向对象基础（中）</code></li>
-<li>修改公告栏内容</li>
-</ul>
-<h1 id="v5-0-4-2020-08-05"><a href="#v5-0-4-2020-08-05" class="headerlink" title="v5.0.4 2020-08-05"></a>v5.0.4 2020-08-05</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v5-0-3-2020-08-04"><a href="#v5-0-3-2020-08-04" class="headerlink" title="v5.0.3 2020-08-04"></a>v5.0.3 2020-08-04</h1><ul>
-<li>添加友链</li>
-<li>修改博客 <code>AI学习 Day07 面向对象基础（上）</code></li>
-<li>修改valine评论框内文字</li>
-</ul>
-<h1 id="v5-0-2-2020-08-03"><a href="#v5-0-2-2020-08-03" class="headerlink" title="v5.0.2 2020-08-03"></a>v5.0.2 2020-08-03</h1><ul>
-<li>修改友链信息</li>
-</ul>
-<h1 id="v5-0-1-2020-07-31"><a href="#v5-0-1-2020-07-31" class="headerlink" title="v5.0.1 2020-07-31"></a>v5.0.1 2020-07-31</h1><ul>
-<li>恢复v3.0.0版本</li>
-<li>添加友链</li>
-<li>修改 <code>关于页面</code></li>
-<li>发布博客 <code>AI学习 Day07 面向对象基础（上）</code></li>
-</ul>
-<h1 id="v5-0-0-2020-07-30"><a href="#v5-0-0-2020-07-30" class="headerlink" title="v5.0.0 2020-07-30"></a>v5.0.0 2020-07-30</h1><ul>
-<li>更新 pjax 版本，暂时恢复原生valine</li>
-<li>修改博客 <code>不会pjax？这篇博客教你如何搞定背景音乐</code></li>
-<li>jsDelivr报错403导致评论或一些图片显示出现问题</li>
-</ul>
-<h1 id="v4-1-0-2020-07-29"><a href="#v4-1-0-2020-07-29" class="headerlink" title="v4.1.0 2020-07-29"></a>v4.1.0 2020-07-29</h1><ul>
-<li>修改博客 <code>AI学习 Day06 内置函数</code></li>
-<li>开启文章隐藏功能</li>
-</ul>
-<h1 id="v4-0-9-2020-07-27"><a href="#v4-0-9-2020-07-27" class="headerlink" title="v4.0.9 2020-07-27"></a>v4.0.9 2020-07-27</h1><ul>
-<li>添加友链</li>
-<li>修改博客 <code>哇！用github+jsDelivr搭建图床真香</code> </li>
-<li>修改博客 <code>AI学习 Day06 内置函数</code></li>
-</ul>
-<h1 id="v4-0-8-2020-07-25"><a href="#v4-0-8-2020-07-25" class="headerlink" title="v4.0.8 2020-07-25"></a>v4.0.8 2020-07-25</h1><ul>
-<li>更新博客 <code>哇！用github+jsDelivr搭建图床真香</code> </li>
-<li>开启文章锚点</li>
-</ul>
-<h1 id="v4-0-7-2020-07-22"><a href="#v4-0-7-2020-07-22" class="headerlink" title="v4.0.7 2020-07-22"></a>v4.0.7 2020-07-22</h1><ul>
-<li>恢复 dev 版本s</li>
-<li>修改评论处 placeholder 内容</li>
-</ul>
-<h1 id="v4-0-6-2020-07-21"><a href="#v4-0-6-2020-07-21" class="headerlink" title="v4.0.6 2020-07-21"></a>v4.0.6 2020-07-21</h1><ul>
-<li>更新 pjax 测试版本</li>
-</ul>
-<h1 id="v4-0-5-2020-07-18"><a href="#v4-0-5-2020-07-18" class="headerlink" title="v4.0.5 2020-07-18"></a>v4.0.5 2020-07-18</h1><ul>
-<li>修改 github 图床地址</li>
-</ul>
-<h1 id="v4-0-4-2020-07-17"><a href="#v4-0-4-2020-07-17" class="headerlink" title="v4.0.4 2020-07-17"></a>v4.0.4 2020-07-17</h1><ul>
-<li>开启 <code>图片懒加载</code></li>
-<li>发布博客 <code>AI学习 Day03 高级数据类型</code></li>
-<li>修改github图床地址</li>
-</ul>
-<h1 id="v4-0-3-2020-07-15"><a href="#v4-0-3-2020-07-15" class="headerlink" title="v4.0.3 2020-07-15"></a>v4.0.3 2020-07-15</h1><ul>
-<li>修复打赏列表间歇性显示异常的问题</li>
-</ul>
-<h1 id="v4-0-2-2020-07-14"><a href="#v4-0-2-2020-07-14" class="headerlink" title="v4.0.2 2020-07-14"></a>v4.0.2 2020-07-14</h1><ul>
-<li>修改友链信息</li>
-<li>关闭评论页面入口</li>
-<li>添加友链</li>
-</ul>
-<h1 id="v4-0-1-2020-07-13"><a href="#v4-0-1-2020-07-13" class="headerlink" title="v4.0.1 2020-07-13"></a>v4.0.1 2020-07-13</h1><ul>
-<li>添加友链</li>
-<li>修改 <code>友链</code> 页面</li>
-<li>修改部分内容默认颜色</li>
-</ul>
-<h1 id="v4-0-0-2020-07-11"><a href="#v4-0-0-2020-07-11" class="headerlink" title="v4.0.0 2020-07-11"></a>v4.0.0 2020-07-11</h1><ul>
-<li>主题更新至 <code>v3.0.0 RC1</code></li>
-<li>修改部分文章分类</li>
-<li>修改代码框样式</li>
-</ul>
-<h1 id="v3-2-0-2020-07-10"><a href="#v3-2-0-2020-07-10" class="headerlink" title="v3.2.0 2020-07-10"></a>v3.2.0 2020-07-10</h1><ul>
-<li>修改文章 <code>做面条，。！不做面条</code></li>
-<li>修改 <code>打赏列表</code> 页面</li>
-<li>打赏问卷页面迁移至 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://donate.plushine.cn">这里</a></li>
-<li>调整顶部菜单内容</li>
-<li>修改文章 <code>WebSSH神器sshwifty的安装与使用</code></li>
-<li>修改文章 <code>day03 高级数据类型</code></li>
-<li>音乐播放页面迁移至 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://xingjiahui.top/music/">这里</a></li>
-</ul>
-<h1 id="v3-1-7-2020-07-09"><a href="#v3-1-7-2020-07-09" class="headerlink" title="v3.1.7 2020-07-09"></a>v3.1.7 2020-07-09</h1><ul>
-<li>修改博客 <code>做面条，。！不做面条</code></li>
-<li>修改博客 <code>我终于玩懂了又拍云CDN</code></li>
-</ul>
-<h1 id="v3-1-6-2020-07-07"><a href="#v3-1-6-2020-07-07" class="headerlink" title="v3.1.6 2020-07-07"></a>v3.1.6 2020-07-07</h1><ul>
-<li>修改部分友链信息，提高访问速度</li>
-</ul>
-<h1 id="v3-1-5-2020-07-05"><a href="#v3-1-5-2020-07-05" class="headerlink" title="v3.1.5 2020-07-05"></a>v3.1.5 2020-07-05</h1><ul>
-<li>添加 <code>pace</code> 加载进度条</li>
-</ul>
-<h1 id="v3-1-4-2020-07-04"><a href="#v3-1-4-2020-07-04" class="headerlink" title="v3.1.4 2020-07-04"></a>v3.1.4 2020-07-04</h1><ul>
-<li>添加一些评论表情包</li>
-</ul>
-<h1 id="v3-1-3-2020-06-29"><a href="#v3-1-3-2020-06-29" class="headerlink" title="v3.1.3 2020-06-29"></a>v3.1.3 2020-06-29</h1><ul>
-<li>修改友链信息</li>
-<li>修改 <code>作者信息</code> 页面</li>
-</ul>
-<h1 id="v3-1-2-2020-06-28"><a href="#v3-1-2-2020-06-28" class="headerlink" title="v3.1.2 2020-06-28"></a>v3.1.2 2020-06-28</h1><ul>
-<li>修改页脚内容</li>
-<li>修改博客 <code>作者名称</code></li>
-<li>修改博客 <code>版权信息</code></li>
-<li>修改 <code>关于博主</code> 页面</li>
-</ul>
-<h1 id="v3-1-1-2020-06-27"><a href="#v3-1-1-2020-06-27" class="headerlink" title="v3.1.1 2020-06-27"></a>v3.1.1 2020-06-27</h1><ul>
-<li>添加友链</li>
-<li>修改友链页面 <code>作者信息</code></li>
-</ul>
-<h1 id="v3-1-0-2020-06-26"><a href="#v3-1-0-2020-06-26" class="headerlink" title="v3.1.0 2020-06-26"></a>v3.1.0 2020-06-26</h1><ul>
-<li>修改 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.hclonely.com/posts/409d3090/">HCLonely</a> 魔改的 <code>valine</code> ，具体内容如下：<ol>
-<li>去除 <code>md5</code> 加密（原来的加密形同虚设）</li>
-<li>将 <code>访客、小伙伴、博主</code> 判断依据改为 <code>link</code></li>
-<li>数据来源：<ul>
-<li>friends：友链配置文件（<code>link.yml</code>）中 link</li>
-<li>master：根目录配置文件（<code>_config.yml</code>）中 url</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>已开源，项目地址 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xingjiahui/modify">在这</a> 💕</li>
-<li>修改页脚样式</li>
-<li>全站迁移至 <a href="https://liy159872.github.io/">PluShine</a>，新站CDN由 <code>百度云加速</code> 提供</li>
-<li>修复 <code>小伙伴</code> 不显示的问题</li>
-<li>添加友链</li>
-<li>修改友链页面 <code>作者信息</code></li>
-</ul>
-<h1 id="v3-0-1-2020-06-25"><a href="#v3-0-1-2020-06-25" class="headerlink" title="v3.0.1 2020-06-25"></a>v3.0.1 2020-06-25</h1><ul>
-<li>修复ios端 <code>valine评论</code> 不显示的问题</li>
-</ul>
-<h1 id="v3-0-0-2020-06-16"><a href="#v3-0-0-2020-06-16" class="headerlink" title="v3.0.0 2020-06-16"></a>v3.0.0 2020-06-16</h1><ul>
-<li>添加友链</li>
-<li>修改 <code>友情链接</code> 页面</li>
-<li>修改 <code>关于博主</code> 页面</li>
-<li>修改部分文章 <code>cover</code>、<code>top_img</code> 图片</li>
-<li>优化博客访问速度</li>
-<li>更换 <code>valine</code> 的js并修复 <code>Gravatar</code> 用户头像不显示的问题</li>
-</ul>
-<h1 id="v2-8-9-2020-06-15"><a href="#v2-8-9-2020-06-15" class="headerlink" title="v2.8.9 2020-06-15"></a>v2.8.9 2020-06-15</h1><ul>
-<li>发布博客 <code>人工智能 Day02</code></li>
-<li>置顶部分文章</li>
-</ul>
-<h1 id="v2-8-8-2020-06-14"><a href="#v2-8-8-2020-06-14" class="headerlink" title="v2.8.8 2020-06-14"></a>v2.8.8 2020-06-14</h1><ul>
-<li>发布博客 <code>人工智能 Day01</code></li>
-</ul>
-<h1 id="v2-8-7-2020-06-11"><a href="#v2-8-7-2020-06-11" class="headerlink" title="v2.8.7 2020-06-11"></a>v2.8.7 2020-06-11</h1><ul>
-<li>修改 <code>友情链接</code> 页面</li>
-<li>公告栏添加 <code>公众号</code> 二维码 </li>
-</ul>
-<h1 id="v2-8-6-2020-06-10"><a href="#v2-8-6-2020-06-10" class="headerlink" title="v2.8.6 2020-06-10"></a>v2.8.6 2020-06-10</h1><ul>
-<li>修改博客 <code>Hexo常用插件</code></li>
-<li>更换博客 <code>备份</code> 仓库</li>
-</ul>
-<h1 id="v2-8-5-2020-06-09"><a href="#v2-8-5-2020-06-09" class="headerlink" title="v2.8.5 2020-06-09"></a>v2.8.5 2020-06-09</h1><ul>
-<li>修改主页 <code>标签</code>、<code>分类</code> 最大显示数目</li>
-<li>修改博客 <code>Hexo常用插件</code></li>
-</ul>
-<h1 id="v2-8-4-2020-06-07"><a href="#v2-8-4-2020-06-07" class="headerlink" title="v2.8.4 2020-06-07"></a>v2.8.4 2020-06-07</h1><ul>
-<li>修改博客 <code>我终于玩懂了又拍云CDN</code></li>
-<li>修改博客 <code>做面条，。！不做面条</code></li>
-</ul>
-<h1 id="v2-8-3-2020-06-06"><a href="#v2-8-3-2020-06-06" class="headerlink" title="v2.8.3 2020-06-06"></a>v2.8.3 2020-06-06</h1><ul>
-<li>修改部分图片链接，加快访问速度</li>
-<li>修复 <code>GitHub图床</code> 链接不安全的问题</li>
-<li>修改博客 <code>哇！用github+jsDelivr搭建图床真香</code></li>
-</ul>
-<h1 id="v2-8-2-2022-02-26"><a href="#v2-8-2-2022-02-26" class="headerlink" title="v2.8.2 2022-02-26"></a>v2.8.2 2022-02-26</h1><ul>
-<li>发布博客 <code>做面条，。！不做面条</code></li>
-</ul>
-<h1 id="v2-8-1-2020-06-02"><a href="#v2-8-1-2020-06-02" class="headerlink" title="v2.8.1 2020-06-02"></a>v2.8.1 2020-06-02</h1><ul>
-<li>修改 <code>footer</code> 内容</li>
-<li>恢复 <code>html5音乐播放器</code> 入口</li>
-<li>恢复 <code>GitHub图床</code> 入口</li>
-</ul>
-<h1 id="v2-8-0-2020-06-01"><a href="#v2-8-0-2020-06-01" class="headerlink" title="v2.8.0 2020-06-01"></a>v2.8.0 2020-06-01</h1><ul>
-<li><code>做面条，。！不做面条</code>（测试版）上线</li>
-<li>问卷平台改为 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://donate.xingjiahui.top">打赏信息统计平台</a></li>
-<li>修改页面 <code>打赏列表</code></li>
-</ul>
-<h1 id="v2-7-5-2020-05-31"><a href="#v2-7-5-2020-05-31" class="headerlink" title="v2.7.5 2020-05-31"></a>v2.7.5 2020-05-31</h1><ul>
-<li>添加友链</li>
-</ul>
-<h1 id="v2-7-4-2020-05-30"><a href="#v2-7-4-2020-05-30" class="headerlink" title="v2.7.4 2020-05-30"></a>v2.7.4 2020-05-30</h1><ul>
-<li>暂时关闭 <code>html5音乐播放器</code> 入口</li>
-<li>暂时关闭 <code>GitHub图床</code> 入口</li>
-<li>原因是 <code>爱网云维护</code> ，结束后即恢复 <code>上述</code> 入口</li>
-</ul>
-<h1 id="v2-7-3-2020-05-27"><a href="#v2-7-3-2020-05-27" class="headerlink" title="v2.7.3 2020-05-27"></a>v2.7.3 2020-05-27</h1><ul>
-<li>修改页面 <code>打赏列表</code></li>
-<li>修复 <code>打赏列表</code> 页面，打赏 <code>总金额</code> 显示异常的问题</li>
-<li>问卷平台改为 <code>番茄表单</code> </li>
-</ul>
-<h1 id="v2-7-2-2020-05-26"><a href="#v2-7-2-2020-05-26" class="headerlink" title="v2.7.2 2020-05-26"></a>v2.7.2 2020-05-26</h1><ul>
-<li>添加 <code>打赏列表</code> 页面（试运行）</li>
-<li>顶部目录新增 <code>打赏列表</code> 入口</li>
-</ul>
-<h1 id="v2-7-1-2020-05-25"><a href="#v2-7-1-2020-05-25" class="headerlink" title="v2.7.1 2020-05-25"></a>v2.7.1 2020-05-25</h1><ul>
-<li>全站资源迁移，弃用<code>又拍云存储</code></li>
-</ul>
-<h1 id="v2-7-0-2020-05-23"><a href="#v2-7-0-2020-05-23" class="headerlink" title="v2.7.0 2020-05-23"></a>v2.7.0 2020-05-23</h1><ul>
-<li>更换CDN为 <code>腾讯云</code>，原因 <a href="https://liy159872.github.io//14261.html#告攻击者">在这</a></li>
-<li>修改博客 <code>我终于玩懂了又拍云CDN</code></li>
-<li>修改博客 <code>哇！用github+jsDelivril搭建图床真香</code></li>
-<li>添加友链</li>
-</ul>
-<h1 id="v2-6-1-2020-05-22"><a href="#v2-6-1-2020-05-22" class="headerlink" title="v2.6.1 2020-05-22"></a>v2.6.1 2020-05-22</h1><ul>
-<li>修改博客 <code>哇！用github+jsDelivr搭建图床真香</code></li>
-<li>修改 <code>Zeit.co</code> 的域名链接</li>
-</ul>
-<h1 id="v2-6-0-2020-05-21"><a href="#v2-6-0-2020-05-21" class="headerlink" title="v2.6.0 2020-05-21"></a>v2.6.0 2020-05-21</h1><ul>
-<li>添加 <code>GitHub图床</code>入口</li>
-<li>添加 <code>图床管理</code> 入口</li>
-<li>修改博客 <code>哇！用github+jsDelivril搭建图床真香</code></li>
-<li>修改博客 <code>图床搭建以及图床工具的使用</code></li>
-</ul>
-<h1 id="v2-5-9-2020-05-20"><a href="#v2-5-9-2020-05-20" class="headerlink" title="v2.5.9 2020-05-20"></a>v2.5.9 2020-05-20</h1><ul>
-<li>修复fancybox</li>
-<li>发布博客 <code>哇！用github+jsDelivr搭建图床真香</code></li>
-<li>修改博客 <code>我终于玩懂了又拍云CDN</code></li>
-<li>修改博客 <code>图床搭建以及图床工具的使用</code></li>
-</ul>
-<h1 id="v2-5-8-2020-05-18"><a href="#v2-5-8-2020-05-18" class="headerlink" title="v2.5.8 2020-05-18"></a>v2.5.8 2020-05-18</h1><ul>
-<li>关闭打字时的<code>窗口抖动</code>效果</li>
-</ul>
-<h1 id="v2-5-7-2020-05-17"><a href="#v2-5-7-2020-05-17" class="headerlink" title="v2.5.7 2020-05-17"></a>v2.5.7 2020-05-17</h1><ul>
-<li>发布博客<code>不会pjax？这篇博客教你如何搞定背景音乐</code></li>
-</ul>
-<h1 id="v2-5-6-2020-05-16"><a href="#v2-5-6-2020-05-16" class="headerlink" title="v2.5.6 2020-05-16"></a>v2.5.6 2020-05-16</h1><ul>
-<li>解决<code>leancloud</code>流控原因导致的<code>唤醒失败</code>，感谢<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.antmoe.com/posts/ff6aef7b/index.html">见血封侯</a></li>
-</ul>
-<h1 id="v2-5-5-2020-05-15"><a href="#v2-5-5-2020-05-15" class="headerlink" title="v2.5.5 2020-05-15"></a>v2.5.5 2020-05-15</h1><ul>
-<li>修复<code>已运行时间</code>不显示的问题</li>
-<li>修改valine评论<code>placeholder</code></li>
-<li>修改<code>search.xml</code>加载逻辑</li>
-<li>添加<code>html5音乐播放器</code>和<code>html5音乐管理页面</code>入口</li>
-</ul>
-<h1 id="v2-5-4-2020-05-14"><a href="#v2-5-4-2020-05-14" class="headerlink" title="v2.5.4 2020-05-14"></a>v2.5.4 2020-05-14</h1><ul>
-<li>修改图片<code>大图查看模式</code></li>
-<li>修复<code>联系博主</code>页面显示问题</li>
-</ul>
-<h1 id="v2-5-3-2020-05-13"><a href="#v2-5-3-2020-05-13" class="headerlink" title="v2.5.3 2020-05-13"></a>v2.5.3 2020-05-13</h1><ul>
-<li>更新博客<code>WebSSH神器sshwifty的安装与使用</code></li>
-<li>添加<code>WebSSH工具</code>入口</li>
-</ul>
-<h1 id="v2-5-2-2020-05-12"><a href="#v2-5-2-2020-05-12" class="headerlink" title="v2.5.2 2020-05-12"></a>v2.5.2 2020-05-12</h1><ul>
-<li>发布博客<code>给你的Zeit page自定义404页面</code></li>
-<li>添加<code>valine评论表情</code></li>
-</ul>
-<h1 id="v2-5-1-2020-05-11"><a href="#v2-5-1-2020-05-11" class="headerlink" title="v2.5.1 2020-05-11"></a>v2.5.1 2020-05-11</h1><ul>
-<li>修复<code>404页面</code>无法显示</li>
-<li>更换<code>404页面</code></li>
-<li>修改<code>友链</code>页样式</li>
-</ul>
-<h1 id="v2-5-0-2020-05-08"><a href="#v2-5-0-2020-05-08" class="headerlink" title="v2.5.0 2020-05-08"></a>v2.5.0 2020-05-08</h1><ul>
-<li>更新Butterfly主题<code>v2.2.5~v2.3.5</code></li>
-<li>关闭<code>Pan.XJHui</code>入口</li>
-<li>修复<code>文章图片</code>无法显示</li>
-<li>开启<code>文章锚点</code></li>
-<li>修改<code>404</code>图片</li>
-</ul>
-<h1 id="v2-4-0-2020-05-07"><a href="#v2-4-0-2020-05-07" class="headerlink" title="v2.4.0 2020-05-07"></a>v2.4.0 2020-05-07</h1><ul>
-<li>发布博客<code>我终于玩懂了又拍云CDN</code></li>
-<li>修改博客<code>WebSSH神器sshwifty的安装与使用</code>所属分类</li>
-<li><code>真正</code>使用<code>又拍云CDN</code></li>
-<li>更换回源域名为<code>blog.xingjiahui.top</code></li>
-<li>CDN加速域名为<code>xingjiahui.top</code>(本站)</li>
-<li>修改每页博客数目为<code>6</code></li>
-<li>修改底部<code>又拍云logo</code></li>
-</ul>
-<h1 id="v2-3-7-2020-05-06"><a href="#v2-3-7-2020-05-06" class="headerlink" title="v2.3.7 2020-05-06"></a>v2.3.7 2020-05-06</h1><ul>
-<li>发布博客<code>WebSSH神器sshwifty的安装与使用</code></li>
-<li>展示<code>文章版权</code>和<code>许可协议</code></li>
-<li>修改新建博客<code>模板</code></li>
-</ul>
-<h1 id="v2-3-6-2020-05-05"><a href="#v2-3-6-2020-05-05" class="headerlink" title="v2.3.6 2020-05-05"></a>v2.3.6 2020-05-05</h1><ul>
-<li>解决部分友链<code>头像</code>加载缓慢</li>
-<li>修改交换友链处的<code>博客信息</code></li>
-</ul>
-<h1 id="v2-3-5-2020-05-04"><a href="#v2-3-5-2020-05-04" class="headerlink" title="v2.3.5 2020-05-04"></a>v2.3.5 2020-05-04</h1><ul>
-<li>添加<code>联系博主</code>页面</li>
-<li>修复手机端<code>更新</code>页面图标不显示的问题</li>
-<li>删除<code>添加QQ好友</code>入口</li>
-</ul>
-<h1 id="v2-3-4-2020-04-30"><a href="#v2-3-4-2020-04-30" class="headerlink" title="v2.3.4 2020-04-30"></a>v2.3.4 2020-04-30</h1><ul>
-<li>添加友链</li>
-<li>编辑博客<code>Hexo常用插件</code></li>
-<li>添加<code>CuteOne在线网盘</code>入口</li>
-</ul>
-<h1 id="v2-3-3-2020-04-29"><a href="#v2-3-3-2020-04-29" class="headerlink" title="v2.3.3 2020-04-29"></a>v2.3.3 2020-04-29</h1><ul>
-<li>修改图片<code>大图查看模式</code></li>
-<li>发布博客<code>如何删除突然多出来的CD驱动器</code></li>
-</ul>
-<h1 id="v2-3-2-2020-04-28"><a href="#v2-3-2-2020-04-28" class="headerlink" title="v2.3.2 2020-04-28"></a>v2.3.2 2020-04-28</h1><ul>
-<li>添加友链</li>
-<li>修复<code>更新</code>页面标题显示异常</li>
-</ul>
-<h1 id="v2-3-1-2020-04-27"><a href="#v2-3-1-2020-04-27" class="headerlink" title="v2.3.1 2020-04-27"></a>v2.3.1 2020-04-27</h1><ul>
-<li>重新编辑<code>更新</code>页面</li>
-<li>更新valine（v1.4.14）</li>
-<li>添加<code>音乐播放器</code></li>
-<li>关闭<code>music</code>页面</li>
-<li>修复顶部<code>菜单图标</code>显示错误</li>
-<li>使用<code>又拍云CDN</code>加快访问速度</li>
-<li>全站<code>https</code></li>
-</ul>
-<h1 id="v2-3-0-2020-04-26"><a href="#v2-3-0-2020-04-26" class="headerlink" title="v2.3.0 2020-04-26"></a>v2.3.0 2020-04-26</h1><ul>
-<li>更换搜索插件为 hexo-generator-search</li>
-<li>尝试实现搜索框显示具体内容，失败</li>
-<li>更新valine（v1.4.13）</li>
-</ul>
-<h1 id="v2-2-3-2020-04-25"><a href="#v2-2-3-2020-04-25" class="headerlink" title="v2.2.3 2020-04-25"></a>v2.2.3 2020-04-25</h1><ul>
-<li>增加“关于页面”特殊按钮css</li>
-<li>更新valine（v1.4.9）</li>
-<li>美化友链</li>
-<li>重新编辑“关于”页面、留言板页面</li>
-<li>修改flink和valine的pug文件</li>
-<li>valine实现输入QQ自动填充昵称和邮箱、必填信息</li>
-</ul>
-<h1 id="v2-2-2-2020-04-24"><a href="#v2-2-2-2020-04-24" class="headerlink" title="v2.2.2 2020-04-24"></a>v2.2.2 2020-04-24</h1><ul>
-<li>更新头像</li>
-<li>魔改valine</li>
-<li>修改顶部菜单布局</li>
-<li>增加valine评论管理页面</li>
-</ul>
-<h1 id="v2-2-1-2020-04-22"><a href="#v2-2-1-2020-04-22" class="headerlink" title="v2.2.1 2020-04-22"></a>v2.2.1 2020-04-22</h1><ul>
-<li>更新valine（v1.4.7）</li>
-<li>修改评论每页显示个数</li>
-<li>添加一些valine表情</li>
-<li>增加留言板页面</li>
-<li>修改背景颜色</li>
-<li>关闭foot_bg（页脚图片）</li>
-<li>关闭彩带背景</li>
-<li>增加“见血封侯”提供的鼠标、页脚渐变、友链、特殊按钮的css</li>
-<li>修改“关于博主”页面布局</li>
-</ul>
-<h1 id="v2-2-0-2020-04-21"><a href="#v2-2-0-2020-04-21" class="headerlink" title="v2.2.0 2020-04-21"></a>v2.2.0 2020-04-21</h1><ul>
-<li>关闭点击更换彩带</li>
-<li>使用“明月播放器”</li>
-<li>开启自动夜间模式</li>
-<li>修改图片显示插件为fancybox</li>
-<li>修改常用工具的链接</li>
-</ul>
-<h1 id="v2-1-3-2020-04-20"><a href="#v2-1-3-2020-04-20" class="headerlink" title="v2.1.3 2020-04-20"></a>v2.1.3 2020-04-20</h1><ul>
-<li>关闭文章版权</li>
-<li>发布博客“（一）概述”</li>
-<li>使用“GamerNoTitle”魔改的valine</li>
-<li>修改博客签名</li>
-<li>尝试使用“头像一直转圈”，失败</li>
-</ul>
-<h1 id="v2-1-2-2020-04-17"><a href="#v2-1-2-2020-04-17" class="headerlink" title="v2.1.2 2020-04-17"></a>v2.1.2 2020-04-17</h1><ul>
-<li>修改新建post页面模板</li>
-<li>发布博客“解决Chrome播放视频闪黑屏”</li>
-</ul>
-<h1 id="v2-1-1-2020-04-16"><a href="#v2-1-1-2020-04-16" class="headerlink" title="v2.1.1 2020-04-16"></a>v2.1.1 2020-04-16</h1><ul>
-<li>编辑“关于”页面</li>
-<li>修改交换友链内容</li>
-</ul>
-<h1 id="v2-1-0-2020-04-15"><a href="#v2-1-0-2020-04-15" class="headerlink" title="v2.1.0 2020-04-15"></a>v2.1.0 2020-04-15</h1><ul>
-<li>修改页面美化后的样式</li>
-<li>使用生成文章永久链接插件</li>
-<li>修改valine中placeholder内容</li>
-<li>新增友链</li>
-<li>编辑博客“Hexo常用插件”</li>
-<li>修改交换友链内容</li>
-<li>使用Gitee图床</li>
-</ul>
-<h1 id="v2-0-4-2020-04-14"><a href="#v2-0-4-2020-04-14" class="headerlink" title="v2.0.4 2020-04-14"></a>v2.0.4 2020-04-14</h1><ul>
-<li>修改valine评论框顺序</li>
-</ul>
-<h1 id="v2-0-3-2020-04-13"><a href="#v2-0-3-2020-04-13" class="headerlink" title="v2.0.3 2020-04-13"></a>v2.0.3 2020-04-13</h1><ul>
-<li>发布博客“Hexo常用插件”</li>
-<li>使用top_img（顶部图）和cover（缩略图）</li>
-<li>关闭Daovoice实时对话功能</li>
-</ul>
-<h1 id="v2-0-2-2020-04-12"><a href="#v2-0-2-2020-04-12" class="headerlink" title="v2.0.2 2020-04-12"></a>v2.0.2 2020-04-12</h1><ul>
-<li>修改文章链接为按照id生成</li>
-<li>编辑博客“图床搭建以及图床工具的使用”</li>
-<li>使用页面美化</li>
-<li>更新valine（v1.4.4）</li>
-<li>修改页面美化后的样式</li>
-</ul>
-<h1 id="v2-0-1-2020-04-10"><a href="#v2-0-1-2020-04-10" class="headerlink" title="v2.0.1 2020-04-10"></a>v2.0.1 2020-04-10</h1><ul>
-<li><p>开启文章版权</p>
-</li>
-<li><p>编辑博客“图床搭建以及图床工具的使用”</p>
-</li>
-<li><p>新增友链</p>
-</li>
-<li><p>又拍云申请失败，关闭页脚又拍云链接</p>
-</li>
-<li><p>使用Daovoice实施对话功能</p>
-</li>
-<li><p>友链页新增Daovoice</p>
-</li>
-<li><p>重新编辑交换友链内容</p>
-</li>
-<li><p>双线部署失败，恢复Zeit.co部署</p>
-</li>
-<li><p>发布第一篇博客“图床搭建以及图床工具的使用”</p>
-</li>
-</ul>
-<h1 id="v2-0-0-2020-04-08"><a href="#v2-0-0-2020-04-08" class="headerlink" title="v2.0.0 2020-04-08"></a>v2.0.0 2020-04-08</h1><ul>
-<li>关闭Zeit.co部署，尝试双线部署（GitHub、Coding）</li>
-</ul>
-<h1 id="v1-3-1-2020-04-06"><a href="#v1-3-1-2020-04-06" class="headerlink" title="v1.3.1 2020-04-06"></a>v1.3.1 2020-04-06</h1><ul>
-<li>编辑“关于页面”</li>
-<li>美化内容基本完成</li>
-</ul>
-<h1 id="v1-3-0-2020-04-05"><a href="#v1-3-0-2020-04-05" class="headerlink" title="v1.3.0 2020-04-05"></a>v1.3.0 2020-04-05</h1><ul>
-<li>关闭全站灰白</li>
-<li>搭建GitHub图床并使用jsDelivr加速</li>
-<li>使用Gallery相册</li>
-<li>使用标签外挂</li>
-<li>修复相册链接问题</li>
-<li>使用hexo-douban插件</li>
-<li>添加框架和主题等工具的链接</li>
-<li>部署到Zeit.co</li>
-<li>添加交换友链申请</li>
-<li>编辑“关于博主”页面</li>
-</ul>
-<h1 id="v1-2-1-2020-04-04"><a href="#v1-2-1-2020-04-04" class="headerlink" title="v1.2.1 2020-04-04"></a>v1.2.1 2020-04-04</h1><ul>
-<li>全站灰白，对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼</li>
-<li>增加友链</li>
-</ul>
-<h1 id="v1-2-0-2020-04-03"><a href="#v1-2-0-2020-04-03" class="headerlink" title="v1.2.0 2020-04-03"></a>v1.2.0 2020-04-03</h1><ul>
-<li>开启footer_bg</li>
-<li>百度推送</li>
-</ul>
-<h1 id="v1-1-1-2020-04-02"><a href="#v1-1-1-2020-04-02" class="headerlink" title="v1.1.1 2020-04-02"></a>v1.1.1 2020-04-02</h1><ul>
-<li>百度统计</li>
-<li>增加友链</li>
-<li>修改友链页样式</li>
-<li>更改博客描述</li>
-<li>关闭自动夜间模式</li>
-<li>首次使用idea编辑配置文件</li>
-</ul>
-<h1 id="v1-1-0-2020-04-01"><a href="#v1-1-0-2020-04-01" class="headerlink" title="v1.1.0 2020-04-01"></a>v1.1.0 2020-04-01</h1><ul>
-<li>音乐播放器、歌单</li>
-<li>使用博客备份插件</li>
-</ul>
-<h1 id="v1-0-1-2020-03-31"><a href="#v1-0-1-2020-03-31" class="headerlink" title="v1.0.1 2020-03-31"></a>v1.0.1 2020-03-31</h1><ul>
-<li>修改页脚内容</li>
-<li>申请又拍云联盟</li>
-<li>新增404页面</li>
-</ul>
-<h1 id="v1-0-0-2020-03-30"><a href="#v1-0-0-2020-03-30" class="headerlink" title="v1.0.0 2020-03-30"></a>v1.0.0 2020-03-30</h1><ul>
-<li>首次部署到GitHub服务器</li>
-<li>绑定个人域名</li>
-<li>修改语言、个人信息、顶部菜单项目、图标、界面色调</li>
-<li>新增搜索、评论功能</li>
-</ul>
-<h1 id="2020-03-20"><a href="#2020-03-20" class="headerlink" title="2020-03-20"></a>2020-03-20</h1><ul>
-<li>两次部署Hexo只为踩坑写博客</li>
-</ul>
-<h1 id="2020-03-12"><a href="#2020-03-12" class="headerlink" title="2020-03-12"></a>2020-03-12</h1><ul>
-<li>通过CodeSheep初识Hexo框架</li>
-<li>通过CSDN初识Butterfly主题</li>
-</ul>
-</div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By 翎傑皓信</div><div class="framework-info"><span>签约平台💕 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.mengya.com/">萌芽</a><span class="footer-separator">|</span><span>文学贡献✨ </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect">首席作家</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://su.baidu.com/"><img src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/26/6a2bc771a2ead2434fa80740eaa22924.png" align="absmiddle" width="70px" height="20px"></a><span>&nbsp;&&nbsp;&nbsp;</span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jsdelivr.com/"><img src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/26/7b059f8e9de1a268fdeb80109a192925.png" align="absmiddle" width="70px" height="20px"></a></div><div class="icp"><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.beian.miit.gov.cn/"><img class="icp-icon" src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/06/0bcff08ca63f75f26d0f0db7290665fc.png" alt="ICP"/><span>鲁ICP备 20009899号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
- <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
-  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
-  else {
-    $.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js', () => {
-      pangu.spacingElementById('content-inner')
-    })
-  }
-}
+            .justified-gallery img {
+                opacity: 1
+            }
 
-function panguInit () {
-  if (false){
-    GLOBAL_CONFIG_SITE.isPost && panguFn()
-  } else {
-    panguFn()
-  }
-}
+            #recent-posts time,
+            #post-meta time {
+                display: inline !important
+            }
+        </style>
+    </noscript>
+    <script>(function () {
+        window.activateDarkMode = function () {
+            document.documentElement.setAttribute('data-theme', 'dark')
+            if (document.querySelector('meta[name="theme-color"]') !== null) {
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+            }
+        }
+        window.activateLightMode = function () {
+            document.documentElement.setAttribute('data-theme', 'light')
+            if (document.querySelector('meta[name="theme-color"]') !== null) {
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+            }
+        }
+        const autoChangeMode = 'true'
+        const t = saveToLocal.get('theme')
+        if (autoChangeMode === '1') {
+            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+            const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+            const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+            const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+            if (t === undefined) {
+                if (isLightMode) activateLightMode()
+                else if (isDarkMode) activateDarkMode()
+                else if (isNotSpecified || hasNoSupport) {
+                    const now = new Date()
+                    const hour = now.getHours()
+                    const isNight = hour <= 6 || hour >= 18
+                    isNight ? activateDarkMode() : activateLightMode()
+                }
+                window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+                    if (saveToLocal.get('theme') === undefined) {
+                        e.matches ? activateDarkMode() : activateLightMode()
+                    }
+                })
+            } else if (t === 'light') activateLightMode()
+            else activateDarkMode()
+        } else if (autoChangeMode === '2') {
+            const now = new Date()
+            const hour = now.getHours()
+            const isNight = hour <= 6 || hour >= 18
+            if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+            else if (t === 'light') activateLightMode()
+            else activateDarkMode()
+        } else {
+            if (t === 'dark') activateDarkMode()
+            else if (t === 'light') activateLightMode()
+        }
+        const asideStatus = saveToLocal.get('aside-status')
+        if (asideStatus !== undefined) {
+            if (asideStatus === 'hide') {
+                document.documentElement.classList.add('hide-aside')
+            } else {
+                document.documentElement.classList.remove('hide-aside')
+            }
+        }
+    })()</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/beautiful@master/CSS/alicon.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_2091506_hzyk6ifjte9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/beautiful@master/CSS/custom.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/buttons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/footer.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/plugins.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/xingjiahui/modify/pace/themes/pink/pace-theme-flash.min.css">
+    <meta name="referrer" content="no-referrer-when-downgrade"/>
+    <meta name="generator" content="Hexo 5.2.0">
+    <link rel="alternate" href="/atom.xml" title="Letter~Spume" type="application/atom+xml">
+</head>
+<body>
+<div id="web_bg"></div>
+<div id="sidebar">
+    <div id="menu-mask"></div>
+    <div id="sidebar-menus">
+        <div class="author-avatar"><img class="avatar-img" data-lazy-src="https://i.imgloc.com/2023/05/23/V4QOro.jpeg"
+                                        onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/510e2c828ef28669ccde919409a1835e.png'"
+                                        alt="avatar"/></div>
+        <div class="site-data">
+            <div class="data-item is-center">
+                <div class="data-item-link"><a href="/archives/">
+                    <div class="headline">文章</div>
+                    <div class="length-num">34</div>
+                </a></div>
+            </div>
+            <div class="data-item is-center">
+                <div class="data-item-link"><a href="/tags/">
+                    <div class="headline">标签</div>
+                    <div class="length-num">27</div>
+                </a></div>
+            </div>
+            <div class="data-item is-center">
+                <div class="data-item-link"><a href="/categories/">
+                    <div class="headline">分类</div>
+                    <div class="length-num">20</div>
+                </a></div>
+            </div>
+        </div>
+        <hr/>
+        <div class="menus_items">
+            <div class="menus_item"><a class="site-page" href="/"><i
+                    class="fa-fw iconfont icon-home3"></i><span> 主页</span></a></div>
+            <div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-friend"></i><span> 友链</span></a>
+            </div>
+            <div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于</span></a>
+            </div>
+            <div class="menus_item"><a class="site-page" href="/donate/"><i
+                    class="fa-fw iconfont icon-dashang"></i><span> 支持</span></a></div>
+            <div class="menus_item"><a class="site-page" href="/update/"><i
+                    class="fa-fw iconfont icon-gengxin"></i><span> 履历</span></a></div>
+            <div class="menus_item"><a class="site-page" href="javascript:void(0);"
+                                       rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-kongzhitai"></i><span> 控制台</span><i
+                    class="fas fa-chevron-down expand"></i></a>
+                <ul class="menus_item_child">
+                    <li><a class="site-page" href="/log/"><i
+                            class="fa-fw iconfont icon-shuoshuo1"></i><span> 说说页面</span></a></li>
+                    <li><a class="site-page" href="/video/"><i
+                            class="fa-fw iconfont icon-shipinkecheng"></i><span> 课程推荐</span></a></li>
+                </ul>
+            </div>
+            <div class="menus_item"><a class="site-page" href="javascript:void(0);"
+                                       rel="external nofollow noreferrer"><i
+                    class="fa-fw iconfont icon-gongneng1"></i><span> 原创文章</span><i
+                    class="fas fa-chevron-down expand"></i></a>
+                <ul class="menus_item_child">
+                    <li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer"
+                           href="https://github.com/xingjiahui/Weather-Push"><i
+                            class="fa-fw iconfont icon-tianqi"></i><span> 关于过去II</span></a></li>
+                    <li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer"
+                           href="https://github.com/319np666/Yunbanke-Auto"><i
+                            class="fa-fw iconfont icon-zuoye"></i><span> 作业互评</span></a></li>
+                </ul>
+            </div>
+            <div class="menus_item"><a class="site-page" href="javascript:void(0);"
+                                       rel="external nofollow noreferrer"><i
+                    class="fa-fw iconfont icon-lianxi"></i><span> 联系博主</span><i class="fas fa-chevron-down expand"></i></a>
+                <ul class="menus_item_child">
+                    <li><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban1"></i><span> 留言板</span></a>
+                    </li>
+                    <li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer"
+                           href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d"><i
+                            class="fa-fw iconfont icon-QQ"></i><span> 腾讯QQ</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="body-wrap">
+    <header class="not-index-bg" id="page-header"
+            style="background-image: url(https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/40e2c24229630e3ebfebe24ff1dbca93.png)">
+        <nav id="nav"><span id="blog_name"><a id="site-name" href="/">Letter~Spume</a></span><span id="menus"><div
+                id="search_button"><a class="site-page social-icon search"><i
+                class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div
+                class="menus_item"><a class="site-page" href="/"><i
+                class="fa-fw iconfont icon-home3"></i><span> 主页</span></a></div><div class="menus_item"><a
+                class="site-page" href="/link/"><i class="fa-fw iconfont icon-friend"></i><span> 友链</span></a></div><div
+                class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于</span></a></div><div
+                class="menus_item"><a class="site-page" href="/donate/"><i
+                class="fa-fw iconfont icon-dashang"></i><span> 支持</span></a></div><div class="menus_item"><a
+                class="site-page" href="/update/"><i class="fa-fw iconfont icon-gengxin"></i><span> 履历</span></a></div><div
+                class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i
+                class="fa-fw iconfont icon-kongzhitai"></i><span> 控制台</span><i
+                class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page"
+                                                                                               href="/log/"><i
+                class="fa-fw iconfont icon-shuoshuo1"></i><span> 说说页面</span></a></li><li><a class="site-page"
+                                                                                            href="/video/"><i
+                class="fa-fw iconfont icon-shipinkecheng"></i><span> 课程推荐</span></a></li></ul></div><div
+                class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i
+                class="fa-fw iconfont icon-gongneng1"></i><span> 原创文章</span><i
+                class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page"
+                                                                                               target="_blank"
+                                                                                               rel="noopener external nofollow noreferrer"
+                                                                                               href="https://github.com/xingjiahui/Weather-Push"><i
+                class="fa-fw iconfont icon-tianqi"></i><span> 关于过去II</span></a></li><li><a class="site-page"
+                                                                                           target="_blank"
+                                                                                           rel="noopener external nofollow noreferrer"
+                                                                                           href="https://github.com/319np666/Yunbanke-Auto"><i
+                class="fa-fw iconfont icon-zuoye"></i><span> 作业互评</span></a></li></ul></div><div class="menus_item"><a
+                class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i
+                class="fa-fw iconfont icon-lianxi"></i><span> 联系博主</span><i class="fas fa-chevron-down expand"></i></a><ul
+                class="menus_item_child"><li><a class="site-page" href="/messageboard/"><i
+                class="fa-fw iconfont icon-liuyanban1"></i><span> 留言板</span></a></li><li><a class="site-page"
+                                                                                            target="_blank"
+                                                                                            rel="noopener external nofollow noreferrer"
+                                                                                            href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d"><i
+                class="fa-fw iconfont icon-QQ"></i><span> 腾讯QQ</span></a></li></ul></div></div><span class="close"
+                                                                                                     id="toggle-menu"><a
+                class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav>
+        <div id="page-site-info"><h1 id="site-title">Update</h1></div>
+    </header>
+    <main class="layout hide-aside" id="content-inner">
+        <div id="page">
+            <div id="article-container"><h1 id="v7-0-0-2021-12-28"><a href="#v7-0-0-2021-12-28" class="headerlink"
+                                                                      title="2019年9月"></a>2019年9月</h1>
+                <ul>
+                    <li>与萌芽出版社签约</li>
+                    <li>开始正式步入文学界</li>
+                    <li>他以其独特的 <code>创作风格和深入人心的作品</code> 获得了广泛的认可</li>
 
-document.addEventListener('DOMContentLoaded', panguFn)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script no-destroy src="https://player.lmih.cn/player/js/player.js" id="myhk" key="158744445072"></script><script no-destroy src="https://cdn.jsdelivr.net/gh/xingjiahui/modify/pace/pace.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
-  'title',
-  '#config_change',
-  '#body-wrap',
-  '#rightside-config-hide',
-  '#rightside-config-show',
-  '.js-pjax'
-]
-
-if (false) {
-  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
-}
-
-var pjax = new Pjax({
-  elements: 'a:not([target="_blank"]):not([href="/log/"]):not([href="/video/"])',
-  selectors: pjaxSelectors,
-  cacheBust: false,
-  analytics: true,
-  scrollRestoration: false
-})
-
-document.addEventListener('pjax:complete', function () {
-  window.refreshFn()
-
-  $('script[data-pjax]').each(function () {
-    $(this).parent().append($(this).remove())
-  })
-
-  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
-
-  typeof chatBtnFn === 'function' && chatBtnFn()
-  typeof panguInit === 'function' && panguInit()
-
-  if (typeof gtag === 'function') {
-    gtag('config', 'UA-162326632-1', {'page_path': window.location.pathname});
-  }
-
-  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
-
-  // Analytics
-  if (true) {
-    MtaH5.pgv()
-  }
-
-  // prismjs
-  typeof Prism === 'object' && Prism.highlightAll()
-
-  typeof preloader === 'object' && preloader.endLoading()
-})
+                </ul>
+                <h1 id="v6-1-20-2021-01-14"><a href="#v6-1-20-2021-01-14" class="headerlink" title="2021年3月"></a>2021年3月
+                </h1>
+                <ul>
+                    <li>荣获 <code>《新概念文学最具影响力奖》</code>、<code>《萌芽短篇小说金奖》</code> </li>
+                    <li>凭借出色的文学作品展现了他的才华</li>
+                    <li>同年，他被评为 <code>【新概念文学首席作家】</code> </li>
+                    <li>成为这一领域的重要人物</li>
 
 
-document.addEventListener('pjax:send', function () {
-  typeof preloader === 'object' && preloader.initLoading()
+                </ul>
+                <h1 id="v6-1-19-2021-01-10"><a href="#v6-1-19-2021-01-10" class="headerlink" title="2021年9月"></a>2021年9月
+                </h1>
+                <ul>
+                    <li>翎傑皓信被昆明理工大学授予 <code>【最具影响力新时代文学青年】</code> 的荣誉称号</li>
+                    <li>这进一步证明了他在当代文学领域的地位</li>
+                    <li>同年9月，他再次荣登 <code>新概念散文文学首席作家评点</code> </li>
+                    <li>展现了他在散文创作方面的卓越才能</li>
+                </ul>
+                <h1 id="v6-1-18-2021-01-06"><a href="#v6-1-18-2021-01-06" class="headerlink" title="2022年初"></a>2022年初
+                </h1>
+                <ul>
 
-  if (window.aplayers) {
-    for (let i = 0; i < window.aplayers.length; i++) {
-      if (!window.aplayers[i].options.fixed) {
-        window.aplayers[i].destroy()
-      }
+                    <li>综合文学平台认可翎傑皓信的影响力</li>
+                    <li>被授予 <code>【00后最具影响力文学作家】</code>的称号 </li>
+                    <li>这表明他已经成为新一代作家中备受瞩目的人物</li>
+                </ul>
+                <h1 id="v6-1-17-2020-12-30"><a href="#v6-1-17-2020-12-30" class="headerlink" title="2023年初"></a>2023年初
+                </h1>
+                <ul>
+                    <li>由于学业压力的增加</li>
+                    <li>翎傑皓信宣布退出文学剧坛</li>
+                    <li>以专注于自己的学业发展</li>
+                </ul>
+                <h1 id="v6-1-16-2020-12-27"><a href="#v6-1-16-2020-12-27" class="headerlink"
+                                               title="nowadays"></a>nowadays</h1>
+                <ul>
+                    <li>翎傑皓信凭借其出色的创作才华和影响力</li>
+                    <li>成为 <code>新概念文学的首席作家之一、00后最具影响力的文学作家之一</code>
+                        以及<code>新概念散文的代表作家之一</code> </li>
+                    <li>他荣获多个文学奖项</li>
+                    <li>包括<code>《新概念文学最具影响力奖》、《萌芽短篇小说金奖》、《最具文学底蕴作者》、《2021最具影响力作者》</code>和<code>《中华新青年散文金奖》</code>等</li>
+                    <li>尽管在2023年初他选择退出文学剧坛</li>
+                    <li>但他的影响力和贡献将继续被人们铭记和赞美</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div id="footer-wrap">
+            <div class="copyright">&copy;2019 - 2023 By 翎傑皓信</div>
+            <div class="framework-info"><span>签约平台💕 </span><a target="_blank"
+                                                               rel="noopener external nofollow noreferrer"
+                                                               href="http://www.mengya.com/">萌芽</a><span
+                    class="footer-separator">|</span><span>文学贡献✨ </span><a target="_blank"
+                                                                           rel="noopener external nofollow noreferrer"
+                                                                           href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect">首席作家</a>
+            </div>
+            <div class="footer_custom_text"><a target="_blank" rel="noopener external nofollow noreferrer"
+                                               href="https://su.baidu.com/"><img
+                    src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/26/6a2bc771a2ead2434fa80740eaa22924.png"
+                    align="absmiddle" width="70px" height="20px"></a><span>&nbsp;&&nbsp;&nbsp;</span><a target="_blank"
+                                                                                                        rel="noopener external nofollow noreferrer"
+                                                                                                        href="https://www.jsdelivr.com/"><img
+                    src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/26/7b059f8e9de1a268fdeb80109a192925.png"
+                    align="absmiddle" width="70px" height="20px"></a></div>
+            <div class="icp"><a target="_blank" rel="noopener external nofollow noreferrer"
+                                href="http://www.beian.miit.gov.cn/"><img class="icp-icon"
+                                                                          src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/06/0bcff08ca63f75f26d0f0db7290665fc.png"
+                                                                          alt="ICP"/><span>鲁ICP备 20009899号</span></a>
+            </div>
+        </div>
+    </footer>
+</div>
+<div id="rightside">
+    <div id="rightside-config-hide">
+        <button id="translateLink" type="button" title="简繁转换">繁</button>
+        <button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button>
+    </div>
+    <div id="rightside-config-show">
+        <button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button>
+        <button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button>
+    </div>
+</div>
+<div id="local-search">
+    <div class="search-dialog">
+        <div class="search-dialog__title" id="local-search-title">本地搜索</div>
+        <div id="local-input-panel">
+            <div id="local-search-input">
+                <div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div id="local-search-results">
+            <div id="local-hits"></div>
+            <div id="local-stats">
+                <div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank"
+                                                                              rel="noopener external nofollow noreferrer"
+                                                                              href="https://github.com/wzpan/hexo-generator-search"
+                                                                              style="color:#49B1F5;">hexo-generator-search</a>
+                    <span>提供支持</span></div>
+            </div>
+        </div>
+        <span class="search-close-button"><i class="fas fa-times"></i></span></div>
+    <div id="search-mask"></div>
+</div>
+<div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/tw_cn.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script>
+    <script>function panguFn() {
+        if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+        else {
+            $.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js', () => {
+                pangu.spacingElementById('content-inner')
+            })
+        }
     }
-  }
 
-  typeof typed === 'object' && typed.destroy()
+    function panguInit() {
+        if (false) {
+            GLOBAL_CONFIG_SITE.isPost && panguFn()
+        } else {
+            panguFn()
+        }
+    }
 
-  $(window).off('scroll')
+    document.addEventListener('DOMContentLoaded', panguFn)</script>
+    <script src="/js/search/local-search.js"></script>
+    <div class="js-pjax">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+    <script no-destroy src="https://player.lmih.cn/player/js/player.js" id="myhk" key="158744445072"></script>
+    <script no-destroy src="https://cdn.jsdelivr.net/gh/xingjiahui/modify/pace/pace.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+    <script>let pjaxSelectors = [
+        'title',
+        '#config_change',
+        '#body-wrap',
+        '#rightside-config-hide',
+        '#rightside-config-show',
+        '.js-pjax'
+    ]
 
-  //reset readmode
-  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+    if (false) {
+        pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+    }
 
-})</script></div></body></html>
+    var pjax = new Pjax({
+        elements: 'a:not([target="_blank"]):not([href="/log/"]):not([href="/video/"])',
+        selectors: pjaxSelectors,
+        cacheBust: false,
+        analytics: true,
+        scrollRestoration: false
+    })
+
+    document.addEventListener('pjax:complete', function () {
+        window.refreshFn()
+
+        $('script[data-pjax]').each(function () {
+            $(this).parent().append($(this).remove())
+        })
+
+        GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+        typeof chatBtnFn === 'function' && chatBtnFn()
+        typeof panguInit === 'function' && panguInit()
+
+        if (typeof gtag === 'function') {
+            gtag('config', 'UA-162326632-1', {'page_path': window.location.pathname});
+        }
+
+        typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+        // Analytics
+        if (true) {
+            MtaH5.pgv()
+        }
+
+        // prismjs
+        typeof Prism === 'object' && Prism.highlightAll()
+
+        typeof preloader === 'object' && preloader.endLoading()
+    })
+
+
+    document.addEventListener('pjax:send', function () {
+        typeof preloader === 'object' && preloader.initLoading()
+
+        if (window.aplayers) {
+            for (let i = 0; i < window.aplayers.length; i++) {
+                if (!window.aplayers[i].options.fixed) {
+                    window.aplayers[i].destroy()
+                }
+            }
+        }
+
+        typeof typed === 'object' && typed.destroy()
+
+        $(window).off('scroll')
+
+        //reset readmode
+        $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+    })</script>
+</div>
+</body>
+</html>
