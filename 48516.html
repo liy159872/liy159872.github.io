@@ -1,401 +1,1232 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>给你的Zeit page自定义404页面 | Letter~Spume</title><meta name="keywords" content="Zeit,404"><meta name="author" content="翎傑皓信"><meta name="copyright" content="翎傑皓信"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="本文章最初发表在XJHui’s Blog，未经允许，任何人禁止转载！ 为使您获得最好的阅读体验，强烈建议您点击 这里 前往 XJHui’s Blog 查看！ 前言本教程仅适用于部署在Zeit.co的个人网站。 我的博客使用的是Hexo框架+Butterfly主题+GitHub仓库+Zeit.co部署+那一刻CDN（这不是在打广告，很认真的在写博客），主题配置文件中有404页面的具体设置：   这样">
-<meta property="og:type" content="article">
-<meta property="og:title" content="给你的Zeit page自定义404页面">
-<meta property="og:url" content="https://liy159872.github.io//48516.html">
-<meta property="og:site_name" content="翎傑皓信">
-<meta property="og:description" content="本文章最初发表在XJHui’s Blog，未经允许，任何人禁止转载！ 为使您获得最好的阅读体验，强烈建议您点击 这里 前往 XJHui’s Blog 查看！ 前言本教程仅适用于部署在Zeit.co的个人网站。 我的博客使用的是Hexo框架+Butterfly主题+GitHub仓库+Zeit.co部署+那一刻CDN（这不是在打广告，很认真的在写博客），主题配置文件中有404页面的具体设置：   这样">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/16/4f1ae10155991244cc4de4881a3e1580.png">
-<meta property="article:published_time" content="2020-05-11T03:41:50.000Z">
-<meta property="article:modified_time" content="2022-05-02T08:34:40.058Z">
-<meta property="article:author" content="翎傑皓信">
-<meta property="article:tag" content="Zeit">
-<meta property="article:tag" content="404">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/16/4f1ae10155991244cc4de4881a3e1580.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/favicon.ico"><link rel="canonical" href="https://liy159872.github.io//48516"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//pingjs.qq.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="Yp0AsOhfru"/><meta name="360-site-verification" content="9346f3a82cd6e2ac3622b3b380341276"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?46d8572351f7699bce77c44868dae192";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-162326632-1"></script><script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-162326632-1');
-</script><script>var _mtac = {};
-(function() {
-    var mta = document.createElement("script");
-    mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
-    mta.setAttribute("name", "MTAH5");
-    mta.setAttribute("sid", "66539107");
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(mta, s);
-})();
-</script><script>var GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  noticeOutdate: {"limitDay":60,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  ClickShowText: undefined,
-  lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"rgb(142,140,216)","bgDark":"#2d3035","position":"bottom-left"},
-  justifiedGallery: {
-    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-  },
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isanchor: true
-};
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>再不见她长发 | Letter~Spume</title>
+    <meta name="keywords" content="Zeit,404">
+    <meta name="author" content="翎傑皓信">
+    <meta name="copyright" content="翎傑皓信">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="description" content="本文章最初发布在 新概念文学，未经允许，任何人禁止转载！ 注意：最新修改版本已发布在 这里，点击前往查看！
+                        皓信寄语如果相信，如若珍惜，选择原谅，结局可否有你，。！ --翎傑皓信;
+                        翎傑皓信 介绍作者介绍 笔名：翎傑皓信 领域：新概念文学首席作家之一 影响：与同时期作家天皓其名，撑起了00后文学的半边天 ... ...">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="再不见她长发">
+    <meta property="og:url" content="https://liy159872.github.io//48516.html">
+    <meta property="og:site_name" content="翎傑皓信">
+    <meta property="og:description" content="本文章最初发布在 新概念文学，未经允许，任何人禁止转载！ 注意：最新修改版本已发布在 这里，点击前往查看！
+                        皓信寄语如果相信，如若珍惜，选择原谅，结局可否有你，。！ --翎傑皓信;
+                        翎傑皓信 介绍作者介绍 笔名：翎傑皓信 领域：新概念文学首席作家之一 影响：与同时期作家天皓其名，撑起了00后文学的半边天 ... ...">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image"
+          content="https://i.imgloc.com/2023/05/25/VDBCvN.jpeg">
+    <meta property="article:published_time" content="2020-06-07T03:41:50.000Z">
+    <meta property="article:modified_time" content="2022-05-02T08:34:40.058Z">
+    <meta property="article:author" content="翎傑皓信">
+    <meta property="article:tag" content="Zeit">
+    <meta property="article:tag" content="404">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image"
+          content="https://i.imgloc.com/2023/05/25/VDBCvN.jpeg">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/favicon.ico">
+    <link rel="canonical" href="https://liy159872.github.io//48516">
+    <link rel="preconnect" href="//cdn.jsdelivr.net"/>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/>
+    <link rel="preconnect" href="//hm.baidu.com"/>
+    <link rel="preconnect" href="//pingjs.qq.com"/>
+    <link rel="preconnect" href="//busuanzi.ibruce.info"/>
+    <meta name="baidu-site-verification" content="Yp0AsOhfru"/>
+    <meta name="360-site-verification" content="9346f3a82cd6e2ac3622b3b380341276"/>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css">
+    <script>var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?46d8572351f7699bce77c44868dae192";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-162326632-1"></script>
+    <script>window.dataLayer = window.dataLayer || [];
 
-var saveToLocal = {
-  set: function setWithExpiry(key, value, ttl) {
-    const now = new Date()
-    const expiryDay = ttl * 86400000
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay,
+    function gtag() {
+        dataLayer.push(arguments);
     }
-    localStorage.setItem(key, JSON.stringify(item))
-  },
 
-  get: function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
+    gtag('js', new Date());
+    gtag('config', 'UA-162326632-1');
+    </script>
+    <script>var _mtac = {};
+    (function () {
+        var mta = document.createElement("script");
+        mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+        mta.setAttribute("name", "MTAH5");
+        mta.setAttribute("sid", "66539107");
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(mta, s);
+    })();
+    </script>
+    <script>var GLOBAL_CONFIG = {
+        root: '/',
+        algolia: undefined,
+        localSearch: {"path": "search.xml", "languages": {"hits_empty": "找不到您查询的内容：${query}"}},
+        translate: {
+            "defaultEncoding": 2,
+            "translateDelay": 0,
+            "msgToTraditionalChinese": "繁",
+            "msgToSimplifiedChinese": "簡"
+        },
+        noticeOutdate: {
+            "limitDay": 60,
+            "position": "top",
+            "messagePrev": "It has been",
+            "messageNext": "days since the last update, the content of the article may be outdated."
+        },
+        highlight: {"plugin": "highlighjs", "highlightCopy": true, "highlightLang": true},
+        copy: {
+            success: '复制成功',
+            error: '复制错误',
+            noSupport: '浏览器不支持'
+        },
+        relativeDate: {
+            homepage: false,
+            post: false
+        },
+        runtime: '天',
+        date_suffix: {
+            just: '刚刚',
+            min: '分钟前',
+            hour: '小时前',
+            day: '天前',
+            month: '个月前'
+        },
+        copyright: undefined,
+        ClickShowText: undefined,
+        lightbox: 'fancybox',
+        Snackbar: {
+            "chs_to_cht": "你已切换为繁体",
+            "cht_to_chs": "你已切换为简体",
+            "day_to_night": "你已切换为深色模式",
+            "night_to_day": "你已切换为浅色模式",
+            "bgLight": "rgb(142,140,216)",
+            "bgDark": "#2d3035",
+            "position": "bottom-left"
+        },
+        justifiedGallery: {
+            js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+            css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+        },
+        isPhotoFigcaption: false,
+        islazyload: true,
+        isanchor: true
+    };
 
-    if (!itemStr) {
-      return undefined
-    }
-    const item = JSON.parse(itemStr)
-    const now = new Date()
+    var saveToLocal = {
+        set: function setWithExpiry(key, value, ttl) {
+            const now = new Date()
+            const expiryDay = ttl * 86400000
+            const item = {
+                value: value,
+                expiry: now.getTime() + expiryDay,
+            }
+            localStorage.setItem(key, JSON.stringify(item))
+        },
 
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
-      return undefined
-    }
-    return item.value
-  }
-}</script><script id="config_change">var GLOBAL_CONFIG_SITE = {
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2022-05-02 16:34:40'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+        get: function getWithExpiry(key) {
+            const itemStr = localStorage.getItem(key)
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(function () {  window.activateDarkMode = function () {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-    }
-  }
-  window.activateLightMode = function () {
-    document.documentElement.setAttribute('data-theme', 'light')
-   if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-    }
-  }
-  const autoChangeMode = 'true'
-  const t = saveToLocal.get('theme')
-  if (autoChangeMode === '1') {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-    if (t === undefined) {
-      if (isLightMode) activateLightMode()
-      else if (isDarkMode) activateDarkMode()
-      else if (isNotSpecified || hasNoSupport) {
-        const now = new Date()
-        const hour = now.getHours()
-        const isNight = hour <= 6 || hour >= 18
-        isNight ? activateDarkMode() : activateLightMode()
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-        if (saveToLocal.get('theme') === undefined) {
-          e.matches ? activateDarkMode() : activateLightMode()
+            if (!itemStr) {
+                return undefined
+            }
+            const item = JSON.parse(itemStr)
+            const now = new Date()
+
+            if (now.getTime() > item.expiry) {
+                localStorage.removeItem(key)
+                return undefined
+            }
+            return item.value
         }
-      })
-    } else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else if (autoChangeMode === '2') {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour <= 6 || hour >= 18
-    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-    else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else {
-    if (t === 'dark') activateDarkMode()
-    else if (t === 'light') activateLightMode()
-  }const asideStatus = saveToLocal.get('aside-status')
-if (asideStatus !== undefined) {
-   if (asideStatus === 'hide') {
-     document.documentElement.classList.add('hide-aside')
-   } else {
-     document.documentElement.classList.remove('hide-aside')
-   }
-}})()</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/beautiful@master/CSS/alicon.css"><link rel="stylesheet" href="https://at.alicdn.com/t/font_2091506_hzyk6ifjte9.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/beautiful@master/CSS/custom.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/buttons.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/footer.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/plugins.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/modify/pace/themes/pink/pace-theme-flash.min.css"><meta name="referrer" content="no-referrer-when-downgrade"/><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Letter~Spume" type="application/atom+xml">
-</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://i.imgloc.com/2023/05/23/V4QOro.jpeg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/510e2c828ef28669ccde919409a1835e.png'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home3"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-friend"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/donate/"><i class="fa-fw iconfont icon-dashang"></i><span> 支持</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw iconfont icon-gengxin"></i><span> 履历</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-kongzhitai"></i><span> 控制台</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/log/"><i class="fa-fw iconfont icon-shuoshuo1"></i><span> 说说页面</span></a></li><li><a class="site-page" href="/video/"><i class="fa-fw iconfont icon-shipinkecheng"></i><span> 好书推荐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-gongneng1"></i><span> 原创文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect"><i class="fa-fw iconfont icon-tianqi"></i><span> 微信公众号</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/LetterLJHX?type=blog"><i class="fa-fw iconfont icon-zuoye"></i><span> CSDN</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-lianxi"></i><span> 联系博主</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban1"></i><span> 留言板</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d"><i class="fa-fw iconfont icon-QQ"></i><span> 萌芽腾讯QQ客服</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/16/47ae6dc8de662ede8ca909eb76fcacab.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Letter~Spume</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home3"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-friend"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/donate/"><i class="fa-fw iconfont icon-dashang"></i><span> 支持</span></a></div><div class="menus_item"><a class="site-page" href="/update/"><i class="fa-fw iconfont icon-gengxin"></i><span> 履历</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-kongzhitai"></i><span> 控制台</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/log/"><i class="fa-fw iconfont icon-shuoshuo1"></i><span> 说说页面</span></a></li><li><a class="site-page" href="/video/"><i class="fa-fw iconfont icon-shipinkecheng"></i><span> 好书推荐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-gongneng1"></i><span> 原创文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect"><i class="fa-fw iconfont icon-tianqi"></i><span> 微信公众号</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/LetterLJHX?type=blog"><i class="fa-fw iconfont icon-zuoye"></i><span> CSDN</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-lianxi"></i><span> 联系博主</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban1"></i><span> 留言板</span></a></li><li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer" href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d"><i class="fa-fw iconfont icon-QQ"></i><span> 萌芽腾讯QQ客服</span></a></li></ul></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">给你的Zeit page自定义404页面</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-05-11T03:41:50.000Z" title="发表于 2020-05-11 11:41:50">2020-05-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-02T08:34:40.058Z" title="更新于 2022-05-02 16:34:40">2022-05-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">原创文章</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Zeit-co/">Zeit.co</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量: 97</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/48516.html#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/48516.html" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>本文章最初发表在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://xingjiahui.top">XJHui’s Blog</a>，未经允许，任何人禁止转载！</p>
-<p>为使您获得最好的阅读体验，强烈建议您点击 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://xingjiahui.top/48516.html">这里</a> 前往 XJHui’s Blog 查看！</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本教程仅适用于部署在Zeit.co的个人网站。</p>
-<p>我的博客使用的是<code>Hexo框架</code>+<code>Butterfly主题</code>+<code>GitHub仓库</code>+<code>Zeit.co部署</code>+<code>那一刻CDN</code>（这不是在打广告，很认真的在写博客），主题配置文件中有404页面的具体设置：</p>
-<img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/1ae25b6a8a36446cc7b6cb6cc98bd55f.png" width="100%"/>
+    }</script>
+    <script id="config_change">var GLOBAL_CONFIG_SITE = {
+        isPost: true,
+        isHome: false,
+        isHighlightShrink: false,
+        isToc: true,
+        postUpdate: '2022-05-02 16:34:40'
+    }</script>
+    <noscript>
+        <style type="text/css">
+            #nav {
+                opacity: 1
+            }
 
-<p>这样配置能渲染出404页面：</p>
-<img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/ab2248aa5ab978969133d68db8bb6aa6.png" width="80%"/>
+            .justified-gallery img {
+                opacity: 1
+            }
 
-<p>但当你真正404时：</p>
-<img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/bd8c981a8c1058106005a7e3af68445f.png" width="50%"/>
+            #recent-posts time,
+            #post-meta time {
+                display: inline !important
+            }
+        </style>
+    </noscript>
+    <script>(function () {
+        window.activateDarkMode = function () {
+            document.documentElement.setAttribute('data-theme', 'dark')
+            if (document.querySelector('meta[name="theme-color"]') !== null) {
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+            }
+        }
+        window.activateLightMode = function () {
+            document.documentElement.setAttribute('data-theme', 'light')
+            if (document.querySelector('meta[name="theme-color"]') !== null) {
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+            }
+        }
+        const autoChangeMode = 'true'
+        const t = saveToLocal.get('theme')
+        if (autoChangeMode === '1') {
+            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+            const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+            const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+            const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+            if (t === undefined) {
+                if (isLightMode) activateLightMode()
+                else if (isDarkMode) activateDarkMode()
+                else if (isNotSpecified || hasNoSupport) {
+                    const now = new Date()
+                    const hour = now.getHours()
+                    const isNight = hour <= 6 || hour >= 18
+                    isNight ? activateDarkMode() : activateLightMode()
+                }
+                window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+                    if (saveToLocal.get('theme') === undefined) {
+                        e.matches ? activateDarkMode() : activateLightMode()
+                    }
+                })
+            } else if (t === 'light') activateLightMode()
+            else activateDarkMode()
+        } else if (autoChangeMode === '2') {
+            const now = new Date()
+            const hour = now.getHours()
+            const isNight = hour <= 6 || hour >= 18
+            if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+            else if (t === 'light') activateLightMode()
+            else activateDarkMode()
+        } else {
+            if (t === 'dark') activateDarkMode()
+            else if (t === 'light') activateLightMode()
+        }
+        const asideStatus = saveToLocal.get('aside-status')
+        if (asideStatus !== undefined) {
+            if (asideStatus === 'hide') {
+                document.documentElement.classList.add('hide-aside')
+            } else {
+                document.documentElement.classList.remove('hide-aside')
+            }
+        }
+    })()</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/beautiful@master/CSS/alicon.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_2091506_hzyk6ifjte9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/beautiful@master/CSS/custom.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/buttons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/footer.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xingjiahui/HexoStaticFile@master/Hexo/css/plugins.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/xingjiahui/modify/pace/themes/pink/pace-theme-flash.min.css">
+    <meta name="referrer" content="no-referrer-when-downgrade"/>
+    <meta name="generator" content="Hexo 5.2.0">
+    <link rel="alternate" href="/atom.xml" title="Letter~Spume" type="application/atom+xml">
+</head>
+<body>
+<div id="web_bg"></div>
+<div id="sidebar">
+    <div id="menu-mask"></div>
+    <div id="sidebar-menus">
+        <div class="author-avatar"><img class="avatar-img" data-lazy-src="https://i.imgloc.com/2023/05/23/V4QOro.jpeg"
+                                        onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/510e2c828ef28669ccde919409a1835e.png'"
+                                        alt="avatar"/></div>
+        <div class="site-data">
+            <div class="data-item is-center">
+                <div class="data-item-link"><a href="/archives/">
+                    <div class="headline">文章</div>
+                    <div class="length-num">34</div>
+                </a></div>
+            </div>
+            <div class="data-item is-center">
+                <div class="data-item-link"><a href="/tags/">
+                    <div class="headline">标签</div>
+                    <div class="length-num">27</div>
+                </a></div>
+            </div>
+            <div class="data-item is-center">
+                <div class="data-item-link"><a href="/categories/">
+                    <div class="headline">分类</div>
+                    <div class="length-num">20</div>
+                </a></div>
+            </div>
+        </div>
+        <hr/>
+        <div class="menus_items">
+            <div class="menus_item"><a class="site-page" href="/"><i
+                    class="fa-fw iconfont icon-home3"></i><span> 主页</span></a></div>
+            <div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-friend"></i><span> 友链</span></a>
+            </div>
+            <div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于</span></a>
+            </div>
+            <div class="menus_item"><a class="site-page" href="/donate/"><i
+                    class="fa-fw iconfont icon-dashang"></i><span> 支持</span></a></div>
+            <div class="menus_item"><a class="site-page" href="/update/"><i
+                    class="fa-fw iconfont icon-gengxin"></i><span> 履历</span></a></div>
+            <div class="menus_item"><a class="site-page" href="javascript:void(0);"
+                                       rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-kongzhitai"></i><span> 控制台</span><i
+                    class="fas fa-chevron-down expand"></i></a>
+                <ul class="menus_item_child">
+                    <li><a class="site-page" href="/log/"><i
+                            class="fa-fw iconfont icon-shuoshuo1"></i><span> 说说页面</span></a></li>
+                    <li><a class="site-page" href="/video/"><i
+                            class="fa-fw iconfont icon-shipinkecheng"></i><span> 好书推荐</span></a></li>
+                </ul>
+            </div>
+            <div class="menus_item"><a class="site-page" href="javascript:void(0);"
+                                       rel="external nofollow noreferrer"><i
+                    class="fa-fw iconfont icon-gongneng1"></i><span> 原创文章</span><i
+                    class="fas fa-chevron-down expand"></i></a>
+                <ul class="menus_item_child">
+                    <li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer"
+                           href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect"><i
+                            class="fa-fw iconfont icon-tianqi"></i><span> 微信公众号</span></a></li>
+                    <li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer"
+                           href="https://blog.csdn.net/LetterLJHX?type=blog"><i
+                            class="fa-fw iconfont icon-zuoye"></i><span> CSDN</span></a></li>
+                </ul>
+            </div>
+            <div class="menus_item"><a class="site-page" href="javascript:void(0);"
+                                       rel="external nofollow noreferrer"><i
+                    class="fa-fw iconfont icon-lianxi"></i><span> 联系博主</span><i class="fas fa-chevron-down expand"></i></a>
+                <ul class="menus_item_child">
+                    <li><a class="site-page" href="/messageboard/"><i class="fa-fw iconfont icon-liuyanban1"></i><span> 留言板</span></a>
+                    </li>
+                    <li><a class="site-page" target="_blank" rel="noopener external nofollow noreferrer"
+                           href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d"><i
+                            class="fa-fw iconfont icon-QQ"></i><span> 萌芽腾讯QQ客服</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="body-wrap">
+    <header class="post-bg" id="page-header"
+            style="background-image: url(https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/16/47ae6dc8de662ede8ca909eb76fcacab.png)">
+        <nav id="nav"><span id="blog_name"><a id="site-name" href="/">Letter~Spume</a></span><span id="menus"><div
+                id="search_button"><a class="site-page social-icon search"><i
+                class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div
+                class="menus_item"><a class="site-page" href="/"><i
+                class="fa-fw iconfont icon-home3"></i><span> 主页</span></a></div><div class="menus_item"><a
+                class="site-page" href="/link/"><i class="fa-fw iconfont icon-friend"></i><span> 友链</span></a></div><div
+                class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于</span></a></div><div
+                class="menus_item"><a class="site-page" href="/donate/"><i
+                class="fa-fw iconfont icon-dashang"></i><span> 支持</span></a></div><div class="menus_item"><a
+                class="site-page" href="/update/"><i class="fa-fw iconfont icon-gengxin"></i><span> 履历</span></a></div><div
+                class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i
+                class="fa-fw iconfont icon-kongzhitai"></i><span> 控制台</span><i
+                class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page"
+                                                                                               href="/log/"><i
+                class="fa-fw iconfont icon-shuoshuo1"></i><span> 说说页面</span></a></li><li><a class="site-page"
+                                                                                            href="/video/"><i
+                class="fa-fw iconfont icon-shipinkecheng"></i><span> 好书推荐</span></a></li></ul></div><div
+                class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i
+                class="fa-fw iconfont icon-gongneng1"></i><span> 原创文章</span><i
+                class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page"
+                                                                                               target="_blank"
+                                                                                               rel="noopener external nofollow noreferrer"
+                                                                                               href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect"><i
+                class="fa-fw iconfont icon-tianqi"></i><span> 微信公众号</span></a></li><li><a class="site-page"
+                                                                                          target="_blank"
+                                                                                          rel="noopener external nofollow noreferrer"
+                                                                                          href="https://blog.csdn.net/LetterLJHX?type=blog"><i
+                class="fa-fw iconfont icon-zuoye"></i><span> CSDN</span></a></li></ul></div><div class="menus_item"><a
+                class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i
+                class="fa-fw iconfont icon-lianxi"></i><span> 联系博主</span><i class="fas fa-chevron-down expand"></i></a><ul
+                class="menus_item_child"><li><a class="site-page" href="/messageboard/"><i
+                class="fa-fw iconfont icon-liuyanban1"></i><span> 留言板</span></a></li><li><a class="site-page"
+                                                                                            target="_blank"
+                                                                                            rel="noopener external nofollow noreferrer"
+                                                                                            href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d"><i
+                class="fa-fw iconfont icon-QQ"></i><span> 萌芽腾讯QQ客服</span></a></li></ul></div></div><span class="close"
+                                                                                                         id="toggle-menu"><a
+                class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav>
+        <div id="post-info"><h1 class="post-title">再不见她长发</h1>
+            <div id="post-meta">
+                <div class="meta-firstline"><span class="post-meta-date"><i
+                        class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time
+                        class="post-meta-date-created" datetime="2020-06-07T03:41:50.000Z"
+                        title="发表于 2020-06-07 11:41:50">2020-06-07</time><span class="post-meta-separator">|</span><i
+                        class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time
+                        class="post-meta-date-updated" datetime="2022-05-02T08:34:40.058Z"
+                        title="更新于 2022-05-02 16:34:40">2022-05-02</time></span><span class="post-meta-categories"><span
+                        class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a
+                        class="post-meta-categories" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">原创文章</a><i
+                        class="fas fa-angle-right post-meta-separator"></i><i
+                        class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories"
+                                                                         href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Zeit-co/">Zeit.co</a></span>
+                </div>
+                <div class="meta-secondline"><span class="post-meta-separator">|</span><span
+                        class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span
+                        class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span
+                        class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span
+                        class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span
+                        class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i
+                        class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量: 97</span><span
+                        id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span
+                        class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span
+                        class="post-meta-label">评论数:</span><a href="/48516.html#post-comment"
+                                                              itemprop="discussionUrl"><span
+                        class="valine-comment-count comment-count" data-xid="/48516.html"
+                        itemprop="commentCount"></span></a></span></div>
+            </div>
+        </div>
+    </header>
+    <main class="layout" id="content-inner">
+        <div id="post">
+            <article class="post-content" id="article-container"><p>本文章最初发布在 <a href="http://www.mengya.com/xingainian/">新概念文学
+            </a>，未经允许，任何人禁止转载！</p>
+             <p><font color="red" style="font-weight:700">注意：</font>最新修改版本已发布在 <a
+                     href="https://mp.weixin.qq.com/s/VCiwm67gNs_S_r7v2f6zUQ">这里</a>，点击前往查看！</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>皓信寄语</h1>
+                <p>如果相信，如若珍惜，选择原谅，结局可否有你，。！</p>
+                <p>我的心又一次被唤醒，。！</p>
+                <p style="text-align: right;"><a target="_blank" rel="noopener external nofollow noreferrer"
+                                                 href="https://liy159872.github.io/about/">--翎傑皓信</a></p>
 
-<p>配置好404后也没有测试过，一直以为我的404页面是正常的…</p>
-<h1 id="踩坑经历"><a href="#踩坑经历" class="headerlink" title="踩坑经历"></a>踩坑经历</h1><p>这里记录踩坑经历，想跳过的可以直接传送到 <a href="https://liy159872.github.io//48516.html#解决404页面无法显示">这里</a> 。</p>
-<ol>
-<li><p>百度找到<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.pearik.com/">Yavin</a>的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.pearik.com/archives/zeit-404-page/">这篇文章</a>中有说解决方法：</p>
-<p> 创建<code>now.json</code>文件：</p>
- <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">&quot;routes&quot;</span>: [</span><br><span class="line">    &#123; <span class="attr">&quot;handle&quot;</span>: <span class="string">&quot;filesystem&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">&quot;src&quot;</span>: <span class="string">&quot;/(.*)&quot;</span>, <span class="attr">&quot;status&quot;</span>: <span class="number">404</span>, <span class="attr">&quot;dest&quot;</span>: <span class="string">&quot;/404.html&quot;</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h1 id="踩坑经历"><a href="#踩坑经历" class="headerlink" title="踩坑经历"></a>作者介绍</h1>
+                <ol>
+                    <li>笔名：翎傑皓信</li>
+                    <li>领域：新概念文学首席作家之一</li>
+                    <li>影响：与同时期作家天皓其名，撑起了00后文学的半边天</li>
+                </ol>
 
-<p> 并把它放到<code>根目录</code>（我当时认为是<code>Hexo的根目录</code>），<code>hexo g</code> 后自动在<code>/public</code>下生成<code>now.json</code>文件：</p>
- <img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/483e764ec0f661ac700c98a3066905bb.png" width="50%"/>
 
-<p> 于是我兴奋的<code>hexo d</code>后发现提交至<code>Zeit.co仓库</code>失败了：</p>
- <img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/993b3abe5f3bae3ead67b23619a19b31.png" width="80%"/>
 
-<p> 英文看不懂？就是说生成的<code>json文件</code>不符合规范（存在<code>语法错误</code>），仔细看上图会发现<code>json文件</code>中包含了JavaScript，至于为什么会这样至今我也不知道，如果您知道原因欢迎到<code>评论区</code>留言（失败）。</p>
-</li>
-<li><p>于时更换了<code>now.json</code>文件位置，把他放在了<code>主题</code>的根目录，结果发现hexo g后在/public文件夹下未生成now.json文件（失败）。</p>
-</li>
-<li><p>既然无法生成，那我就直接到GitHub仓库，创建<code>now.json</code>文件并把上面的<code>代码</code>沾了进去，再次提交竟然成功了，这才明白原来<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.pearik.com/">Yavin</a>说的<code>根目录</code>是指<code>仓库根目录</code>，但这样做存在的问题是下次<code>hexo d</code>后<code>now.json</code>文件会直接被删掉（失败）。</p>
-</li>
-<li><p>我知道<code>hexo d</code>其实就是把<code>/public</code>中的文件上传到仓库。想把json文件放到仓库根目录其实就是先放到/public中，于时开始想哪里的文件<code>hexo g</code>后能直接生成在<code>/public</code>中，看了一眼仓库中的文件：</p>
- <img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/2e216096405f08125298a9d3d3c63ef5.png" width="80%"/>
+                <h1 id="解决404页面无法显示"><a href="#解决404页面无法显示" class="headerlink" title="解决404页面无法显示"></a>再不见她长发</h1>
+                <p>
+                    南宫府 是夜 月光如水
 
-<p> ​    有点熟悉呀，这三个文件夹不就是<code>主题根目录/source</code>（不是hexo根目录下的/source）中的三个文件夹？：</p>
- <img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/6ebcae35646e68fc9c95e2e6dba288b2.png" width="30%"/>
+                    “公子，属下无能，被她发现了”江言单膝下跪，把头埋的很低，语调忐忑：“请公子责罚”
 
-<p> ​        于时我很开心的把<code>now.json</code>文件放进了<code>/source</code>中</p>
-<p> ​    哈哈，测试没问题，终于解决了。</p>
-</li>
-</ol>
-<h1 id="解决404页面无法显示"><a href="#解决404页面无法显示" class="headerlink" title="解决404页面无法显示"></a>解决404页面无法显示</h1><blockquote>
-<p>本博客提供的方法仅在Hexo博客框架下Butterfly主题测试，其余框架或主题可自行尝试。</p>
-<p>若您的主题使用了页面压缩（gulp…），需要先排除掉<code>conf.json</code>这个文件。</p>
-</blockquote>
-<p>在主题根目录/source下新建now.json文件，粘贴下面的代码：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">&quot;routes&quot;</span>: [</span><br><span class="line">    &#123; <span class="attr">&quot;handle&quot;</span>: <span class="string">&quot;filesystem&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">&quot;src&quot;</span>: <span class="string">&quot;/(.*)&quot;</span>, <span class="attr">&quot;status&quot;</span>: <span class="number">404</span>, <span class="attr">&quot;dest&quot;</span>: <span class="string">&quot;/404.html&quot;</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                    窗前的人半侧过身，清冷的月光打在他的脸上，显出些许冷意。“罢了，这不怪你，退下吧”。那人摆了摆手，轻叹了一声，示意江言退下。随即抬头望着那浩瀚无垠的星空，不由得皱了皱眉：“紫薇，真的是你吗。”
 
-<p>注：该json文件会调用404.html，所以要保证仓库根目录有404.html文件，当然也可以写成其他文件（也为下面<code>自定义404页面</code>创造可能）。</p>
-<p>感谢：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.pearik.com/">Yavin</a></p>
-<h1 id="自定义404页面"><a href="#自定义404页面" class="headerlink" title="自定义404页面"></a>自定义404页面</h1><blockquote>
-<p>主题<code>404页面</code>可配置项不多（仅支持<code>修改背景图片</code>），但你可以按照本教程让你的博客<code>拥有喜欢的404页面</code></p>
-<p>当然你可以去修改<code>404的pug</code>文件，但我实在是不想动<code>源代码</code>（主要是怕<code>博客报错</code>，然后gg）</p>
-</blockquote>
-<p>先上gif，看看我的404页面：</p>
-<img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/af56f72e8dce1452ad834ed91f6a9ca1.png" width="80%"/>
+                    建安元年，新皇登基，一场腥风血雨在所难免。皇城开外，雷鸣电闪，风雨交加，一队马车正加速前行，数十位禁军护其左右。不远处，传来阵阵马蹄声。“将军，他们追上来了”一位护卫回禀到。那将军瞬间紧张起来，他紧张的不是死亡，而是马车上的人，他不知道等待他们的是什么。两队人马相遇，剑拔弩张，为首的黑衣男子冷冷说道：“将军，莫要怪我等，我等也是奉命行事。”随即亮明身份。那块令牌上赫赫写着“锦衣卫”三个字。“动手”黑衣人发出指令。“保护夫人和公子”两队人马混战在一起，刀光剑影，天空电闪雷鸣，大雨瞬时而至。
 
-<p>404页面代码来自<a target="_blank" rel="noopener external nofollow noreferrer" href="https://404.life/">CodePen</a>，感谢！</p>
-<p>其实很简单，大致思路是新建<code>page页面</code> -&gt; <code>禁止渲染</code>该页面 -&gt; 修改<code>json.now</code>文件。</p>
-<h2 id="新建page页面"><a href="#新建page页面" class="headerlink" title="新建page页面"></a>新建page页面</h2><p>怎么创建应该都会吧，这里以404为例：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page 404</span><br></pre></td></tr></table></figure>
+                </p>
 
-<p>别担心这个<code>404</code>会渲染出<code>404.html</code>然后与原有的<code>404.html</code>冲突，因为page页渲染出来的是<code>/404/index.html</code></p>
-<p>创建后的文件：</p>
-<img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/a40203f8249c5982a4e1783ba7d00fbd.png" width="50%"/>
+                <img src="https://i.imgloc.com/2023/05/25/VDBCvN.jpeg" alt="翎傑皓信">
 
-<h2 id="禁止渲染"><a href="#禁止渲染" class="headerlink" title="禁止渲染"></a>禁止渲染</h2><blockquote>
-<p>为什么要禁止渲染？如果不禁止会像其他页面那样被加上顶部图、页脚…</p>
-</blockquote>
-<p>主要有两种方法，想具体学习的可以看<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/qq_36759224/article/details/90320295">这篇文章</a>，本篇教程指介绍一种我认为简单的：</p>
-<ol>
-<li><p>index.md中添加：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout: false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>插入html代码时，使用标签：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">...</span><br><span class="line">html</span><br><span class="line">...</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+                <p>
+                    八岁的他透过缝隙，把外面看的一清二楚，看着父亲的鲜血染红了盔甲，看着边上的叔叔们一个接一个倒下，他不知道这世界怎么了。天空中弥漫着浓浓的血腥味，一朵桃花飘落，他本能的伸出手想把它抓住。“吾儿，不要”那是父亲的声音，瞬间，那桃花被鲜血所染红，父亲那魁梧的身躯重重的倒在血泊之中。而他的母亲也伴随着那厮杀声，缓缓的倒在了雨中。他只觉得眼前一黑，便失去了知觉。
 
-</li>
-</ol>
-<p>例如：</p>
-<img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/f7e0736e177974384712f0e1d03d2bfd.png" width="70%"/>
+                    建安八年，三月的临安城，桃花盛开，美不胜收。临安城里有个逍遥阁，逍遥阁里美女如云，不管是你能想到的，还是想不到的，在这里，都能遇到你心仪的姑娘。“小二，去，把你们阁里最漂亮的姑娘叫来，让我家公子瞧瞧。”“好嘞，两位爷，请稍等”。不出半盏茶的功夫，十几位美貌如花的姑娘在小二引领下站到了他的跟前。南宫陌抬头一扫而过，摇摇头，示意换一批。“这位公子，一个都没看中”虽说不是头等货色，但也属于上等了，小二嘀咕着。“没有”南宫陌冷冷的回道。小二示意姑娘们退下，不多时，又有一位貌若天仙的女子带着七位姑娘走了进来。这七位可是逍遥阁的镇阁之宝，称之为阁中七仙女，个个倾国倾城。
 
-<p>如果喜欢我的404页面，可以使用下面的代码（太长了，使用<a target="_blank" rel="noopener external nofollow noreferrer" href="https://pasteme.cn/">PasteMe</a>平台）：</p>
-<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://pasteme.cn/36643">点击查看代码</a>，点击该位置可以<code>直接复制</code>哦：</p>
-<img src= "https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/07/17/09d3e39264b9174dbc352c1a83898459.png" data-lazy-src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/05/25/73bf9ef57761ce065543eab90a052c2e.png" width="80%"/>
+                </p>
 
-<p>说起<a href="(https://pasteme.cn/)">PasteMe</a>，又让我想起来<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/softwareldu/article/list/">iamzxf</a>，还是很感谢他…</p>
-<h2 id="修改now-json文件"><a href="#修改now-json文件" class="headerlink" title="修改now.json文件"></a>修改<code>now.json</code>文件</h2><p>来到了最后一步，离成功又近了一步。</p>
-<p>将原<code>now.json</code>文件中的：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dest&quot;: &quot;/404.html&quot; </span><br></pre></td></tr></table></figure>
+                <img src="https://i.imgloc.com/2023/05/25/VDB0mo.png" alt="翎傑皓信">
+                <p>
+                    “想必这位就是逍遥阁的阁主，凌月凌阁主吧”南宫陌起身，微微的向那女子行礼到。“在下南宫陌，初到临安，便听闻逍遥阁居有特别之处，凡到此阁都能遇到自己心仪的姑娘，特此前来探个究竟。”
 
-<p>修改为：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dest&quot;: &quot;/404/&quot; </span><br></pre></td></tr></table></figure>
+                    “若非公子就是京城南宫府的少主，南宫陌”
 
-<p>至于为什么这样修改，应该很好理解，不多解释了。</p>
-<hr>
+                    “正是在下”
 
-<p>桃花本在三月开，如若将军言语失，请与留言把君绝！</p>
-<p>皓信有你才最美，。！</p>
-<p>最后的最后，欢迎访问我的个人博客<a href="https://liy159872.github.io/">XJHui’s Blog</a>。</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" rel="external nofollow noreferrer">翎傑皓信</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://liy159872.github.io//48516.html">https://liy159872.github.io//48516.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liy159872.github.io/" target="_blank">Letter~Spume（翎傑皓信）</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Zeit/">Zeit</a><a class="post-meta__tags" href="/tags/404/">404</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/16/4f1ae10155991244cc4de4881a3e1580.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/52527.html"><img class="prev-cover" data-lazy-src="https://i.imgloc.com/2023/04/08/i3q8K8.jpeg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">关于异地恋</div></div></a></div><div class="next-post pull-right"><a href="/14261.html"><img class="next-cover" data-lazy-src="https://i.imgloc.com/2023/04/08/i3ChUL.jpeg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">和平精英</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://i.imgloc.com/2023/05/23/V4QOro.jpeg" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/510e2c828ef28669ccde919409a1835e.png'" alt="avatar"/><div class="author-info__name">翎傑皓信</div><div class="author-info__description">翎傑皓信，原名李文国后改名李一，云南临沧人。 新概念文学首席作家之一！</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect"><i class="fab fa-github"></i><span>翎傑皓信的WeChat OA</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d" rel="external nofollow noreferrer" target="_blank" title="腾讯 QQ"><i class="iconfont icon-qq1"></i></a><a class="social-icon" href="https://blog.csdn.net/LetterLJHX?type=blog" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="iconfont icon-CSDN"></i></a><a class="social-icon" href="https://www.zhihu.com/people/spume--" rel="external nofollow noreferrer" target="_blank" title="知乎专栏"><i class="iconfont icon-zhihu1"></i></a><a class="social-icon" href="https://space.bilibili.com/510082921" rel="external nofollow noreferrer" target="_blank" title="哔哩哔哩"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://i.imgloc.com/2023/05/23/VAGbvw.jpeg" rel="external nofollow noreferrer" target="_blank" title="微信公众号"><i class="iconfont icon-gongzhonghao1"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>翎傑皓信</span></div><div class="announcement_content">走进人类的 <span class="inline-tag red">初级世界</span> ，。！<br><img style="border-top:solid 6px rgba(1,1,1,0);" src="https://www.hualigs.cn/image/6411b246da80e.jpg" width="100%"/></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86"><span class="toc-number">2.</span> <span class="toc-text">踩坑经历</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3404%E9%A1%B5%E9%9D%A2%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA"><span class="toc-number">3.</span> <span class="toc-text">解决404页面无法显示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89404%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.</span> <span class="toc-text">自定义404页面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BApage%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.1.</span> <span class="toc-text">新建page页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E6%B8%B2%E6%9F%93"><span class="toc-number">4.2.</span> <span class="toc-text">禁止渲染</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9now-json%E6%96%87%E4%BB%B6"><span class="toc-number">4.3.</span> <span class="toc-text">修改now.json文件</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/42951.html" title="所以"><img data-lazy-src="https://i.imgloc.com/2023/05/24/VA9qdy.jpeg" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'" alt="所以"/></a><div class="content"><a class="title" href="/42951.html" title="所以">所以</a><time datetime="2021-07-25T02:23:37.000Z" title="发表于 2021-07-25 10:23:37">2021-07-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/24775.html" title="对不起，把你弄丢了"><img data-lazy-src="https://i.imgloc.com/2023/04/08/i3uIwb.jpeg" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'" alt="对不起，把你弄丢了"/></a><div class="content"><a class="title" href="/24775.html" title="对不起，把你弄丢了">对不起，把你弄丢了</a><time datetime="2021-07-04T05:10:43.000Z" title="发表于 2021-07-04 13:10:43">2021-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/17196.html" title="17岁的痛"><img data-lazy-src="https://i.imgloc.com/2023/04/08/i30XH5.jpeg" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'" alt="17岁的痛"/></a><div class="content"><a class="title" href="/17196.html" title="17岁的痛">17岁的痛</a><time datetime="2021-06-22T02:16:30.000Z" title="发表于 2021-06-22 10:16:30">2021-06-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/22094.html" title="也许背叛"><img data-lazy-src="https://i.imgloc.com/2023/04/08/i30NpL.jpeg" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'" alt="也许背叛"/></a><div class="content"><a class="title" href="/22094.html" title="也许背叛">也许背叛</a><time datetime="2021-05-15T11:05:22.000Z" title="发表于 2021-05-15 19:05:22">2021-05-15</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By 翎傑皓信</div><div class="framework-info"><span>签约平台💕 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.mengya.com/">萌芽</a><span class="footer-separator">|</span><span>文学贡献✨ </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect">首席作家</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://su.baidu.com/"><img src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/26/6a2bc771a2ead2434fa80740eaa22924.png" align="absmiddle" width="70px" height="20px"></a><span>&nbsp;&&nbsp;&nbsp;</span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jsdelivr.com/"><img src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/26/7b059f8e9de1a268fdeb80109a192925.png" align="absmiddle" width="70px" height="20px"></a></div><div class="icp"><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.beian.miit.gov.cn/"><img class="icp-icon" src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/06/0bcff08ca63f75f26d0f0db7290665fc.png" alt="ICP"/><span>鲁ICP备 20009899号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
- <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
-  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
-  else {
-    $.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js', () => {
-      pangu.spacingElementById('content-inner')
-    })
-  }
-}
+                    “怪不得，眼光如此之高，原来是京城来的南宫少主”凌月虽久经风月，阅人无数，但对于眼前这位男子，却颇有好感。“怎么样，七仙女中可有否让公子动心的。”
 
-function panguInit () {
-  if (false){
-    GLOBAL_CONFIG_SITE.isPost && panguFn()
-  } else {
-    panguFn()
-  }
-}
+                    南宫陌依旧摇了摇头，“没有”
 
-document.addEventListener('DOMContentLoaded', panguFn)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
-  function initValine () {
-    const friends = 'https://www.impdx.vip,https://www.impdx.vip/,https://bili33.top/,https://bili33.top,https://xiabor.com/,https://xiabor.com,https://www.antmoe.com,https://www.antmoe.com/,https://fuckzuoye.ga/,https://fuckzuoye.ga,https://zhouyunfei.club/,https://zhouyunfei.club,https://wangdudyb.gitee.io/blog/,https://wangdudyb.gitee.io/blog,https://www.meilinfeng.top/,https://www.meilinfeng.top,https://ply.cool,https://ply.cool/,https://www.isk.ink/,https://www.isk.ink,https://www.atdawn.tk,https://www.atdawn.tk/,https://justlovesmile.top/,https://justlovesmile.top,https://www.jiubrc.com/,https://www.jiubrc.com,https://nanzx.top/,https://nanzx.top,https://blog.slqwq.cn,https://blog.slqwq.cn/,https://lingstudy.gitee.io,https://lingstudy.gitee.io/,https://peacecity.cn/,https://peacecity.cn,https://iyyy.nl,https://iyyy.nl/,https://www.kikohk.top,https://www.kikohk.top/,https://fadeawayol.github.io/,https://fadeawayol.github.io,https://yww52.com,https://yww52.com/,https://abalone.life/,https://abalone.life,https://www.imzjw.cn,https://www.imzjw.cn/,https://blog.zhiqin.xyz/,https://blog.zhiqin.xyz,https://imlql.cn,https://imlql.cn/,http://www.byelmx.com/,http://www.byelmx.com,https://blog.zhheo.com,https://blog.zhheo.com/,https://noionion.top,https://noionion.top/,http://blog.yaoyaoman.cn/,http://blog.yaoyaoman.cn,https://damanyang.cn/,https://damanyang.cn,https://blog.molipre.com,https://blog.molipre.com/,http://www.maidang.cool,http://www.maidang.cool/,https://yuanyuanzi.top,https://yuanyuanzi.top/,https://www.iamzlt.com,https://www.iamzlt.com/,https://zangwhe.cn/,https://zangwhe.cn,https://zghya.cn/,https://zghya.cn,http://www.iamdqy.cn,http://www.iamdqy.cn/,https://hexo.io/zh-cn,https://hexo.io/zh-cn/,https://github.com/jerryc127/hexo-theme-butterfly/,https://github.com/jerryc127/hexo-theme-butterfly,https://github.com,https://github.com/,https://vercel.com,https://vercel.com/,https://valine.js.org,https://valine.js.org/,https://www.leancloud.cn,https://www.leancloud.cn/,https://github.com/Molunerfinn/PicGo/,https://github.com/Molunerfinn/PicGo,https://www.typora.io,https://www.typora.io/,https://www.fotor.com.cn,https://www.fotor.com.cn/'.split(',');  //将获取的友链地址存入变量friends中
-    let initData = {
-      el: '#vcomment',
-      appId: 'YEUA8TLuUAcMn94WkAI4SuzA-gzGzoHsz',
-      appKey: 'i07m822kUUdXLatLixeoLibn',
-      placeholder: '昵称栏输入QQ后按下Tab键，可以自动获取昵称和邮箱哦！',
-      avatar: 'mp',
-      meta: 'nick,mail,link'.split(','),
-      pageSize: '5',
-      lang: 'zh-CN',
-      recordIP: false,
-      serverURLs: '',
-      emojiCDN: 'https://',
-      emojiMaps: {"custom1":"cdn.jsdelivr.net/gh/blogimg/emotion/custom/19.webp","custom2":"cdn.jsdelivr.net/gh/blogimg/emotion/custom/24.webp","custom3":"cdn.jsdelivr.net/gh/blogimg/emotion/custom/7.webp","custom4":"cdn.jsdelivr.net/gh/blogimg/emotion/custom/8.webp","custom5":"cdn.jsdelivr.net/gh/blogimg/emotion/custom/13.webp","custom6":"cdn.jsdelivr.net/gh/blogimg/emotion/custom/12.webp","custom7":"cdn.jsdelivr.net/gh/blogimg/emotion/custom/30.gif","custom8":"pic2.zhimg.com/v2-e572af592a4c5d7b1272741265df8e7d_b.gif","custom9":"pic1.zhimg.com/v2-fb2fdc36dff66c7bbc6f7f7fe5fb0564_b.gif","custom10":"pic3.zhimg.com/v2-0567ef42a240192aa8cc6414591cf0f2_b.gif","custom11":"pic4.zhimg.com/v2-3ca857bbb343d32bdeb66a330a3c48ff_b.gif","custom12":"pic2.zhimg.com/v2-5163087c3fabb0dcd7c8c3a0dfa64075_b.gif","custom13":"pic1.zhimg.com/v2-e80a73877ad43277c9ccff4f631ef93c_b.gif","custom14":"pic1.zhimg.com/v2-215941e4f016f6251ac549fcaa3899b4_b.gif","custom15":"pic2.zhimg.com/v2-3c1eaf1a9ed12401fe56fd889a3f1151_b.gif","custom16":"pic4.zhimg.com/v2-3667572fb0cb999e180487be43b00323_b.gif","custom17":"pic3.zhimg.com/v2-681c4f1cdc9d9c8b04af40d0cfcb0faa_b.gif","custom18":"pic3.zhimg.com/v2-aafa7ae089b4e124a318ef59bc4a470e_b.gif","custom19":"pic2.zhimg.com/v2-1944ef897865961033233282215490f9_b.gif","custom20":"pic3.zhimg.com/v2-bb309ecce53658416d270550377a73a2_b.gif","custom21":"pic1.zhimg.com/v2-35eeb1d14b56b7b43aac45055f75eaa8_b.gif","custom22":"pic3.zhimg.com/v2-9de252f01196ce895ca7a8866300dc32_b.gif","custom23":"pic1.zhimg.com/v2-c8096214f4b41efe48bb88ba3036cd70_b.gif","custom24":"pic2.zhimg.com/v2-3b4cd517f5440257f0d3ddf57808ccf1_b.gif","custom25":"pic3.zhimg.com/v2-181a31a055a8a63139bce5d4ed7bb67a_b.gif","custom26":"pic2.zhimg.com/v2-7e007496712a40e0178bea8bdcc53275_b.gif","custom27":"pic3.zhimg.com/v2-056f81c46fc2ffef8de549db7ca88dbe_b.gif","custom28":"pic4.zhimg.com/v2-4001df7dac4076c71eb25cc2715ffae3_b.gif","custom29":"pic2.zhimg.com/v2-8527b778588d1e3ec600cc093f6b9685_b.gif","custom30":"pic2.zhimg.com/v2-ed112e0c8b365eed90e3d0fba99ef959_b.gif","custom31":"pic1.zhimg.com/v2-5e720c6af6fa953dbe80d7acfec9eb6c_b.gif","custom32":"pic4.zhimg.com/v2-6c36175478eca8926a29011cbb7a39d7_b.gif","custom33":"pic1.zhimg.com/v2-33cee90bf0f730beb8f3217df7b50e20_b.gif","custom34":"pic2.zhimg.com/v2-b5eccdef676bfbb91f277f7081ee50e1_b.gif","custom35":"pic3.zhimg.com/v2-c780479dbe201896aa26176f3a7d44b6_b.gif","custom36":"pic1.zhimg.com/v2-551dd3d1e059d84c027d46b958a94f90_b.gif","custom37":"pic2.zhimg.com/v2-48b0cfa1b685a037875f0bd0bdb500dd_b.gif","custom38":"pic2.zhimg.com/v2-390105b06925f71b754a11f82d57fde5_b.gif","custom39":"pic3.zhimg.com/v2-1eb745ae6d6d030c55dd694c9fd4e9d6_b.gif","custom40":"pic3.zhimg.com/v2-597c097311126fe8bf3bf956fb7e54ea_b.gif","custom41":"pic3.zhimg.com/v2-7236186ffee6ec269163e09404f255de_b.gif","custom42":"pic3.zhimg.com/v2-f2a9c6e9d8cc423856bcd746aaf99e0a_b.gif","custom43":"pic4.zhimg.com/v2-57830232d755f8f7a638529092d6e8ef_b.gif","custom44":"pic4.zhimg.com/v2-c50ea4eae7fa31de787f281b490e3b0b_b.gif","custom45":"pic4.zhimg.com/v2-0fd936cc5c0845897d0095ccfd4c56a3_b.gif","custom46":"pic2.zhimg.com/v2-c377e106a5c540aec11a59d519161f2d_b.gif","custom47":"pic1.zhimg.com/v2-93488a1f970ebb48e00cd6c4783bf808_b.gif","custom48":"pic3.zhimg.com/v2-b59fe0db6cd292d7e5b7144df03b1aea_b.gif","custom49":"pic2.zhimg.com/v2-58c791d7544c1a65d1645146c375b8ad_b.gif","custom50":"pic3.zhimg.com/v2-73f9013b1629ec4eb43764c345e90032_b.gif","custom51":"pic2.zhimg.com/v2-ff76d3d0edf8985fda1849129a2c9ed1_b.gif","custom52":"pic1.zhimg.com/v2-3c88bb276007a76e66fbf80f261dc470_b.gif","custom53":"pic1.zhimg.com/v2-7780da7452785c7d3d924a1877bc1544_b.gif","custom54":"pic2.zhimg.com/v2-c5ab25dbdb322554cfc4fff95944fa11_b.gif","custom55":"pic4.zhimg.com/v2-4cdf8d6eb70ef925186e19dea14a774f_b.gif","custom56":"pic4.zhimg.com/v2-9bc71ca21fd75b737f7a58c1a3ecb6bb_b.gif","custom57":"pic2.zhimg.com/v2-dd6bdf233268397905b052fcbe563fa9_b.gif","custom58":"pic2.zhimg.com/v2-c1286bdfbfca9dca67af8b620fe48939_b.gif","custom59":"pic2.zhimg.com/v2-e2423a19028a3abacf11d8761e8bfa19_b.gif","custom60":"pic4.zhimg.com/v2-29a795d37053863310a04378c5f56f83_b.gif","custom61":"pic4.zhimg.com/v2-98cadd6464caf5c3939a370596ec0093_b.gif","custom62":"pic3.zhimg.com/v2-31f77eec98a92cd861fe48b96f37289e_b.gif","custom63":"pic2.zhimg.com/v2-b651a63912807daddc4b411836d2e2cd_b.gif","custom64":"pic1.zhimg.com/v2-e36ae3cd61b2344dc9eb657ac630787c_b.gif","custom65":"pic1.zhimg.com/v2-56781dd58ed247ce6cc8f5000b463f28_b.gif","custom66":"pic3.zhimg.com/v2-7c0709c030775f42350a4dfaae8abdd2_b.gif","custom67":"pic3.zhimg.com/v2-0862a36e96dcd4b0eb8aaa6a724434ca_b.gif","custom68":"pic1.zhimg.com/v2-53ac3570ebdb0d7c5bfc521e9d25deac_b.gif","custom69":"pic1.zhimg.com/v2-ceb106b2200f6dbd954c9976931d93bc_b.gif","custom70":"pic1.zhimg.com/v2-680caf4670b4442c3637304c9babb874_b.gif","custom71":"pic2.zhimg.com/v2-ce56dd5cc9c81d4bd3e76c1d8fc3015d_b.gif","custom72":"pic1.zhimg.com/v2-d3e6f5eb204592548a2c01f661864d80_b.gif","custom73":"pic2.zhimg.com/v2-83730a87a6c51767f28132622c1fc0a9_b.gif","custom74":"pic3.zhimg.com/v2-5e8098ffcf9c4eea0ea713035157831e_b.gif","custom75":"pic1.zhimg.com/v2-b6dc883acee237c8b77a081b3c727c44_b.gif","custom76":"pic1.zhimg.com/v2-c38e6883d21f2fabf3c39b50ba498990_b.gif","custom77":"pic2.zhimg.com/v2-e2afb155f0de4f2c55a6bc329ac30ea9_b.gif","custom78":"pic4.zhimg.com/v2-9977dc5ea13ad6b30243e2568a53fbaf_b.gif","custom79":"pic3.zhimg.com/v2-37f24a50383fdfab91bd5fc18598ee06_b.gif","custom80":"pic3.zhimg.com/v2-62dd7e4ee42d2fc87228218b8000c0a2_b.gif","custom81":"pic2.zhimg.com/v2-9424bb340713dcb37d45dd5660af199d_b.gif","custom82":"pic1.zhimg.com/v2-93fd43bc9fbd0b542ac532053380506c_b.gif","custom83":"pic4.zhimg.com/v2-95731e6bb902a5e6983158dd7dc33d0b_b.gif","custom84":"pic4.zhimg.com/v2-20bb020f13e6bc6f835e18323be6bdd3_b.gif","custom85":"pic2.zhimg.com/v2-81bb85951b8564a35b3b56c4f815e81d_b.gif","custom86":"pic1.zhimg.com/v2-2926449281d63bb9e366a7cae8f6db20_b.gif","custom87":"pic2.zhimg.com/v2-679d5d182bd240dc8a8edc775e4fb4ad_b.gif","custom88":"pic1.zhimg.com/v2-88a2364402b90559dac36a7cda38a4a0_b.gif","custom89":"pic3.zhimg.com/v2-a40d310c471685a300003001db165d96_b.gif","custom90":"pic2.zhimg.com/v2-d9d785c9ceb06adc30d3db359d223e09_b.gif","custom91":"pic4.zhimg.com/v2-2d64b6d43c06b2e9e28b53d8a2a37d57_b.gif","custom92":"pic4.zhimg.com/v2-1760e5210f7e2073ce11fa74a2735a7b_b.gif","custom93":"pic3.zhimg.com/v2-0cc94ca6970c22e3ab8a9d18576dfbd6_b.gif","custom94":"pic3.zhimg.com/v2-8f532f4a36ac6879ce07ed47590cc8a6_b.gif","custom95":"pic1.zhimg.com/v2-95d35d83e9ea74a4853ded89e48b56a8_b.gif","custom96":"pic4.zhimg.com/v2-bca71b4e7a56779c21d84f44e0555973_b.gif","custom97":"pic1.zhimg.com/v2-0ae83e71fb9a241d7ff7ce852e318a40_b.gif","custom98":"pic1.zhimg.com/v2-31e18866441a228f7aaf5b63775feb34_b.gif","custom99":"pic1.zhimg.com/v2-25b19033705d96b8dd5b517a99d52ab4_b.gif","custom100":"pic2.zhimg.com/v2-d1ac062e897449b30ed254be7d6d3e3d_b.gif","custom101":"pic4.zhimg.com/v2-c801f0c1e9f69cb205177b1a27d294d7_b.gif","custom102":"pic3.zhimg.com/v2-d2c3bfa27bc3c9857b1919d5d39bba86_b.gif","custom103":"pic2.zhimg.com/v2-59bcedc7deb8de6c444a7034628686dd_b.gif","custom104":"pic1.zhimg.com/v2-65e8bcf3bc1058a290cadfc6c6c4fd54_b.gif","custom105":"pic2.zhimg.com/v2-9424bb340713dcb37d45dd5660af199d_b.gif","custom106":"pic4.zhimg.com/v2-3418357b00de23ad4c56518e5fb1f193_b.gif","custom107":"pic2.zhimg.com/v2-ce0d5597053ae87c9d87c1e0d0cec901_b.gif","custom108":"pic2.zhimg.com/v2-35e61f7762287ee18f4944cc72232085_b.gif","custom109":"pic4.zhimg.com/v2-6aecb3bc3269e478f2a08d4e46918a73_b.gif","custom110":"pic3.zhimg.com/v2-abcb76e88c215a14493bbb34bb567e16_b.gif","custom111":"pic2.zhimg.com/v2-9930adc06149d7948e32bde4fdb3ada5_b.gif","custom112":"pic2.zhimg.com/v2-d7df1e9fe66d559d1e3103282c735a3d_b.gif","custom113":"pic4.zhimg.com/v2-e5b9d0f7ffb5db93e100507c68dfce43_b.gif","custom114":"pic4.zhimg.com/v2-aff47b605da193111c61155fe42f020f_b.gif","custom115":"pic3.zhimg.com/v2-f9fea5bb44a0c55daf3b6d5cd1e14fa2_b.gif","custom116":"pic2.zhimg.com/v2-7ba02b43a6e29ccf7a4d9d5c07f1f841_b.gif","custom117":"pic1.zhimg.com/v2-be861e6493cd879eda9d201f09c025bc_b.gif","custom118":"pic3.zhimg.com/v2-3b14278c97109b914f4ac14a19b00bc2_b.gif","custom119":"pic4.zhimg.com/v2-b57de09fec1ebc9172f0d483cdf9d467_b.gif","custom120":"pic2.zhimg.com/v2-d501afd61c71b780824b9361771f4005_b.gif","custom121":"pic4.zhimg.com/v2-1760e5210f7e2073ce11fa74a2735a7b_b.gif","custom122":"pic1.zhimg.com/v2-d9b48cfeb56da1070cbd1ce9d41581d4_b.gif","custom123":"pic1.zhimg.com/v2-9aea05a387c82248be185c1bb229803c_b.gif","custom124":"pic3.zhimg.com/v2-a5388ce79bb31d7bb3ccb80403b94332_b.gif","custom125":"pic2.zhimg.com/v2-100aca4030f5d1b40bcee87d62d7f66d_b.gif","custom126":"pic1.zhimg.com/v2-ff22c98629d32876092ebd0ca9715584_b.gif","custom127":"pic3.zhimg.com/v2-4e22550d190c3d8b5c0b353e1065b532_b.gif","custom128":"pic2.zhimg.com/v2-32b8497d622649c2d00b74be71971c4d_b.gif","custom129":"pic2.zhimg.com/v2-602e7680e81e621c3d2c653d24288da9_b.gif","custom130":"pic4.zhimg.com/v2-8d592b7d1b55eb4307da4790750ba333_b.gif","custom131":"pic1.zhimg.com/v2-1fd69d40fbb2efbea1fca9ce4c416050_b.gif","custom132":"pic2.zhimg.com/v2-2e139cf57cd7daafc68de5e7f91e7629_b.gif","custom133":"pic2.zhimg.com/v2-291c5c10504077692f7683af97413a2d_b.gif","custom134":"pic4.zhimg.com/v2-69bffcc804a13ab1768f702667bdd40f_b.gif","custom135":"pic1.zhimg.com/v2-bc26a205d5e016ee0642ecced24ff490_b.gif","custom136":"pic1.zhimg.com/v2-29ee02808b809812465b3d09847a683c_b.gif","custom137":"pic1.zhimg.com/v2-44cf5897353d056cefd5480bec2c81e4_b.gif","custom138":"pic2.zhimg.com/v2-7e3d1027066f3637b2fe1d1be943d879_b.gif","custom139":"pic1.zhimg.com/v2-7f23f4443cf26b09a7702f79e5395444_b.gif","custom140":"pic1.zhimg.com/v2-87505a4a0393e32cc13a4c16434f9558_b.gif","custom141":"pic3.zhimg.com/v2-1ced686ce3147ae0dcf3b4c44af64b66_b.gif","custom142":"pic3.zhimg.com/v2-4775417b57c694622ac62d738308269a_b.gif","custom143":"pic3.zhimg.com/v2-1787eb6552b14eb897a0d3ae0462f516_b.gif","custom144":"pic1.zhimg.com/v2-fe022032cbe480f5522e4cd64cdb4b94_b.gif","custom145":"pic4.zhimg.com/v2-dad976cc1ba4991418ccbfe7222e564f_b.gif","custom146":"pic4.zhimg.com/v2-54fbcf3f0b70a1d064c9a5b72344ed07_b.gif","custom147":"pic1.zhimg.com/v2-be6e40da0a6248aec174bdc3c1c664a4_b.gif","custom148":"pic2.zhimg.com/v2-f21b7824c07e47e66ec99ba2fe876991_b.gif","custom149":"pic1.zhimg.com/v2-6ca6d176e6cfebd885b362ed39a52754_b.gif","custom150":"pic3.zhimg.com/v2-7096fbcaa46d84e196b24539b01844b6_b.gif","custom151":"pic4.zhimg.com/v2-9a7df92798c0e20752aa74e4cc5466cb_b.gif","custom152":"pic2.zhimg.com/v2-cda9ef3135a133d68085247a1b69cffd_b.gif","custom153":"pic3.zhimg.com/v2-a51fc7d88b9dda0574a5ba8825821c82_b.gif","custom154":"pic4.zhimg.com/v2-c1aa44684a2ca95b36ec93a84a35e77f_b.gif","custom155":"pic4.zhimg.com/v2-817888c40f2cc7892e3ac4a151e49ee7_b.gif","custom156":"pic1.zhimg.com/v2-74ff5c91f66eb89e48a5a89e638e73b0_b.gif","custom157":"pic2.zhimg.com/v2-42c967fae56d7b3c86bec6cde9bcd7b1_b.gif","custom158":"pic3.zhimg.com/v2-5e95643fa22d1ab0bdd6320ad5d1db2a_b.gif","custom159":"pic2.zhimg.com/v2-6f859296c99b9b5a6e8e9e2d0e854a29_b.gif","custom160":"pic2.zhimg.com/v2-3bb0c8ed8882c75489df4b1afba1840d_b.gif","custom161":"pic1.zhimg.com/v2-a78dbd510ea52030a1c0cfa4ebe347e0_b.gif","custom162":"pic4.zhimg.com/v2-0ddd383dc74cc15791b197d6c9963c13_b.gif","custom163":"pic2.zhimg.com/v2-2e719166991d7a3b357a4c1161c19871_b.gif","custom164":"pic3.zhimg.com/v2-29478cfa6376f13d4683e6ccf31fd23e_b.gif","custom165":"pic4.zhimg.com/v2-a1c3204e6c1c6d029e7f1e8395b662ef_b.gif","custom166":"pic4.zhimg.com/v2-1e99af51e9a843ae6e7da7922b7d04a7_b.gif","custom167":"pic4.zhimg.com/v2-88316af36de09f6143c6d4b4b9fb48a3_b.gif","custom168":"pic3.zhimg.com/v2-5c774b2be9572a6ff923b378e4378666_b.gif","custom169":"pic4.zhimg.com/v2-80d589d638790b9179bff798661e6f1b_b.gif","custom170":"pic3.zhimg.com/v2-4f5ce0bc5804d9aa39f2ba4fbce84a96_b.gif","custom171":"pic3.zhimg.com/v2-1ee5355dc5729d7d6b506c82db86406e_b.gif","custom172":"pic1.zhimg.com/v2-c67bb502aed043acf52ce446633becc0_b.gif","custom173":"pic3.zhimg.com/v2-28de39defdaf921e7bed9cbcbf747336_b.gif","custom174":"pic4.zhimg.com/v2-482a3fe2af6dc43fdc4577e81595458f_b.gif","custom175":"pic3.zhimg.com/v2-9b14f13670db560aad1277b0084bf71e_b.gif","custom176":"pic4.zhimg.com/v2-67a6c8eecd135664558908cce4c9974f_b.gif","custom177":"pic2.zhimg.com/v2-2fdc05cf86a4fee3932156f35b4d8a09_b.gif","custom178":"pic1.zhimg.com/v2-4904d237ab497f3c7a5b84d3f9139c2c_b.gif","custom179":"pic1.zhimg.com/v2-c8096214f4b41efe48bb88ba3036cd70_b.gif","custom180":"pic2.zhimg.com/v2-69b72648b83645ae38f51e867b042b4d_b.gif","custom181":"pic2.zhimg.com/v2-f6e1da0eb533edcb861666bf7ec6d049_b.gif","custom182":"pic1.zhimg.com/v2-f30dabdd0e98314a99be305fca7c90a4_b.gif","custom183":"pic3.zhimg.com/v2-eb40a03a20678be76b6bded945fa2d76_b.gif","custom184":"pic3.zhimg.com/v2-359317a1b9e58922e645ff0d4d1c312e_b.gif","custom185":"pic3.zhimg.com/v2-635191a768940f8bcf7bb25d8e5e0bde_b.gif","custom186":"pic1.zhimg.com/v2-7bdb13ca8a4812dfdf91ea77d2c369a4_b.gif"},
-      enableQQ: true,
-      path: window.location.pathname,
-      master: 'https://liy159872.github.io/',  //主题根目录配置文件获取博主地址
-      friends: friends,
+                    凌月微微诧异，难不成这个京城来的富家公子纯粹是来捣乱的。“真没看中”
+
+                    “那倒也不是”南宫陌浅浅一笑“实不相瞒，在下早就看中一人”他摆弄着桌上的茶杯，“刚刚站在你身旁的那位姑娘不错”。
+
+                    原来他看中的是如画，凌月心里琢磨着：“公子，如画姑娘没到阁中几日，见生，不如我再给公子物色一下。”
+
+                    “不了，凌阁主，就她”南宫陌一脸坚定。
+
+                    “那好，南宫少主，我事先说明，万一如画姑娘不从，你可不能硬来”凌月心里直喊疼，这可是她的宝贝，虽貌不惊人，但稍微调教一下，也算的上阁中头牌。
+
+                    可曾想到，如画自从和南宫陌见了一面后，整个人都变了，天天缠着凌月教她取悦他人之术。两人天天见面，夜夜笙歌。
+
+                    “阁主，他说要娶我为妻”如画轻声说道。
+
+                </p>
+
+                <img src="https://i.imgloc.com/2023/05/25/VDBkWA.png" alt="翎傑皓信">
+
+                <p>
+                    “想什么呢，傻丫头，男人的话不可信，他是什么样的身份，你还不知道吗，就当是一句玩笑罢了”。凌月把玩着手中的茶杯，谈谈的说着。
+
+                    “可我也想嫁给他，我相信他。”如画一脸坚定，其神色如同那时他认定如画一样。
+
+                    “如画，你记住了，你要嫁给谁，我都不反对，唯独不能嫁给他，不要问为什么，就因为他是南宫陌”凌月一字一句，冷冷的告诫到。
+
+                    “不，我就要嫁给他，不管别人怎么看。”
+
+                    就这样，一场锣鼓喧天，如画离开了逍遥阁，成为了京城的南宫少夫人。记得她出嫁的那天，漫天桃花飘散，落满了整个街头。
+
+                    如画自从嫁到南宫府后，也会偶尔来逍遥阁，看望凌月，每次来，都会带很多东西。“看来，你夫君对你还不错的嘛”凌月浅浅笑着。“那是，我说什么来着嘛，我相信他，相信他会对我一辈子好的。”此时的如画满脸充满着幸福。
+
+                    “丫头，我酿了桃花酒，要不来一杯”
+
+                    “好啊好啊，我最喜欢阁主酿的桃花酒了”
+
+                    桃花酒，以桃花为引，泡入酒中，清冽甘醇，喝上一杯，赛过神仙，难以忘怀。
+
+                </p>
+
+                <img src="https://i.imgloc.com/2023/05/25/VDBtPc.png" alt="翎傑皓信">
+                <p>
+                    那晚，如画做了个梦。十里桃林，长发微飘，一位少年正站在桃花中央，像似在等什么。她刚想呼喊，转眼间，十里桃花被那大火瞬间吞噬，可那少年却一动不动，眼看那火龙就要将他吞噬，便奋不顾身的冲进火海，想救那少年。
+
+                    梦做到这里，她便醒来了，额头上布满了汗珠。
+
+                    “做噩梦了吧，丫头”南宫陌一边帮她拭去额头上的汗一边安慰着：“别怕，别怕，有我在，无论何时，我都会守护护你。”
+
+                    如画把头埋在南宫陌胸膛，浅浅的睡着了。
+
+                    “凌阁主，今日来逍遥阁，不为别的，只为向阁主讨杯酒喝。”
+
+                    “哈哈，堂堂的南宫少主，居然屈尊来我阁讨酒喝，要是传了出去，岂不成为天大的笑话。”
+
+                    “哈哈，凌阁主实在是个风趣之人，你知道的，我所要的酒只出自你之手——桃花酒。”南宫陌一本正经的说到。
+
+                    “好，”见南宫陌非喝此酒的态度，凌月也不再调侃。“不过，我先申明，此酒极具烈性，非常人所能承受的。”
+
+                    “我知道”喝一杯，永无忘怀
+
+                    “吾儿，不要”
+
+                    “公子，记住了，你的父亲，母亲，还有禁军几十号兄弟全部被伊家所杀，等你长大成人，一定要为我们报仇，报仇”
+
+                    “不，求你放过她，她的父亲再怎么可恨，也不能殃及与她，况且我喜欢她”。
+
+                    “你疯了，居然喜欢仇人家的人，如果她知道是你杀了她的家人，她会怎么做，斩草要除根，你难道忘了，当初他们是怎么对你的”
+
+                    “是你杀了我的家人，是你这个刽子手，是你，我恨你”
+
+                    “你醒了”当南宫陌睁开眼睛已是第二日晌午，凌月递给他一块湿巾，示意他擦擦脸上的汗。
+
+                    “这酒还真烈啊”南宫陌恢复常态，缓缓说道“凌阁主，酒后失态，让你见笑了，还望阁主替我保密。”他起身准备离去。
+
+                    “我现在要叫你李陌还是要叫你南宫陌呢。”凌月低声说着，但她的每一字都如雷雨般打在南宫陌的心口上，瞬间肢体僵硬。
+
+                    “原来你就是当年禁军统领文将军的遗子李陌”
+
+                    “你想怎样”南宫陌卡住凌月的咽喉，此时此刻的氛围瞬间紧张起来。
+
+                    “李陌，不，是南宫陌，南宫少主，我区区一女子，又能怎样”凌月并未慌张，继续淡淡的说着：“积压在心底这么多年了，难道就不想找个人倾诉一下。”
+
+                    不错，南宫陌就是当年的李陌，当年禁军统领李将军的遗子，他后来被南宫世家所救，改姓南宫，成了南宫少主。而他口中的那个人便是伊家的千金，伊紫薇。当年，他为了复仇，为了取得伊家的信任，便千方百计接近伊紫薇。一日，他假装受伤，背靠着一棵桃树，他知道，每当此时，伊家的千金都会来看看这里的桃花。果不其然，那伊紫薇看到身负重伤的少年，立马派人送府医治，就这样，他顺利的进入了当朝宰相府。南宫陌在伊府疗养了几日，便主动与她告别。那时的两人都情窦初开，“我答应你，等来年那十里桃林开满桃花的时候，我便回来娶你为妻。”伊紫薇可曾知道，眼前的少年是多么的危险，娶她为妻，恐怕来年带给她的并非是幸福而是灭顶之灾。
+
+                </p>
+
+                <img src="https://i.imgloc.com/2023/05/25/VDBn7J.png" alt="翎傑皓信">
+
+                <p>
+                    建安六年，三月，伊紫薇每日都早早来到那十里桃林下，生怕错过那个少年。可桃花未开，却迎来了一场大火，瞬间将十里桃林吞噬，同时，吞噬的还有伊府上下。“你疯了，这么大的火，还冲进来”南宫陌看着一脸灰土的她，又气又笑。“我知道，你会来的。”
+
+                    宰相府灭门一案，轰动全国，龙颜大怒，责令锦衣卫限期破案。可没多久，曾辉煌一世的宰相伊思被查出私通敌国，并准备举兵造反，那皇帝气的直瞪眼，怪自己用人不慎，并对已故的禁军统领李将军沉冤昭雪。如此的戏剧性，全出自南宫陌之手，他在伊府多日，收集了很多证据，待上面一查，他就托人把所有搜集的罪证交了上去，便有了这出大戏。而伊紫薇对此浑然不知。她只知道，现在的她再也不是千什么金小姐了，而是个乱臣余孽。
+
+                    “紫薇，嫁给我，好吗。”南宫陌站在桃花树下再次向她表白。这已是第六次了。她何尝不想答应，可她现在的身份，真的难以配得上眼前的这位男子。她满脸通红，不知所措，最后还是南宫陌说了一句：“反正这是第六次了，也不怕下一次，哈哈。”走吧，带你去看桃花。
+
+                </p>
+
+                <img src="https://i.imgloc.com/2023/05/25/VDBU2t.jpeg" alt="翎傑皓信">
+                <p>
+                    “我看你，真的被那贼女迷昏了头，还想娶她为妻，你疯了，你这样做，对的起你死去的爹娘吗?”南宫府的主人语重心长的对着跪在地上的少年说道。
+
+                    “可我就喜欢她，上辈子的恩怨情仇，都已经过去了，伊家也得到了应有的惩罚，可她是无辜的。”
+
+                    “无辜，对，她是无辜，可要是有一天被她知道，是你杀了她全家，她会怎么做，你想过没，不要说了，我明天就会派人送她走，以后你们就不要再见面了。”老者一字一字的说道。
+
+                    突然，门外传来咣当一声，是茶杯掉落的声音。紫薇原本泡好茶，准备给南宫陌送来，可不曾想听到了他们的谈话，瞬间感觉天塌下来。原来将伊家推向万劫不复的境地是那个口口声声说要娶她的人，为什么，这是为什么。她飞奔着，南宫陌在后面追着，他知道，有些话他不能说，是伊家有错在先，是她父亲进谏谗言，才使当今天子对李家动了杀机。他怕说了，那样，只会令毫不知情的紫薇更加心寒。多年的恩怨情仇，多年的爱恨交加，多年的纠缠牵绊，他都有口无言。最后，他只能眼睁睁的看着心爱的女人带着满满的恨，策马扬鞭，消失在那十里桃花，永无相见之日。
+
+                    其实，凌月是个驻颜师，一个能让他人获得重生的医者。但也需要重生者付出相应的代价，比如灵魂，比如记忆，比如驻颜师看中重生者的某一部位等。那日，伊紫薇找到了她，想让凌月为她驻颜，而交换的条件，则是记忆。故凌月对南宫陌所说的并不感到意外。
+
+                    “公子，要是本姑娘没猜错的话，你此前还有一段虐心之恋，一并说说吧，也许这样会让你好受些。”
+
+                    南宫陌倚在窗前，手把桃花酒，望着远处的美景，长叹一声：“罢了，罢了，其实也不是虐心之恋，是我有愧于她，却再也无法偿还。”
+
+                    当年，紫薇的离去，使他日思夜想，数日未进米粒，南宫府上下无不为他操心。一日，府上来了位老者，说能解开南宫陌心中的结，只需带他去那遥远的潼关，他心中的结自然会解开。南宫府也半信半疑，也没办法，只能死马当活马医了，于是，派了几位随从，带上南宫陌，随那老者去了潼关。
+
+                    潼关，是边疆要塞之地，也是汉人与胡人相互交易的地方，好不热闹。南宫陌初到潼关，因水土不服，生了场大病，生子骨比原先又消瘦了许多，随从们拿那老者是问，老者淡淡的说道：“你家公子的心结明日自会解开，莫急莫急。”
+
+                    “请问南宫公子在吗”一位戴着面纱的女子轻轻的问道。
+
+                    “我就是，请问姑娘有何事”南宫陌看着眼前的女子，一脸诧异。
+
+                    “有位老者叫我来找你，说带你出去散散心”那女子行礼到“对了，我叫纳古晓岚，以后叫我晓岚就好。”
+
+                    “纳古晓岚，你不是中原人”
+
+                    “是的，我是回族的，因家里闹饥荒，便迁移在此”
+
+                    “哦，原来如此，你回去吧，我只想一个人静静，谢谢”
+
+                </p>
+
+                <img src="https://i.imgloc.com/2023/05/25/VDBAqX.jpeg" alt="翎傑皓信">
+
+                <p>
+                    “不，不，不，我已经收了老者的钱了，不能就这么回去了”此时的晓岚有点小慌，忽然，外面吹起了阵风，余风把晓岚的面纱吹落在地，露出一张精致的脸蛋，特别是那双眼睛，特似一位故人。
+
+                    “你刚刚说什么来着，哦，带我去玩，是吧，那行，恭敬不如从命，就由姑娘带我去了解一下边疆的风土人情。”南宫陌像变了个人似的，充满着活力与热情。
+
+                    时光流逝，一晃就三个月过去了，晓岚依偎在南宫陌那厚实的肩膀上，深情地问道：“陌，你会娶我吗?”“当然，我会带你回中原”南宫陌斩钉截铁的回答到。“可是，你们汉人不是有规定，不许汉人与胡人通婚”晓岚满脸疑虑。“放心，被我南宫陌看上的女人，我定会护她一身。”
+
+                    就这样，纳古晓岚随南宫陌来到中原，来到京城，来到南宫府。本以为，两人终成眷属，可造化弄人，晓岚入府没多久，南宫府的主人就病逝了，紧接其来的则是南宫府机密室被盗，虽未波及南宫府，可也造成南宫府在江湖的地位瞬间滑落。一切的证据直指晓岚，晓岚满怀无辜的眼神看着南宫陌，此时此刻，也只有南宫陌能救得了她。可是，她的疑点实在太多，多的让南宫陌也深信不疑，他看着那一双双眼睛，他是南宫府的少主，要以大局为重，其实，他是有多想救她，可他不能，因为他是南宫陌。最后，南宫陌并亲手喂她断魂散，将她安葬在那十里桃林下。
+
+                    数日之后，真正的凶手找到了，可一切都已经晚了，南宫陌追悔莫及，可又能如何，是他自己亲手断送了她的性命，是他自己亲手斩断了情丝，全是他自己做的。
+
+                    “是不是觉得我很冷血，不懂得珍惜，只会满嘴谎话”南宫陌侧过身问道。
+
+                    凌月不曾想到他会问这么一个问题。
+
+                    “珍惜”二字，恐怕只有公子你最清楚不过，世上尚来缘深缘浅，情一字，又有谁能道个明白。
+
+                </p>
+
+                <img src="https://i.imgloc.com/2023/05/25/VDcHdy.jpeg" alt="翎傑皓信">
+
+                <p>
+                    “是吗，看来，凌阁主其实什么都知道”南宫陌不温不怒的回道。
+
+                    桃花酒，清冽甘醇，喝上一杯，赛过神仙，难以忘怀，追寻过去。
+
+                    “公子，你喝多了，还是早点回去吧，别让如画着急了”凌月下了逐客令。
+
+                    “回去，回哪去，回南宫府吗，笑话，我要回自会回，倒是你，你为什么今日要提起以前的往事，说，你到底是谁。”南宫陌冰冷冷的说着。
+
+                    “我是谁，不重要，今日公子来我逍遥阁，根本不是来讨杯酒喝，对吧”
+
+                    其实，如画做噩梦的那晚，他就对身边的这位女子起了戒心，因为她说出了一些虽是支离破碎的画面，但却直直的戳中他的内心深处，所以，他就借酒来试探这位神秘的逍遥阁阁主。
+
+                    “公子无非是想从我口中知道如画从前是什么人，难道不是吗?”
+
+                    “是的”其实这终究是我心里在作祟，如画只是像以前的那位故人，所以，我才会娶她为妻，可日子久了，终究骗不了自己的心，替身终归是替身。”南宫陌爱过了两个人，失去过两个人，而且都是自己亲手断送的，所以，此时的他无论如何，都没有力气再爱上别人，是他对不起如画。
+
+                    你知道吗，那次找到真凶后的当晚，我就去埋葬她的地方，发现她的墓地被人动过，我也知道，定是有人来过，我多么想她能死而复生，可这是不可能的，断魂散，七个时辰内魂飞魄散。
+
+                    南宫陌真的是醉了，他的话开始有点语无伦次，凌月在他耳畔低声说道：“公子，世上每一次的相遇都是定数，若无相欠，怎会相见，你何曾想过，心心念念的那个她，其实已经近在咫尺，而你却一无所知。”
+
+                    其实，如画就是纳古晓岚，纳古晓岚就是伊紫薇，而那老者便是凌月的师傅。那日，南宫陌亲手把断魂散喂她服下，凌月便早已在桃花树下等候，待他们把她埋葬后，便把她救出。喂她天山雪莲，费了好大的劲，才把她从阎王殿中拉了回来。凌月怕她伤心难过，便私自抹去她的记忆，又为她重塑了一张脸。
+
+                    奈何他俩缘分未尽，如画此时的记忆全部是靠自己的意念所拼凑起来，虽是支离破碎，但也能拼出个所以然来。
+
+                    尾声
+
+                    那天过后，逍遥阁阁主易主，江湖上只知道原先阁主因债务纠纷，跑路去了。怎么可能呢，凌月是怕那南宫陌又来讨酒喝，这不，这么晚了，还派人跟踪她。还好，作为专业的驻颜师，可是学过跟踪和反跟踪之术，还不是因为这个职业太过敏感。
+
+                    如画，不，应该是伊紫薇，她的记忆因过度涌出，一时接受不了，故留了一张纸条“等来年那十里桃林开花的时候，我便回来找你。”南宫陌看了看，忍不住笑了起来。
+
+                    十里桃林，长发微飘，那少年依偎着桃树，却再也不见她的长发，。！
+
+                </p>
+                <img src="https://i.imgloc.com/2023/05/25/VDcktL.png" alt="翎傑皓信">
+
+
+                <hr>
+
+                <p>桃花本在三月开，如若将军言语失，请与留言把君绝！</p>
+                <p>皓信有你才最美，。！</p>
+                <p>最后的最后，欢迎访问我的个人博客<a href="https://blog.csdn.net/LetterLJHX?type=blog">Spume--</a>。</p>
+            </article>
+            <div class="post-copyright">
+                <div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span
+                        class="post-copyright-info"><a href="mailto:undefined"
+                                                       rel="external nofollow noreferrer">翎傑皓信</a></span></div>
+                <div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span
+                        class="post-copyright-info"><a href="https://liy159872.github.io//48516.html">https://liy159872.github.io//48516.html</a></span>
+                </div>
+                <div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span
+                        class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a
+                        href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer"
+                        target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liy159872.github.io/"
+                                                                            target="_blank">Letter~Spume（翎傑皓信）</a>！</span>
+                </div>
+            </div>
+            <div class="tag_share">
+                <div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Zeit/">Zeit</a><a
+                        class="post-meta__tags" href="/tags/404/">404</a></div>
+                <div class="post_share">
+                    <div class="social-share"
+                         data-image="https://i.imgloc.com/2023/05/25/VDBCvN.jpeg"
+                         data-sites="facebook,twitter,wechat,weibo,qq"></div>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css">
+                    <script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"
+                            defer></script>
+                </div>
+            </div>
+            <nav class="pagination-post" id="pagination">
+                <div class="prev-post pull-left"><a href="/52527.html"><img class="prev-cover"
+                                                                            data-lazy-src="https://i.imgloc.com/2023/04/08/i3q8K8.jpeg"
+                                                                            onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'">
+                    <div class="pagination-info">
+                        <div class="label">上一篇</div>
+                        <div class="prev_info">关于异地恋</div>
+                    </div>
+                </a></div>
+                <div class="next-post pull-right"><a href="/14261.html"><img class="next-cover"
+                                                                             data-lazy-src="https://i.imgloc.com/2023/04/08/i3ChUL.jpeg"
+                                                                             onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'">
+                    <div class="pagination-info">
+                        <div class="label">下一篇</div>
+                        <div class="next_info">和平精英</div>
+                    </div>
+                </a></div>
+            </nav>
+            <hr/>
+            <div id="post-comment">
+                <div class="comment-head">
+                    <div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div>
+                </div>
+                <div class="comment-wrap">
+                    <div>
+                        <div class="vcomment" id="vcomment"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aside_content" id="aside_content">
+            <div class="card-widget card-info">
+                <div class="card-content">
+                    <div class="card-info-avatar is-center"><img class="avatar-img"
+                                                                 data-lazy-src="https://i.imgloc.com/2023/05/23/V4QOro.jpeg"
+                                                                 onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/510e2c828ef28669ccde919409a1835e.png'"
+                                                                 alt="avatar"/>
+                        <div class="author-info__name">翎傑皓信</div>
+                        <div class="author-info__description">翎傑皓信，原名李文国后改名李一，云南临沧人。 新概念文学首席作家之一！</div>
+                    </div>
+                    <div class="card-info-data">
+                        <div class="card-info-data-item is-center"><a href="/archives/">
+                            <div class="headline">文章</div>
+                            <div class="length-num">34</div>
+                        </a></div>
+                        <div class="card-info-data-item is-center"><a href="/tags/">
+                            <div class="headline">标签</div>
+                            <div class="length-num">27</div>
+                        </a></div>
+                        <div class="card-info-data-item is-center"><a href="/categories/">
+                            <div class="headline">分类</div>
+                            <div class="length-num">20</div>
+                        </a></div>
+                    </div>
+                    <a class="button--animated" id="card-info-btn" target="_blank"
+                       rel="noopener external nofollow noreferrer"
+                       href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect"><i
+                            class="fab fa-github"></i><span>翎傑皓信的WeChat OA</span></a>
+                    <div class="card-info-social-icons is-center"><a class="social-icon"
+                                                                     href="http://sighttp.qq.com/authd?IDKEY=aed3a79d6ba65c6d83a35402189ab6faeeb887890818809d"
+                                                                     rel="external nofollow noreferrer" target="_blank"
+                                                                     title="腾讯 QQ"><i class="iconfont icon-qq1"></i></a><a
+                            class="social-icon" href="https://blog.csdn.net/LetterLJHX?type=blog"
+                            rel="external nofollow noreferrer" target="_blank" title="CSDN"><i
+                            class="iconfont icon-CSDN"></i></a><a class="social-icon"
+                                                                  href="https://www.zhihu.com/people/spume--"
+                                                                  rel="external nofollow noreferrer" target="_blank"
+                                                                  title="知乎专栏"><i
+                            class="iconfont icon-zhihu1"></i></a><a class="social-icon"
+                                                                    href="https://space.bilibili.com/510082921"
+                                                                    rel="external nofollow noreferrer" target="_blank"
+                                                                    title="哔哩哔哩"><i class="iconfont icon-bilibili"></i></a><a
+                            class="social-icon" href="https://i.imgloc.com/2023/05/23/VAGbvw.jpeg"
+                            rel="external nofollow noreferrer" target="_blank" title="微信公众号"><i
+                            class="iconfont icon-gongzhonghao1"></i></a></div>
+                </div>
+            </div>
+            <div class="card-widget card-announcement">
+                <div class="card-content">
+                    <div class="item-headline"><i
+                            class="fas fa-bullhorn card-announcement-animation"></i><span>翎傑皓信</span></div>
+                    <div class="announcement_content">走进人类的 <span class="inline-tag red">初级世界</span> ，。！<br><img
+                            style="border-top:solid 6px rgba(1,1,1,0);"
+                            src="https://www.hualigs.cn/image/6411b246da80e.jpg" width="100%"/></div>
+                </div>
+            </div>
+            <div class="sticky_layout">
+                <div class="card-widget" id="card-toc">
+                    <div class="card-content">
+                        <div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div>
+                        <div class="toc-content">
+                            <ol class="toc">
+                                <li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span
+                                        class="toc-number">1.</span> <span class="toc-text">皓信寄语</span></a></li>
+                                <li class="toc-item toc-level-1"><a class="toc-link"
+                                                                    href="#%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86"><span
+                                        class="toc-number">2.</span> <span class="toc-text">作者介绍</span></a></li>
+                                <li class="toc-item toc-level-1"><a class="toc-link"
+                                                                    href="#%E8%A7%A3%E5%86%B3404%E9%A1%B5%E9%9D%A2%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA"><span
+                                        class="toc-number">3.</span> <span class="toc-text">再不见她长发</span></a></li>
+
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-widget card-recent-post">
+                    <div class="card-content">
+                        <div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div>
+                        <div class="aside-list">
+                            <div class="aside-list-item"><a class="thumbnail" href="/42951.html" title="所以"><img
+                                    data-lazy-src="https://i.imgloc.com/2023/05/24/VA9qdy.jpeg"
+                                    onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'"
+                                    alt="所以"/></a>
+                                <div class="content"><a class="title" href="/42951.html" title="所以">所以</a>
+                                    <time datetime="2021-07-25T02:23:37.000Z" title="发表于 2021-07-25 10:23:37">
+                                        2021-07-25
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="aside-list-item"><a class="thumbnail" href="/24775.html" title="对不起，把你弄丢了"><img
+                                    data-lazy-src="https://i.imgloc.com/2023/04/08/i3uIwb.jpeg"
+                                    onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'"
+                                    alt="对不起，把你弄丢了"/></a>
+                                <div class="content"><a class="title" href="/24775.html" title="对不起，把你弄丢了">对不起，把你弄丢了</a>
+                                    <time datetime="2021-07-04T05:10:43.000Z" title="发表于 2021-07-04 13:10:43">
+                                        2021-07-04
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="aside-list-item"><a class="thumbnail" href="/17196.html" title="17岁的痛"><img
+                                    data-lazy-src="https://i.imgloc.com/2023/04/08/i30XH5.jpeg"
+                                    onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'"
+                                    alt="17岁的痛"/></a>
+                                <div class="content"><a class="title" href="/17196.html" title="17岁的痛">17岁的痛</a>
+                                    <time datetime="2021-06-22T02:16:30.000Z" title="发表于 2021-06-22 10:16:30">
+                                        2021-06-22
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="aside-list-item"><a class="thumbnail" href="/22094.html" title="也许背叛"><img
+                                    data-lazy-src="https://i.imgloc.com/2023/04/08/i30NpL.jpeg"
+                                    onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/10/30/28126e3043a28e82a980c0afe5e23b5b.png'"
+                                    alt="也许背叛"/></a>
+                                <div class="content"><a class="title" href="/22094.html" title="也许背叛">也许背叛</a>
+                                    <time datetime="2021-05-15T11:05:22.000Z" title="发表于 2021-05-15 19:05:22">
+                                        2021-05-15
+                                    </time>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div id="footer-wrap">
+            <div class="copyright">&copy;2019 - 2023 By 翎傑皓信</div>
+            <div class="framework-info"><span>签约平台💕 </span><a target="_blank"
+                                                               rel="noopener external nofollow noreferrer"
+                                                               href="http://www.mengya.com/">萌芽</a><span
+                    class="footer-separator">|</span><span>文学贡献✨ </span><a target="_blank"
+                                                                           rel="noopener external nofollow noreferrer"
+                                                                           href="https://wechat.com/cgi-bin/readtemplate?t=market_redirect">首席作家</a>
+            </div>
+            <div class="footer_custom_text"><a target="_blank" rel="noopener external nofollow noreferrer"
+                                               href="https://su.baidu.com/"><img
+                    src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/26/6a2bc771a2ead2434fa80740eaa22924.png"
+                    align="absmiddle" width="70px" height="20px"></a><span>&nbsp;&&nbsp;&nbsp;</span><a target="_blank"
+                                                                                                        rel="noopener external nofollow noreferrer"
+                                                                                                        href="https://www.jsdelivr.com/"><img
+                    src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/26/7b059f8e9de1a268fdeb80109a192925.png"
+                    align="absmiddle" width="70px" height="20px"></a></div>
+            <div class="icp"><a target="_blank" rel="noopener external nofollow noreferrer"
+                                href="http://www.beian.miit.gov.cn/"><img class="icp-icon"
+                                                                          src="https://cdn.jsdelivr.net/gh/xingjiahui/CDN@latest/2020/06/06/0bcff08ca63f75f26d0f0db7290665fc.png"
+                                                                          alt="ICP"/><span>鲁ICP备 20009899号</span></a>
+            </div>
+        </div>
+    </footer>
+</div>
+<div id="rightside">
+    <div id="rightside-config-hide">
+        <button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button>
+        <button id="translateLink" type="button" title="简繁转换">繁</button>
+        <button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button>
+        <button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button>
+    </div>
+    <div id="rightside-config-show">
+        <button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button>
+        <button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button>
+        <a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a>
+        <button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button>
+    </div>
+</div>
+<div id="local-search">
+    <div class="search-dialog">
+        <div class="search-dialog__title" id="local-search-title">本地搜索</div>
+        <div id="local-input-panel">
+            <div id="local-search-input">
+                <div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div id="local-search-results">
+            <div id="local-hits"></div>
+            <div id="local-stats">
+                <div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank"
+                                                                              rel="noopener external nofollow noreferrer"
+                                                                              href="https://github.com/wzpan/hexo-generator-search"
+                                                                              style="color:#49B1F5;">hexo-generator-search</a>
+                    <span>提供支持</span></div>
+            </div>
+        </div>
+        <span class="search-close-button"><i class="fas fa-times"></i></span></div>
+    <div id="search-mask"></div>
+</div>
+<div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/tw_cn.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script>
+    <script>function panguFn() {
+        if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+        else {
+            $.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js', () => {
+                pangu.spacingElementById('content-inner')
+            })
+        }
     }
 
-    if (true) {
-      initData.requiredFields= ('nick,mail,link'.split(','))
+    function panguInit() {
+        if (false) {
+            GLOBAL_CONFIG_SITE.isPost && panguFn()
+        } else {
+            panguFn()
+        }
     }
+
+    document.addEventListener('DOMContentLoaded', panguFn)</script>
+    <script src="/js/search/local-search.js"></script>
+    <div class="js-pjax">
+        <script>function loadValine() {
+            function initValine() {
+                const friends = 'https://www.impdx.vip,https://www.impdx.vip/,https://bili33.top/,https://bili33.top,https://xiabor.com/,https://xiabor.com,https://www.antmoe.com,https://www.antmoe.com/,https://fuckzuoye.ga/,https://fuckzuoye.ga,https://zhouyunfei.club/,https://zhouyunfei.club,https://wangdudyb.gitee.io/blog/,https://wangdudyb.gitee.io/blog,https://www.meilinfeng.top/,https://www.meilinfeng.top,https://ply.cool,https://ply.cool/,https://www.isk.ink/,https://www.isk.ink,https://www.atdawn.tk,https://www.atdawn.tk/,https://justlovesmile.top/,https://justlovesmile.top,https://www.jiubrc.com/,https://www.jiubrc.com,https://nanzx.top/,https://nanzx.top,https://blog.slqwq.cn,https://blog.slqwq.cn/,https://lingstudy.gitee.io,https://lingstudy.gitee.io/,https://peacecity.cn/,https://peacecity.cn,https://iyyy.nl,https://iyyy.nl/,https://www.kikohk.top,https://www.kikohk.top/,https://fadeawayol.github.io/,https://fadeawayol.github.io,https://yww52.com,https://yww52.com/,https://abalone.life/,https://abalone.life,https://www.imzjw.cn,https://www.imzjw.cn/,https://blog.zhiqin.xyz/,https://blog.zhiqin.xyz,https://imlql.cn,https://imlql.cn/,http://www.byelmx.com/,http://www.byelmx.com,https://blog.zhheo.com,https://blog.zhheo.com/,https://noionion.top,https://noionion.top/,http://blog.yaoyaoman.cn/,http://blog.yaoyaoman.cn,https://damanyang.cn/,https://damanyang.cn,https://blog.molipre.com,https://blog.molipre.com/,http://www.maidang.cool,http://www.maidang.cool/,https://yuanyuanzi.top,https://yuanyuanzi.top/,https://www.iamzlt.com,https://www.iamzlt.com/,https://zangwhe.cn/,https://zangwhe.cn,https://zghya.cn/,https://zghya.cn,http://www.iamdqy.cn,http://www.iamdqy.cn/,https://hexo.io/zh-cn,https://hexo.io/zh-cn/,https://github.com/jerryc127/hexo-theme-butterfly/,https://github.com/jerryc127/hexo-theme-butterfly,https://github.com,https://github.com/,https://vercel.com,https://vercel.com/,https://valine.js.org,https://valine.js.org/,https://www.leancloud.cn,https://www.leancloud.cn/,https://github.com/Molunerfinn/PicGo/,https://github.com/Molunerfinn/PicGo,https://www.typora.io,https://www.typora.io/,https://www.fotor.com.cn,https://www.fotor.com.cn/'.split(',');  //将获取的友链地址存入变量friends中
+                let initData = {
+                    el: '#vcomment',
+                    appId: 'YEUA8TLuUAcMn94WkAI4SuzA-gzGzoHsz',
+                    appKey: 'i07m822kUUdXLatLixeoLibn',
+                    placeholder: '昵称栏输入QQ后按下Tab键，可以自动获取昵称和邮箱哦！',
+                    avatar: 'mp',
+                    meta: 'nick,mail,link'.split(','),
+                    pageSize: '5',
+                    lang: 'zh-CN',
+                    recordIP: false,
+                    serverURLs: '',
+                    emojiCDN: 'https://',
+                    emojiMaps: {
+                        "custom1": "cdn.jsdelivr.net/gh/blogimg/emotion/custom/19.webp",
+                        "custom2": "cdn.jsdelivr.net/gh/blogimg/emotion/custom/24.webp",
+                        "custom3": "cdn.jsdelivr.net/gh/blogimg/emotion/custom/7.webp",
+                        "custom4": "cdn.jsdelivr.net/gh/blogimg/emotion/custom/8.webp",
+                        "custom5": "cdn.jsdelivr.net/gh/blogimg/emotion/custom/13.webp",
+                        "custom6": "cdn.jsdelivr.net/gh/blogimg/emotion/custom/12.webp",
+                        "custom7": "cdn.jsdelivr.net/gh/blogimg/emotion/custom/30.gif",
+                        "custom8": "pic2.zhimg.com/v2-e572af592a4c5d7b1272741265df8e7d_b.gif",
+                        "custom9": "pic1.zhimg.com/v2-fb2fdc36dff66c7bbc6f7f7fe5fb0564_b.gif",
+                        "custom10": "pic3.zhimg.com/v2-0567ef42a240192aa8cc6414591cf0f2_b.gif",
+                        "custom11": "pic4.zhimg.com/v2-3ca857bbb343d32bdeb66a330a3c48ff_b.gif",
+                        "custom12": "pic2.zhimg.com/v2-5163087c3fabb0dcd7c8c3a0dfa64075_b.gif",
+                        "custom13": "pic1.zhimg.com/v2-e80a73877ad43277c9ccff4f631ef93c_b.gif",
+                        "custom14": "pic1.zhimg.com/v2-215941e4f016f6251ac549fcaa3899b4_b.gif",
+                        "custom15": "pic2.zhimg.com/v2-3c1eaf1a9ed12401fe56fd889a3f1151_b.gif",
+                        "custom16": "pic4.zhimg.com/v2-3667572fb0cb999e180487be43b00323_b.gif",
+                        "custom17": "pic3.zhimg.com/v2-681c4f1cdc9d9c8b04af40d0cfcb0faa_b.gif",
+                        "custom18": "pic3.zhimg.com/v2-aafa7ae089b4e124a318ef59bc4a470e_b.gif",
+                        "custom19": "pic2.zhimg.com/v2-1944ef897865961033233282215490f9_b.gif",
+                        "custom20": "pic3.zhimg.com/v2-bb309ecce53658416d270550377a73a2_b.gif",
+                        "custom21": "pic1.zhimg.com/v2-35eeb1d14b56b7b43aac45055f75eaa8_b.gif",
+                        "custom22": "pic3.zhimg.com/v2-9de252f01196ce895ca7a8866300dc32_b.gif",
+                        "custom23": "pic1.zhimg.com/v2-c8096214f4b41efe48bb88ba3036cd70_b.gif",
+                        "custom24": "pic2.zhimg.com/v2-3b4cd517f5440257f0d3ddf57808ccf1_b.gif",
+                        "custom25": "pic3.zhimg.com/v2-181a31a055a8a63139bce5d4ed7bb67a_b.gif",
+                        "custom26": "pic2.zhimg.com/v2-7e007496712a40e0178bea8bdcc53275_b.gif",
+                        "custom27": "pic3.zhimg.com/v2-056f81c46fc2ffef8de549db7ca88dbe_b.gif",
+                        "custom28": "pic4.zhimg.com/v2-4001df7dac4076c71eb25cc2715ffae3_b.gif",
+                        "custom29": "pic2.zhimg.com/v2-8527b778588d1e3ec600cc093f6b9685_b.gif",
+                        "custom30": "pic2.zhimg.com/v2-ed112e0c8b365eed90e3d0fba99ef959_b.gif",
+                        "custom31": "pic1.zhimg.com/v2-5e720c6af6fa953dbe80d7acfec9eb6c_b.gif",
+                        "custom32": "pic4.zhimg.com/v2-6c36175478eca8926a29011cbb7a39d7_b.gif",
+                        "custom33": "pic1.zhimg.com/v2-33cee90bf0f730beb8f3217df7b50e20_b.gif",
+                        "custom34": "pic2.zhimg.com/v2-b5eccdef676bfbb91f277f7081ee50e1_b.gif",
+                        "custom35": "pic3.zhimg.com/v2-c780479dbe201896aa26176f3a7d44b6_b.gif",
+                        "custom36": "pic1.zhimg.com/v2-551dd3d1e059d84c027d46b958a94f90_b.gif",
+                        "custom37": "pic2.zhimg.com/v2-48b0cfa1b685a037875f0bd0bdb500dd_b.gif",
+                        "custom38": "pic2.zhimg.com/v2-390105b06925f71b754a11f82d57fde5_b.gif",
+                        "custom39": "pic3.zhimg.com/v2-1eb745ae6d6d030c55dd694c9fd4e9d6_b.gif",
+                        "custom40": "pic3.zhimg.com/v2-597c097311126fe8bf3bf956fb7e54ea_b.gif",
+                        "custom41": "pic3.zhimg.com/v2-7236186ffee6ec269163e09404f255de_b.gif",
+                        "custom42": "pic3.zhimg.com/v2-f2a9c6e9d8cc423856bcd746aaf99e0a_b.gif",
+                        "custom43": "pic4.zhimg.com/v2-57830232d755f8f7a638529092d6e8ef_b.gif",
+                        "custom44": "pic4.zhimg.com/v2-c50ea4eae7fa31de787f281b490e3b0b_b.gif",
+                        "custom45": "pic4.zhimg.com/v2-0fd936cc5c0845897d0095ccfd4c56a3_b.gif",
+                        "custom46": "pic2.zhimg.com/v2-c377e106a5c540aec11a59d519161f2d_b.gif",
+                        "custom47": "pic1.zhimg.com/v2-93488a1f970ebb48e00cd6c4783bf808_b.gif",
+                        "custom48": "pic3.zhimg.com/v2-b59fe0db6cd292d7e5b7144df03b1aea_b.gif",
+                        "custom49": "pic2.zhimg.com/v2-58c791d7544c1a65d1645146c375b8ad_b.gif",
+                        "custom50": "pic3.zhimg.com/v2-73f9013b1629ec4eb43764c345e90032_b.gif",
+                        "custom51": "pic2.zhimg.com/v2-ff76d3d0edf8985fda1849129a2c9ed1_b.gif",
+                        "custom52": "pic1.zhimg.com/v2-3c88bb276007a76e66fbf80f261dc470_b.gif",
+                        "custom53": "pic1.zhimg.com/v2-7780da7452785c7d3d924a1877bc1544_b.gif",
+                        "custom54": "pic2.zhimg.com/v2-c5ab25dbdb322554cfc4fff95944fa11_b.gif",
+                        "custom55": "pic4.zhimg.com/v2-4cdf8d6eb70ef925186e19dea14a774f_b.gif",
+                        "custom56": "pic4.zhimg.com/v2-9bc71ca21fd75b737f7a58c1a3ecb6bb_b.gif",
+                        "custom57": "pic2.zhimg.com/v2-dd6bdf233268397905b052fcbe563fa9_b.gif",
+                        "custom58": "pic2.zhimg.com/v2-c1286bdfbfca9dca67af8b620fe48939_b.gif",
+                        "custom59": "pic2.zhimg.com/v2-e2423a19028a3abacf11d8761e8bfa19_b.gif",
+                        "custom60": "pic4.zhimg.com/v2-29a795d37053863310a04378c5f56f83_b.gif",
+                        "custom61": "pic4.zhimg.com/v2-98cadd6464caf5c3939a370596ec0093_b.gif",
+                        "custom62": "pic3.zhimg.com/v2-31f77eec98a92cd861fe48b96f37289e_b.gif",
+                        "custom63": "pic2.zhimg.com/v2-b651a63912807daddc4b411836d2e2cd_b.gif",
+                        "custom64": "pic1.zhimg.com/v2-e36ae3cd61b2344dc9eb657ac630787c_b.gif",
+                        "custom65": "pic1.zhimg.com/v2-56781dd58ed247ce6cc8f5000b463f28_b.gif",
+                        "custom66": "pic3.zhimg.com/v2-7c0709c030775f42350a4dfaae8abdd2_b.gif",
+                        "custom67": "pic3.zhimg.com/v2-0862a36e96dcd4b0eb8aaa6a724434ca_b.gif",
+                        "custom68": "pic1.zhimg.com/v2-53ac3570ebdb0d7c5bfc521e9d25deac_b.gif",
+                        "custom69": "pic1.zhimg.com/v2-ceb106b2200f6dbd954c9976931d93bc_b.gif",
+                        "custom70": "pic1.zhimg.com/v2-680caf4670b4442c3637304c9babb874_b.gif",
+                        "custom71": "pic2.zhimg.com/v2-ce56dd5cc9c81d4bd3e76c1d8fc3015d_b.gif",
+                        "custom72": "pic1.zhimg.com/v2-d3e6f5eb204592548a2c01f661864d80_b.gif",
+                        "custom73": "pic2.zhimg.com/v2-83730a87a6c51767f28132622c1fc0a9_b.gif",
+                        "custom74": "pic3.zhimg.com/v2-5e8098ffcf9c4eea0ea713035157831e_b.gif",
+                        "custom75": "pic1.zhimg.com/v2-b6dc883acee237c8b77a081b3c727c44_b.gif",
+                        "custom76": "pic1.zhimg.com/v2-c38e6883d21f2fabf3c39b50ba498990_b.gif",
+                        "custom77": "pic2.zhimg.com/v2-e2afb155f0de4f2c55a6bc329ac30ea9_b.gif",
+                        "custom78": "pic4.zhimg.com/v2-9977dc5ea13ad6b30243e2568a53fbaf_b.gif",
+                        "custom79": "pic3.zhimg.com/v2-37f24a50383fdfab91bd5fc18598ee06_b.gif",
+                        "custom80": "pic3.zhimg.com/v2-62dd7e4ee42d2fc87228218b8000c0a2_b.gif",
+                        "custom81": "pic2.zhimg.com/v2-9424bb340713dcb37d45dd5660af199d_b.gif",
+                        "custom82": "pic1.zhimg.com/v2-93fd43bc9fbd0b542ac532053380506c_b.gif",
+                        "custom83": "pic4.zhimg.com/v2-95731e6bb902a5e6983158dd7dc33d0b_b.gif",
+                        "custom84": "pic4.zhimg.com/v2-20bb020f13e6bc6f835e18323be6bdd3_b.gif",
+                        "custom85": "pic2.zhimg.com/v2-81bb85951b8564a35b3b56c4f815e81d_b.gif",
+                        "custom86": "pic1.zhimg.com/v2-2926449281d63bb9e366a7cae8f6db20_b.gif",
+                        "custom87": "pic2.zhimg.com/v2-679d5d182bd240dc8a8edc775e4fb4ad_b.gif",
+                        "custom88": "pic1.zhimg.com/v2-88a2364402b90559dac36a7cda38a4a0_b.gif",
+                        "custom89": "pic3.zhimg.com/v2-a40d310c471685a300003001db165d96_b.gif",
+                        "custom90": "pic2.zhimg.com/v2-d9d785c9ceb06adc30d3db359d223e09_b.gif",
+                        "custom91": "pic4.zhimg.com/v2-2d64b6d43c06b2e9e28b53d8a2a37d57_b.gif",
+                        "custom92": "pic4.zhimg.com/v2-1760e5210f7e2073ce11fa74a2735a7b_b.gif",
+                        "custom93": "pic3.zhimg.com/v2-0cc94ca6970c22e3ab8a9d18576dfbd6_b.gif",
+                        "custom94": "pic3.zhimg.com/v2-8f532f4a36ac6879ce07ed47590cc8a6_b.gif",
+                        "custom95": "pic1.zhimg.com/v2-95d35d83e9ea74a4853ded89e48b56a8_b.gif",
+                        "custom96": "pic4.zhimg.com/v2-bca71b4e7a56779c21d84f44e0555973_b.gif",
+                        "custom97": "pic1.zhimg.com/v2-0ae83e71fb9a241d7ff7ce852e318a40_b.gif",
+                        "custom98": "pic1.zhimg.com/v2-31e18866441a228f7aaf5b63775feb34_b.gif",
+                        "custom99": "pic1.zhimg.com/v2-25b19033705d96b8dd5b517a99d52ab4_b.gif",
+                        "custom100": "pic2.zhimg.com/v2-d1ac062e897449b30ed254be7d6d3e3d_b.gif",
+                        "custom101": "pic4.zhimg.com/v2-c801f0c1e9f69cb205177b1a27d294d7_b.gif",
+                        "custom102": "pic3.zhimg.com/v2-d2c3bfa27bc3c9857b1919d5d39bba86_b.gif",
+                        "custom103": "pic2.zhimg.com/v2-59bcedc7deb8de6c444a7034628686dd_b.gif",
+                        "custom104": "pic1.zhimg.com/v2-65e8bcf3bc1058a290cadfc6c6c4fd54_b.gif",
+                        "custom105": "pic2.zhimg.com/v2-9424bb340713dcb37d45dd5660af199d_b.gif",
+                        "custom106": "pic4.zhimg.com/v2-3418357b00de23ad4c56518e5fb1f193_b.gif",
+                        "custom107": "pic2.zhimg.com/v2-ce0d5597053ae87c9d87c1e0d0cec901_b.gif",
+                        "custom108": "pic2.zhimg.com/v2-35e61f7762287ee18f4944cc72232085_b.gif",
+                        "custom109": "pic4.zhimg.com/v2-6aecb3bc3269e478f2a08d4e46918a73_b.gif",
+                        "custom110": "pic3.zhimg.com/v2-abcb76e88c215a14493bbb34bb567e16_b.gif",
+                        "custom111": "pic2.zhimg.com/v2-9930adc06149d7948e32bde4fdb3ada5_b.gif",
+                        "custom112": "pic2.zhimg.com/v2-d7df1e9fe66d559d1e3103282c735a3d_b.gif",
+                        "custom113": "pic4.zhimg.com/v2-e5b9d0f7ffb5db93e100507c68dfce43_b.gif",
+                        "custom114": "pic4.zhimg.com/v2-aff47b605da193111c61155fe42f020f_b.gif",
+                        "custom115": "pic3.zhimg.com/v2-f9fea5bb44a0c55daf3b6d5cd1e14fa2_b.gif",
+                        "custom116": "pic2.zhimg.com/v2-7ba02b43a6e29ccf7a4d9d5c07f1f841_b.gif",
+                        "custom117": "pic1.zhimg.com/v2-be861e6493cd879eda9d201f09c025bc_b.gif",
+                        "custom118": "pic3.zhimg.com/v2-3b14278c97109b914f4ac14a19b00bc2_b.gif",
+                        "custom119": "pic4.zhimg.com/v2-b57de09fec1ebc9172f0d483cdf9d467_b.gif",
+                        "custom120": "pic2.zhimg.com/v2-d501afd61c71b780824b9361771f4005_b.gif",
+                        "custom121": "pic4.zhimg.com/v2-1760e5210f7e2073ce11fa74a2735a7b_b.gif",
+                        "custom122": "pic1.zhimg.com/v2-d9b48cfeb56da1070cbd1ce9d41581d4_b.gif",
+                        "custom123": "pic1.zhimg.com/v2-9aea05a387c82248be185c1bb229803c_b.gif",
+                        "custom124": "pic3.zhimg.com/v2-a5388ce79bb31d7bb3ccb80403b94332_b.gif",
+                        "custom125": "pic2.zhimg.com/v2-100aca4030f5d1b40bcee87d62d7f66d_b.gif",
+                        "custom126": "pic1.zhimg.com/v2-ff22c98629d32876092ebd0ca9715584_b.gif",
+                        "custom127": "pic3.zhimg.com/v2-4e22550d190c3d8b5c0b353e1065b532_b.gif",
+                        "custom128": "pic2.zhimg.com/v2-32b8497d622649c2d00b74be71971c4d_b.gif",
+                        "custom129": "pic2.zhimg.com/v2-602e7680e81e621c3d2c653d24288da9_b.gif",
+                        "custom130": "pic4.zhimg.com/v2-8d592b7d1b55eb4307da4790750ba333_b.gif",
+                        "custom131": "pic1.zhimg.com/v2-1fd69d40fbb2efbea1fca9ce4c416050_b.gif",
+                        "custom132": "pic2.zhimg.com/v2-2e139cf57cd7daafc68de5e7f91e7629_b.gif",
+                        "custom133": "pic2.zhimg.com/v2-291c5c10504077692f7683af97413a2d_b.gif",
+                        "custom134": "pic4.zhimg.com/v2-69bffcc804a13ab1768f702667bdd40f_b.gif",
+                        "custom135": "pic1.zhimg.com/v2-bc26a205d5e016ee0642ecced24ff490_b.gif",
+                        "custom136": "pic1.zhimg.com/v2-29ee02808b809812465b3d09847a683c_b.gif",
+                        "custom137": "pic1.zhimg.com/v2-44cf5897353d056cefd5480bec2c81e4_b.gif",
+                        "custom138": "pic2.zhimg.com/v2-7e3d1027066f3637b2fe1d1be943d879_b.gif",
+                        "custom139": "pic1.zhimg.com/v2-7f23f4443cf26b09a7702f79e5395444_b.gif",
+                        "custom140": "pic1.zhimg.com/v2-87505a4a0393e32cc13a4c16434f9558_b.gif",
+                        "custom141": "pic3.zhimg.com/v2-1ced686ce3147ae0dcf3b4c44af64b66_b.gif",
+                        "custom142": "pic3.zhimg.com/v2-4775417b57c694622ac62d738308269a_b.gif",
+                        "custom143": "pic3.zhimg.com/v2-1787eb6552b14eb897a0d3ae0462f516_b.gif",
+                        "custom144": "pic1.zhimg.com/v2-fe022032cbe480f5522e4cd64cdb4b94_b.gif",
+                        "custom145": "pic4.zhimg.com/v2-dad976cc1ba4991418ccbfe7222e564f_b.gif",
+                        "custom146": "pic4.zhimg.com/v2-54fbcf3f0b70a1d064c9a5b72344ed07_b.gif",
+                        "custom147": "pic1.zhimg.com/v2-be6e40da0a6248aec174bdc3c1c664a4_b.gif",
+                        "custom148": "pic2.zhimg.com/v2-f21b7824c07e47e66ec99ba2fe876991_b.gif",
+                        "custom149": "pic1.zhimg.com/v2-6ca6d176e6cfebd885b362ed39a52754_b.gif",
+                        "custom150": "pic3.zhimg.com/v2-7096fbcaa46d84e196b24539b01844b6_b.gif",
+                        "custom151": "pic4.zhimg.com/v2-9a7df92798c0e20752aa74e4cc5466cb_b.gif",
+                        "custom152": "pic2.zhimg.com/v2-cda9ef3135a133d68085247a1b69cffd_b.gif",
+                        "custom153": "pic3.zhimg.com/v2-a51fc7d88b9dda0574a5ba8825821c82_b.gif",
+                        "custom154": "pic4.zhimg.com/v2-c1aa44684a2ca95b36ec93a84a35e77f_b.gif",
+                        "custom155": "pic4.zhimg.com/v2-817888c40f2cc7892e3ac4a151e49ee7_b.gif",
+                        "custom156": "pic1.zhimg.com/v2-74ff5c91f66eb89e48a5a89e638e73b0_b.gif",
+                        "custom157": "pic2.zhimg.com/v2-42c967fae56d7b3c86bec6cde9bcd7b1_b.gif",
+                        "custom158": "pic3.zhimg.com/v2-5e95643fa22d1ab0bdd6320ad5d1db2a_b.gif",
+                        "custom159": "pic2.zhimg.com/v2-6f859296c99b9b5a6e8e9e2d0e854a29_b.gif",
+                        "custom160": "pic2.zhimg.com/v2-3bb0c8ed8882c75489df4b1afba1840d_b.gif",
+                        "custom161": "pic1.zhimg.com/v2-a78dbd510ea52030a1c0cfa4ebe347e0_b.gif",
+                        "custom162": "pic4.zhimg.com/v2-0ddd383dc74cc15791b197d6c9963c13_b.gif",
+                        "custom163": "pic2.zhimg.com/v2-2e719166991d7a3b357a4c1161c19871_b.gif",
+                        "custom164": "pic3.zhimg.com/v2-29478cfa6376f13d4683e6ccf31fd23e_b.gif",
+                        "custom165": "pic4.zhimg.com/v2-a1c3204e6c1c6d029e7f1e8395b662ef_b.gif",
+                        "custom166": "pic4.zhimg.com/v2-1e99af51e9a843ae6e7da7922b7d04a7_b.gif",
+                        "custom167": "pic4.zhimg.com/v2-88316af36de09f6143c6d4b4b9fb48a3_b.gif",
+                        "custom168": "pic3.zhimg.com/v2-5c774b2be9572a6ff923b378e4378666_b.gif",
+                        "custom169": "pic4.zhimg.com/v2-80d589d638790b9179bff798661e6f1b_b.gif",
+                        "custom170": "pic3.zhimg.com/v2-4f5ce0bc5804d9aa39f2ba4fbce84a96_b.gif",
+                        "custom171": "pic3.zhimg.com/v2-1ee5355dc5729d7d6b506c82db86406e_b.gif",
+                        "custom172": "pic1.zhimg.com/v2-c67bb502aed043acf52ce446633becc0_b.gif",
+                        "custom173": "pic3.zhimg.com/v2-28de39defdaf921e7bed9cbcbf747336_b.gif",
+                        "custom174": "pic4.zhimg.com/v2-482a3fe2af6dc43fdc4577e81595458f_b.gif",
+                        "custom175": "pic3.zhimg.com/v2-9b14f13670db560aad1277b0084bf71e_b.gif",
+                        "custom176": "pic4.zhimg.com/v2-67a6c8eecd135664558908cce4c9974f_b.gif",
+                        "custom177": "pic2.zhimg.com/v2-2fdc05cf86a4fee3932156f35b4d8a09_b.gif",
+                        "custom178": "pic1.zhimg.com/v2-4904d237ab497f3c7a5b84d3f9139c2c_b.gif",
+                        "custom179": "pic1.zhimg.com/v2-c8096214f4b41efe48bb88ba3036cd70_b.gif",
+                        "custom180": "pic2.zhimg.com/v2-69b72648b83645ae38f51e867b042b4d_b.gif",
+                        "custom181": "pic2.zhimg.com/v2-f6e1da0eb533edcb861666bf7ec6d049_b.gif",
+                        "custom182": "pic1.zhimg.com/v2-f30dabdd0e98314a99be305fca7c90a4_b.gif",
+                        "custom183": "pic3.zhimg.com/v2-eb40a03a20678be76b6bded945fa2d76_b.gif",
+                        "custom184": "pic3.zhimg.com/v2-359317a1b9e58922e645ff0d4d1c312e_b.gif",
+                        "custom185": "pic3.zhimg.com/v2-635191a768940f8bcf7bb25d8e5e0bde_b.gif",
+                        "custom186": "pic1.zhimg.com/v2-7bdb13ca8a4812dfdf91ea77d2c369a4_b.gif"
+                    },
+                    enableQQ: true,
+                    path: window.location.pathname,
+                    master: 'https://liy159872.github.io/',  //主题根目录配置文件获取博主地址
+                    friends: friends,
+                }
+
+                if (true) {
+                    initData.requiredFields = ('nick,mail,link'.split(','))
+                }
+
+                if (false) {
+                    const otherData = false
+                    initData = Object.assign({}, initData, otherData)
+                }
+
+                const valine = new Valine(initData)
+            }
+
+            if (typeof Valine === 'function') initValine()
+            else $.getScript('https://cdn.jsdelivr.net/gh/xingjiahui/modify@v1.1.0/valine/valine.min.js', initValine)
+        }
+
+        if ('Valine' === 'Valine' || !false) {
+            if (false) btf.loadComment(document.querySelector('#vcomment'), loadValine)
+            else setTimeout(() => loadValine(), 0)
+        } else {
+            function loadOtherComment() {
+                loadValine()
+            }
+        }</script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+    <script no-destroy src="https://player.lmih.cn/player/js/player.js" id="myhk" key="158744445072"></script>
+    <script no-destroy src="https://cdn.jsdelivr.net/gh/xingjiahui/modify/pace/pace.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+    <script>let pjaxSelectors = [
+        'title',
+        '#config_change',
+        '#body-wrap',
+        '#rightside-config-hide',
+        '#rightside-config-show',
+        '.js-pjax'
+    ]
 
     if (false) {
-      const otherData = false
-      initData = Object.assign({}, initData, otherData)
+        pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
     }
 
-    const valine = new Valine(initData)
-  }
+    var pjax = new Pjax({
+        elements: 'a:not([target="_blank"]):not([href="/log/"]):not([href="/video/"])',
+        selectors: pjaxSelectors,
+        cacheBust: false,
+        analytics: true,
+        scrollRestoration: false
+    })
 
-  if (typeof Valine === 'function') initValine()
-  else $.getScript('https://cdn.jsdelivr.net/gh/xingjiahui/modify@v1.1.0/valine/valine.min.js', initValine)
-}
+    document.addEventListener('pjax:complete', function () {
+        window.refreshFn()
 
-if ('Valine' === 'Valine' || !false) {
-  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
-  else setTimeout(() => loadValine(), 0)
-} else {
-  function loadOtherComment () {
-    loadValine()
-  }
-}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script no-destroy src="https://player.lmih.cn/player/js/player.js" id="myhk" key="158744445072"></script><script no-destroy src="https://cdn.jsdelivr.net/gh/xingjiahui/modify/pace/pace.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
-  'title',
-  '#config_change',
-  '#body-wrap',
-  '#rightside-config-hide',
-  '#rightside-config-show',
-  '.js-pjax'
-]
+        $('script[data-pjax]').each(function () {
+            $(this).parent().append($(this).remove())
+        })
 
-if (false) {
-  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
-}
+        GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
-var pjax = new Pjax({
-  elements: 'a:not([target="_blank"]):not([href="/log/"]):not([href="/video/"])',
-  selectors: pjaxSelectors,
-  cacheBust: false,
-  analytics: true,
-  scrollRestoration: false
-})
+        typeof chatBtnFn === 'function' && chatBtnFn()
+        typeof panguInit === 'function' && panguInit()
 
-document.addEventListener('pjax:complete', function () {
-  window.refreshFn()
+        if (typeof gtag === 'function') {
+            gtag('config', 'UA-162326632-1', {'page_path': window.location.pathname});
+        }
 
-  $('script[data-pjax]').each(function () {
-    $(this).parent().append($(this).remove())
-  })
+        typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
 
-  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+        // Analytics
+        if (true) {
+            MtaH5.pgv()
+        }
 
-  typeof chatBtnFn === 'function' && chatBtnFn()
-  typeof panguInit === 'function' && panguInit()
+        // prismjs
+        typeof Prism === 'object' && Prism.highlightAll()
 
-  if (typeof gtag === 'function') {
-    gtag('config', 'UA-162326632-1', {'page_path': window.location.pathname});
-  }
-
-  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
-
-  // Analytics
-  if (true) {
-    MtaH5.pgv()
-  }
-
-  // prismjs
-  typeof Prism === 'object' && Prism.highlightAll()
-
-  typeof preloader === 'object' && preloader.endLoading()
-})
+        typeof preloader === 'object' && preloader.endLoading()
+    })
 
 
-document.addEventListener('pjax:send', function () {
-  typeof preloader === 'object' && preloader.initLoading()
+    document.addEventListener('pjax:send', function () {
+        typeof preloader === 'object' && preloader.initLoading()
 
-  if (window.aplayers) {
-    for (let i = 0; i < window.aplayers.length; i++) {
-      if (!window.aplayers[i].options.fixed) {
-        window.aplayers[i].destroy()
-      }
-    }
-  }
+        if (window.aplayers) {
+            for (let i = 0; i < window.aplayers.length; i++) {
+                if (!window.aplayers[i].options.fixed) {
+                    window.aplayers[i].destroy()
+                }
+            }
+        }
 
-  typeof typed === 'object' && typed.destroy()
+        typeof typed === 'object' && typed.destroy()
 
-  $(window).off('scroll')
+        $(window).off('scroll')
 
-  //reset readmode
-  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+        //reset readmode
+        $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
 
-})</script></div></body></html>
+    })</script>
+</div>
+</body>
+</html>
